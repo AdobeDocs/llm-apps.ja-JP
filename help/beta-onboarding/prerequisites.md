@@ -21,7 +21,7 @@ Adobeを使用してオンボーディングセッションを実施する前に
 
 代わりに&#x200B;**制限付きアクセス** メッセージが表示される場合は、開発者の役割がありません。 IMS組織の管理者をオンボーディングセッションに招待します。
 
-![Adobe Developer Console – 制限付きアクセス メッセージ ](/help/assets/overview/dev-console-access-denied.png)
+![Adobe Developer Console – 制限付きアクセス メッセージ &#x200B;](/help/assets/overview/dev-console-access-denied.png)
 
 ## [!DNL GitHub]
 
@@ -29,7 +29,7 @@ Adobeを使用してオンボーディングセッションを実施する前に
 
 - **リポジトリを作成** – 組織内に2つのリポジトリ（アプリケーションコード用とEDS プロジェクト用）を作成する必要があります。 確認するには、[github.com/new](https://github.com/new)に移動します。**所有者** ドロップダウンから組織を選択できる場合は、権限があります。
 
-  組織の選択を表示する![GitHub新しいリポジトリ所有者ドロップダウン ](/help/assets/overview/github-repo-owner-dropdown.png)
+  組織の選択を表示する![GitHub新しいリポジトリ所有者ドロップダウン &#x200B;](/help/assets/overview/github-repo-owner-dropdown.png)
 
 - **アプリ [!DNL GitHub]をインストール** – 組織に[!DNL GitHub] アプリをインストールするには、適切な権限が必要です。 GitHub アプリをインストールするための[要件](https://docs.github.com/en/apps/using-github-apps/installing-a-github-app-from-a-third-party#requirements-to-install-a-github-app)を参照してください。
 
@@ -51,9 +51,9 @@ Adobeとミーティングする前に、このクイックチェックを実行
 
 アクションウィジェットは&#x200B;**Adobe Experience Manager [!DNL Edge Delivery Services] （EDS）**&#x200B;でホストされます。 [!DNL Edge Delivery Services]を含むAEM Sites ライセンスが必要です。 EDS組織に&#x200B;**管理者**&#x200B;の役割が必要です。
 
-確認するには、[EDS ユーザー管理ツール ](https://tools.aem.live/tools/user-admin/index.html)に移動し、組織名を入力し、**サイト**&#x200B;を空白のままにして、**ユーザーを取得**&#x200B;をクリックします。 リストでアカウントを検索し、**管理者** バッジが表示されていることを確認します。
+確認するには、[EDS ユーザー管理ツール &#x200B;](https://tools.aem.live/tools/user-admin/index.html)に移動し、組織名を入力し、**サイト**&#x200B;を空白のままにして、**ユーザーを取得**&#x200B;をクリックします。 リストでアカウントを検索し、**管理者** バッジが表示されていることを確認します。
 
-![管理者の役割を持つユーザーを表示するEDS ユーザー管理ツール ](/help/assets/overview/eds-user-admin.png)
+![管理者の役割を持つユーザーを表示するEDS ユーザー管理ツール &#x200B;](/help/assets/overview/eds-user-admin.png)
 
 EDS組織をまだ持っていない場合、アクションは必要ありません。オンボーディングプロセス中に作成されます。
 

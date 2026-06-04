@@ -21,11 +21,11 @@ ht-degree: 0%
 
 アプリの詳細ページに移動します。 右上隅の「**[!UICONTROL デプロイ]**」ボタンをクリックします。
 
-![ アプリの詳細 – デプロイの準備ができました](/help/assets/guide-deploy/app-detail-deploy-ready.png)
+![&#x200B; アプリの詳細 – デプロイの準備ができました](/help/assets/guide-deploy/app-detail-deploy-ready.png)
 
 デプロイメントダイアログが開きます。 ドロップダウンからターゲット環境を選択します。
 
-![ デプロイ ダイアログ – ターゲット環境を選択](/help/assets/guide-deploy/deploy-pipeline-dropdown.png)
+![&#x200B; デプロイ ダイアログ – ターゲット環境を選択](/help/assets/guide-deploy/deploy-pipeline-dropdown.png)
 
 「**[!UICONTROL デプロイ]**」をクリックして、パイプラインを開始します。 4つのステップは次のとおりです。
 
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 開始すると、パイプラインが自動的に実行され、進行状況がリアルタイムで表示されます。
 
-![実行中のパイプラインのデプロイ ](/help/assets/guide-deploy/deploy-pipeline-deploying.png)
+![実行中のパイプラインのデプロイ &#x200B;](/help/assets/guide-deploy/deploy-pipeline-deploying.png)
 
 >[!NOTE]
 >
@@ -46,18 +46,18 @@ ht-degree: 0%
 
 すべての手順が完了すると、ダイアログに、デプロイ済みURLとアーティファクトの詳細を含む&#x200B;**デプロイが成功した**&#x200B;の確認が表示されます。
 
-![ デプロイが成功しました](/help/assets/guide-deploy/app-detail-deploy-finish.png)
+![&#x200B; デプロイが成功しました](/help/assets/guide-deploy/app-detail-deploy-finish.png)
 
 ダイアログを閉じるには、**閉じる**&#x200B;をクリックします。 アプリの詳細ページの「**[!UICONTROL アプリをテストする]**」セクションまで下にスクロールします。
 
-![ アプリのテスト – デプロイされたURL](/help/assets/guide-deploy/test-app-deployed.png)
+![&#x200B; アプリのテスト – デプロイされたURL](/help/assets/guide-deploy/test-app-deployed.png)
 
 各環境（**ステージング**&#x200B;および&#x200B;**実稼動**）は、[!DNL Adobe I/O Runtime]にMCP サーバーのURLを表示します。 これは、アプリの登録時にLLM プラットフォームに提供するURLです。 「**URLをコピー**」をクリックして、クリップボードにコピーします。
 
 以下の&#x200B;**デプロイメント履歴** セクションでは、環境全体のすべてのデプロイメントの完全なログを保持します。
 
-![ デプロイメント履歴](/help/assets/guide-deploy/deployment-history.png)
+![&#x200B; デプロイメント履歴](/help/assets/guide-deploy/deployment-history.png)
 
-各行には、ターゲット **環境** （ステージまたは実稼動）、**ステータス** （成功または失敗）、**デプロイ日**が表示されます。 このテーブルを使用して、デプロイメントが発生したタイミングを追跡し、デプロイメントが発生したことを
+各行には、ターゲット **環境** （ステージまたは実稼動）、**ステータス** （成功または失敗）、**デプロイ日**&#x200B;が表示されます。 このテーブルを使用して、デプロイメントが発生したタイミングを追跡し、デプロイメントが発生したことを
 最新の展開が成功しました。
 

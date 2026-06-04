@@ -40,7 +40,7 @@ ht-degree: 2%
 
 ## 開発者モードを有効にする
 
-カスタム MCP アプリを追加するには、[!DNL ChatGPT] アカウントで&#x200B;**開発者モード**を有効にする必要があります。 フォロー
+カスタム MCP アプリを追加するには、[!DNL ChatGPT] アカウントで&#x200B;**開発者モード**&#x200B;を有効にする必要があります。 フォロー
 検証して有効にするには、次の手順を実行します。
 
 ### 設定を開く
@@ -77,15 +77,15 @@ https://<namespace>.adobeioruntime.net/api/v1/web/llm-apps/mcp
 
 ### アプリページを開く
 
-[!DNL ChatGPT]で、**[!UICONTROL 設定] → [!UICONTROL  アプリ]**&#x200B;に移動します。
+[!DNL ChatGPT]で、**[!UICONTROL 設定] → [!UICONTROL &#x200B; アプリ]**&#x200B;に移動します。
 
-![ChatGPT — アプリページ ](/help/assets/guide-test-chatgpt/chatgpt-apps-page.png)
+![ChatGPT — アプリページ &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-apps-page.png)
 
 ### 新しいアプリを作成
 
 詳細設定行の「**[!UICONTROL アプリを作成]**」をクリックします。
 
-![ChatGPT — アプリの作成ダイアログ ](/help/assets/guide-test-chatgpt/chatgpt-create-app.png)
+![ChatGPT — アプリの作成ダイアログ &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-create-app.png)
 
 次の項目を入力します。
 
@@ -130,7 +130,7 @@ https://<namespace>.adobeioruntime.net/api/v1/web/llm-apps/mcp
 >
 >同じアプリで&#x200B;**@mention**&#x200B;をもう一度使用すると、そのアプリの選択が解除され、会話から削除されます。
 
-![ChatGPT — アプリ@mention インストール ](/help/assets/guide-test-chatgpt/chatgpt-mention-app.png)
+![ChatGPT — アプリ@mention インストール &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-mention-app.png)
 
 選択すると、アプリがインラインで添付され、同じメッセージで質問を入力できます。
 
