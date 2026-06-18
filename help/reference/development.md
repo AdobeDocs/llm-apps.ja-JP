@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM アプリの開発
 description: Adobe LLM Apps ハンドラーコードのプロジェクト構造、ローカル開発ワークフロー、テスト設定。
-source-git-commit: 51ffb31eec82f9639bd7ade9052d61028c262d0e
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '318'
+source-wordcount: '324'
 ht-degree: 4%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->**免責事項：**&#x200B;これは[!DNL LLM Apps]のベータ版リリースです。 ここに示す機能、ワークフロー、UIは、必ずしもアプリケーションまたは製品の最終状態を表すものではありません。
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
-この節では、ハンドラープロジェクトの構造、ローカル開発ワークフロー、テスト設定について説明します。 ハンドラー契約とサンプルコードについては、[&#x200B; アクションハンドラーの記述](/help/guides/write-action-handler.md)を参照してください。
+この節では、[!DNL Adobe LLM Apps]のハンドラープロジェクト構造、ローカル開発ワークフロー、テスト設定について説明します。 ハンドラー契約とサンプルコードについては、[ アクションハンドラーの記述](/help/guides/write-action-handler.md)を参照してください。
 
 ## プロジェクト構造
 
@@ -135,7 +137,7 @@ npx jest test/actions/search-products        # one action only
 
 ## デプロイメント
 
-手動でビルドまたはデプロイすることはありません。 デプロイメントパイプラインの完全なチュートリアルについては、[&#x200B; アプリのデプロイ &#x200B;](/help/guides/deploy-your-app.md)を参照してください。
+手動でビルドまたはデプロイすることはありません。 デプロイメントパイプラインの完全なチュートリアルについては、[ アプリのデプロイ ](/help/guides/deploy-your-app.md)を参照してください。
 
 日々のワークフローは次のとおりです。
 

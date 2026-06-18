@@ -1,9 +1,9 @@
 ---
 title: ChatGPTでテスト
 description: デプロイされたAdobe LLM アプリをChatGPTに追加し、実際の会話でテストする方法について説明します。
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '804'
 ht-degree: 2%
 
 ---
@@ -13,13 +13,15 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->**免責事項：**&#x200B;これは[!DNL LLM Apps]のベータ版リリースです。 ここに示す機能、ワークフロー、UIは、必ずしもアプリケーションまたは製品の最終状態を表すものではありません。
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
 >[!NOTE]
 >
 >このガイドでは、[!DNL ChatGPT]を例として使用します。 一般的な手順（MCP サーバーのURLの登録と会話でのテスト）は、他のLLM プラットフォームにも適用されますが、設定フローとUIは異なります。
 
-デプロイメントが正常に完了すると、アプリは[!DNL Adobe I/O Runtime]で実行され、MCP サーバーのURLが公開されます。 このガイドでは、[!DNL ChatGPT]に追加して、実際の会話でテストする方法について説明します。
+[!DNL Adobe LLM Apps]でのデプロイメントが成功すると、アプリは[!DNL Adobe I/O Runtime]で実行され、MCP サーバーのURLが公開されます。 このガイドでは、[!DNL ChatGPT]に追加して、実際の会話でテストする方法について説明します。
 
 ## プランの要件
 
@@ -40,7 +42,7 @@ ht-degree: 2%
 
 ## 開発者モードを有効にする
 
-カスタム MCP アプリを追加するには、[!DNL ChatGPT] アカウントで&#x200B;**開発者モード**&#x200B;を有効にする必要があります。 フォロー
+カスタム MCP アプリを追加するには、[!DNL ChatGPT] アカウントで&#x200B;**開発者モード**を有効にする必要があります。 フォロー
 検証して有効にするには、次の手順を実行します。
 
 ### 設定を開く
@@ -77,15 +79,15 @@ https://<namespace>.adobeioruntime.net/api/v1/web/llm-apps/mcp
 
 ### アプリページを開く
 
-[!DNL ChatGPT]で、**[!UICONTROL 設定] → [!UICONTROL &#x200B; アプリ]**&#x200B;に移動します。
+[!DNL ChatGPT]で、**[!UICONTROL 設定] → [!UICONTROL  アプリ]**&#x200B;に移動します。
 
-![ChatGPT — アプリページ &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-apps-page.png)
+![ChatGPT — アプリページ ](/help/assets/guide-test-chatgpt/chatgpt-apps-page.png)
 
 ### 新しいアプリを作成
 
 詳細設定行の「**[!UICONTROL アプリを作成]**」をクリックします。
 
-![ChatGPT — アプリの作成ダイアログ &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-create-app.png)
+![ChatGPT — アプリの作成ダイアログ ](/help/assets/guide-test-chatgpt/chatgpt-create-app.png)
 
 次の項目を入力します。
 
@@ -130,7 +132,7 @@ https://<namespace>.adobeioruntime.net/api/v1/web/llm-apps/mcp
 >
 >同じアプリで&#x200B;**@mention**&#x200B;をもう一度使用すると、そのアプリの選択が解除され、会話から削除されます。
 
-![ChatGPT — アプリ@mention インストール &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-mention-app.png)
+![ChatGPT — アプリ@mention インストール ](/help/assets/guide-test-chatgpt/chatgpt-mention-app.png)
 
 選択すると、アプリがインラインで添付され、同じメッセージで質問を入力できます。
 

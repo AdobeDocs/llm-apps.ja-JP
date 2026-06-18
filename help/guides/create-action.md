@@ -1,9 +1,9 @@
 ---
 title: アクションの作成
 description: メタデータ、入力パラメーター、ウィジェット設定など、LLM アプリ UIでアクションを定義する方法について説明します。
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '900'
 ht-degree: 1%
 
 ---
@@ -11,13 +11,19 @@ ht-degree: 1%
 
 # アクションの作成
 
-このガイドでは、[!DNL LLM Apps] UIでのアクションの定義について説明します。 アクションとその仕組みについて詳しくは、[&#x200B; コアコンセプト &#x200B;](/help/overview/overview.md#actions)を参照してください。
+>[!IMPORTANT]
+>
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+
+このガイドでは、[!DNL LLM Apps] UIでのアクションの定義について説明します。 アクションとその仕組みについて詳しくは、[ コアコンセプト ](/help/overview/overview.md#actions)を参照してください。
 
 ## アクションページを開く
 
 左側のサイドバーの&#x200B;**[!UICONTROL アクション]**&#x200B;に移動するか、アプリの詳細ページの&#x200B;**アクション**&#x200B;に移動をクリックします。 アクションがまだ存在しない場合、ページに空の状態が表示されます。
 
-![&#x200B; アクションページ – まだアクションがありません](/help/assets/guide-create-action/actions-empty.png)
+![ アクションページ – まだアクションがありません](/help/assets/guide-create-action/actions-empty.png)
 
 「**+ アクションを作成**」をクリックして、フルスクリーンダイアログを開きます。
 
@@ -31,7 +37,7 @@ ht-degree: 1%
 - **表示**&#x200B;切り替え – ライブエンドポイントでアクションを有効または無効にします（再デプロイは行いません）
 - 右上隅の&#x200B;**レビュー** リンクでアクションエディターを開きます
 
-![&#x200B; アクションページ – アクションカード &#x200B;](/help/assets/guide-create-action/action-card.png)
+![ アクションページ – アクションカード ](/help/assets/guide-create-action/action-card.png)
 
 前回のデプロイメント以降に1つ以上のアクションが変更された場合、「**デプロイメントが必要です**」バナーがアクションページの上部に表示されます。 アプリを再デプロイして、変更を適用します。
 
@@ -41,7 +47,7 @@ ht-degree: 1%
 
 ### 基本情報
 
-![&#x200B; アクションの作成 – 基本情報](/help/assets/guide-create-action/action-basic-info.png)
+![ アクションの作成 – 基本情報](/help/assets/guide-create-action/action-basic-info.png)
 
 - **アクション名** （必須） – アクションの識別子（例：*製品を検索*）。
 - **説明** （必須） – アクションの動作を明確に説明します。 LLM プラットフォームは、これを使用して、アクションを呼び出すタイミングを決定します。 例：*商品カタログをキーワードで検索します。 名前、カテゴリ、画像、価格が一致する製品を返します。*
@@ -54,7 +60,7 @@ ht-degree: 1%
   | **オープンワールドのヒント** | アクションは外部システムと相互作用します |
   | **読み取り専用のヒント** | アクションはデータを読み取るだけで、書き込みはありません |
 
-  詳しくは、[参照：メタデータフィールド &#x200B;](/help/reference/reference-docs.md)を参照してください。
+  詳しくは、[参照：メタデータフィールド ](/help/reference/reference-docs.md)を参照してください。
 
 ### OpenAI メタデータ
 
@@ -79,15 +85,15 @@ ht-degree: 1%
 
 ### Analytics
 
-![&#x200B; アクションの作成 – Analytics ユーザーインテント &#x200B;](/help/assets/guide-create-action/action-analytics-user-intent.png)
+![ アクションの作成 – Analytics ユーザーインテント ](/help/assets/guide-create-action/action-analytics-user-intent.png)
 
 - **ユーザーインテント** – 有効にすると、[!DNL ChatGPT]さんにこのアクションの呼び出しにつながった会話の要約を求められます。 そうした要約はadobe analyticsで収集および表示され、利用者がアクションをトリガーしたときに何を達成しようとしていたかに関するinsightを提供します。
 
 ## 「Widget Metadata」タブ
 
-このタブは、アクションのビジュアルレスポンスがLLM プラットフォームでどのようにレンダリングされるかを設定します。 ウィジェットの仕組みについて詳しくは、[&#x200B; ガイド：ウィジェット（EDS）の設定](/help/guides/widgets.md)を参照してください。
+このタブは、アクションのビジュアルレスポンスがLLM プラットフォームでどのようにレンダリングされるかを設定します。 ウィジェットの仕組みについて詳しくは、[ ガイド：ウィジェット（EDS）の設定](/help/guides/widgets.md)を参照してください。
 
-![&#x200B; アクションの作成 – ウィジェットのメタデータ &#x200B;](/help/assets/guide-create-action/widget-metadata.png)
+![ アクションの作成 – ウィジェットのメタデータ ](/help/assets/guide-create-action/widget-metadata.png)
 
 ### ウィジェット情報
 
@@ -115,7 +121,7 @@ ht-degree: 1%
 
 ### CSP設定
 
-![&#x200B; アクションの作成 – 権限とCSP](/help/assets/guide-create-action/widget-permissions-csp.png)
+![ アクションの作成 – 権限とCSP](/help/assets/guide-create-action/widget-permissions-csp.png)
 
 ウィジェット iframeが接触する外部ドメインを制御します。 すべての外部ドメインを明示的に許可リストに加えるする必要があります。
 
@@ -133,17 +139,17 @@ ht-degree: 1%
 
 アクションは、アクション ページにカードとして表示されます。
 
-![&#x200B; アクションページ – アクションが作成されました](/help/assets/guide-create-action/actions-with-action.png)
+![ アクションページ – アクションが作成されました](/help/assets/guide-create-action/actions-with-action.png)
 
 各カードには、アクション名、説明、タイプ バッジ （**[!UICONTROL EDS]**）、デプロイメント ステータス （**デプロイされていない**）、およびパラメーター数が表示されます。 **...**&#x200B;をクリックして編集または削除するか、**レビュー**&#x200B;をクリックして設定を調べることができます。
 
-![&#x200B; アプリの詳細 – デプロイされていません](/help/assets/guide-create-action/app-detail-not-deployed.png)
+![ アプリの詳細 – デプロイされていません](/help/assets/guide-create-action/app-detail-not-deployed.png)
 
 アクションメタデータは保存されますが、コードはまだデプロイされていません。 アクションを機能させるには、次のことが必要です。
 
-1. **EDS ウィジェットの設定** — [&#x200B; ガイド：ウィジェット（EDS）の設定](/help/guides/widgets.md)を参照してください。
-2. **ハンドラーを書く** — [&#x200B; ガイド：アクションハンドラーを書く](/help/guides/write-action-handler.md)を参照してください。
-3. **[!UICONTROL デプロイ]** — [&#x200B; ガイド：アプリのデプロイ &#x200B;](/help/guides/deploy-your-app.md)を参照してください。
+1. **EDS ウィジェットの設定** — [ ガイド：ウィジェット（EDS）の設定](/help/guides/widgets.md)を参照してください。
+2. **ハンドラーを書く** — [ ガイド：アクションハンドラーを書く](/help/guides/write-action-handler.md)を参照してください。
+3. **[!UICONTROL デプロイ]** — [ ガイド：アプリのデプロイ ](/help/guides/deploy-your-app.md)を参照してください。
 
 ## 次の手順
 

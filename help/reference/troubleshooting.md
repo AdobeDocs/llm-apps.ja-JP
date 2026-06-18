@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM アプリのトラブルシューティング
 description: Adobe LLM アプリの構築、デプロイ、およびテスト時の一般的な問題に対するソリューション。
-source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '451'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**免責事項：**&#x200B;これは[!DNL LLM Apps]のベータ版リリースです。 ここに示す機能、ワークフロー、UIは、必ずしもアプリケーションまたは製品の最終状態を表すものではありません。
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+
+これは、[!DNL Adobe LLM Apps]を操作する際のトラブルシューティング情報を提供します。
 
 ## 一般的な問題
 
@@ -28,7 +32,7 @@ ht-degree: 0%
 | 「クローンとビルド」でデプロイメントが失敗する | リポジトリ内の`npm install`またはwebpack ビルドエラー | `npm install && npm run build`をローカルで実行して、エラーを再現します |
 | 「資格情報の収集」でデプロイメントが失敗する | リポジトリがリンクされていないか、Developer Console プロジェクトが正しく設定されていない | アプリの詳細設定ページでリポジトリがリンクされていることを確認します |
 | ウィジェット読み込み時のCORS エラー | EDS サイトに`access-control-allow-origin` ヘッダーがありません | `admin.hlx.page`を介したCORS ヘッダーの設定 |
-| CORS ヘッダーを保存すると、HTTP ヘッダーエディターが`404 Error updating config: config not found`を返します | サイト設定に`headers` セクションがありません | 以下の「[EDS サイト設定ヘッダーの初期化」セクション &#x200B;](#initialize-the-eds-site-config-headers-section)を参照してください |
+| CORS ヘッダーを保存すると、HTTP ヘッダーエディターが`404 Error updating config: config not found`を返します | サイト設定に`headers` セクションがありません | 以下の「[EDS サイト設定ヘッダーの初期化」セクション ](#initialize-the-eds-site-config-headers-section)を参照してください |
 | ウィジェットはプレビューでレンダリングされますが、LLM プラットフォームではレンダリングされません | ブロックはプレビューモードでサンプルデータにフォールバックしますが、ライブデータでは失敗します | MCP インスペクターまたはcurlを使用して、実際の`structuredContent`でテストします |
 
 ## EDS サイト設定ヘッダーセクションの初期化

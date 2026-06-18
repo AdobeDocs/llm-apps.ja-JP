@@ -1,21 +1,23 @@
 ---
 title: Adobe LLM アプリのリファレンスドキュメント
 description: Adobe LLM Apps UIのアクション設定のフィールドレベルの参照。
-source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '500'
 ht-degree: 6%
 
 ---
 
 
-# 参照 {#reference}
+# リファレンスマテリアル {#reference-material}
 
 >[!IMPORTANT]
 >
->**免責事項：**&#x200B;これは[!DNL LLM Apps]のベータ版リリースです。 ここに示す機能、ワークフロー、UIは、必ずしもアプリケーションまたは製品の最終状態を表すものではありません。
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
-このセクションでは、[!DNL LLM Apps] UIのアクション設定に関するフィールドレベルの参照を提供します。
+このセクションでは、[!DNL Adobe LLM Apps] UIのアクション設定に関するフィールドレベルの参照を提供します。
 
 ## アクションパラメーター
 

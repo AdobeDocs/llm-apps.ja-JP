@@ -1,9 +1,9 @@
 ---
 title: アクションハンドラーの記述
 description: ハンドラーコントラクト、structuredContent、作業例など、Adobe LLM アプリのアクションハンドラーの作成方法について説明します。
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '714'
+source-wordcount: '719'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**免責事項：**&#x200B;これは[!DNL LLM Apps]のベータ版リリースです。 ここに示す機能、ワークフロー、UIは、必ずしもアプリケーションまたは製品の最終状態を表すものではありません。
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
-UIでアクションを作成した後、メタデータは[!DNL LLM Apps] APIに保存されますが、その背後にはコードがありません。 このガイドでは、LLM プラットフォーム（[!DNL ChatGPT]やClaudeなど）がアクションを呼び出したときに実行されるハンドラー関数の記述について説明します。
+[!DNL Adobe LLM Apps] UIでアクションを作成した後、メタデータは[!DNL LLM Apps] APIに保存されますが、その背後にコードはまだ存在しません。 このガイドでは、LLM プラットフォーム（[!DNL ChatGPT]やClaudeなど）がアクションを呼び出したときに実行されるハンドラー関数の記述について説明します。
 
 プロジェクトのレイアウト、ローカル開発、テストの詳細については、[開発](/help/reference/development.md)を参照してください。
 
@@ -31,7 +33,7 @@ UIでアクションを作成した後、メタデータは[!DNL LLM Apps] API�
 
 ## はじめに
 
-リンクされたリポジトリーには、ハンドラーを記述する前にプロジェクト構造が必要です。 **[Adobe LLM Apps ボイラープレート &#x200B;](https://github.com/Adobe-AIFoundations/llm-apps-boilerplate)**&#x200B;を複製して、空の開始点から開始します。
+リンクされたリポジトリーには、ハンドラーを記述する前にプロジェクト構造が必要です。 **[Adobe LLM Apps ボイラープレート ](https://github.com/Adobe-AIFoundations/llm-apps-boilerplate)**&#x200B;を複製して、空の開始点から開始します。
 
 アプリの作成中にリンクしたリポジトリにコンテンツをプッシュします（例：`your-org/your-repo`）。
 
