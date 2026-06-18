@@ -33,7 +33,7 @@ ht-degree: 0%
 
 ## はじめに
 
-リンクされたリポジトリーには、ハンドラーを記述する前にプロジェクト構造が必要です。 **[Adobe LLM Apps ボイラープレート ](https://github.com/Adobe-AIFoundations/llm-apps-boilerplate)**&#x200B;を複製して、空の開始点から開始します。
+リンクされたリポジトリーには、ハンドラーを記述する前にプロジェクト構造が必要です。 **[Adobe LLM Apps ボイラープレート &#x200B;](https://github.com/Adobe-AIFoundations/llm-apps-boilerplate)**&#x200B;を複製して、空の開始点から開始します。
 
 アプリの作成中にリンクしたリポジトリにコンテンツをプッシュします（例：`your-org/your-repo`）。
 

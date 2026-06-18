@@ -17,7 +17,7 @@ ht-degree: 1%
 >
 >ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
-このガイドでは、EDS ウィジェットをエンドツーエンドで作成する方法について説明します。[!DNL LLM Apps] UIでのアクションの設定から、EDS プロジェクトの設定、LLM プラットフォーム内でのデータをレンダリングするブロックコードの記述まで。 概要については、[ コアコンセプト ](/help/overview/overview.md#widgets-eds)を参照してください。
+このガイドでは、EDS ウィジェットをエンドツーエンドで作成する方法について説明します。[!DNL LLM Apps] UIでのアクションの設定から、EDS プロジェクトの設定、LLM プラットフォーム内でのデータをレンダリングするブロックコードの記述まで。 概要については、[&#x200B; コアコンセプト &#x200B;](/help/overview/overview.md#widgets-eds)を参照してください。
 
 ## ザ [!DNL LLM Apps] SDK
 
@@ -67,13 +67,13 @@ AIがアクションを呼び出し、ハンドラーが`structuredContent`を�
 
 2. LLM プラットフォームがクロスオリジンでウィジェットページとスクリプトを読み込めるようにCORS ヘッダーを設定します。以下の[CORS ヘッダーの設定](#configure-cors-headers)を参照してください。
 
-次に、[`decorate(block, bridge)` コントラクト ](#the-decorateblock-bridge-contract)に従ってブロックを作成し、ウィジェットページをオーサリングして、アクションを作成ダイアログにURLを入力します。
+次に、[`decorate(block, bridge)` コントラクト &#x200B;](#the-decorateblock-bridge-contract)に従ってブロックを作成し、ウィジェットページをオーサリングして、アクションを作成ダイアログにURLを入力します。
 
 ## 新しいEDS プロジェクトの設定
 
 ### リポジトリの作成
 
-1. [AEM ボイラープレート ](https://github.com/adobe/aem-boilerplate) テンプレートに基づいて、新しい[!DNL GitHub] リポジトリを作成します。
+1. [AEM ボイラープレート &#x200B;](https://github.com/adobe/aem-boilerplate) テンプレートに基づいて、新しい[!DNL GitHub] リポジトリを作成します。
 2. [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync)をリポジトリに追加します。
 3. ローカル開発 `npm install -g @adobe/aem-cli`用のAEM CLIをインストールします。
 4. `@adobe/llmapps-sdk`をインストールします。 インストール後のスクリプトは`aem-embed.js`と`llmapps-sdk.js`を`scripts/llm-apps/`にコピーします：
@@ -134,7 +134,7 @@ EDS ウィジェットページは、LLM プラットフォームによってサ
 
 EDS オーサリングツールでページを作成し、ブロックを追加します。 ページ URLは、アクションで設定した&#x200B;**[!UICONTROL ウィジェット URL]**&#x200B;になります。これは、アクションとブロックの間の唯一の接続です。 ブロックとアクション名の間に名前を付ける必要はありません。
 
-![EDS オーサリング – ウィジェットページに追加されたブロック ](/help/assets/guide-widget/aem-author.png)
+![EDS オーサリング – ウィジェットページに追加されたブロック &#x200B;](/help/assets/guide-widget/aem-author.png)
 
 ### アクションを作成ダイアログでURLを入力します
 
