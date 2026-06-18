@@ -1,9 +1,9 @@
 ---
 title: ウィジェットの設定（EDS）
 description: Edge Delivery Services ウィジェットプロジェクトを設定し、LLM プラットフォーム内で視覚的な応答をレンダリングするためのブロックコントラクトを実装する方法について説明します。
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '1214'
+source-wordcount: '1226'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,9 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。 ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
 このガイドでは、EDS ウィジェットをエンドツーエンドで作成する方法について説明します。[!DNL LLM Apps] UIでのアクションの設定から、EDS プロジェクトの設定、LLM プラットフォーム内でのデータをレンダリングするブロックコードの記述まで。 概要については、[&#x200B; コアコンセプト &#x200B;](/help/overview/overview.md#widgets-eds)を参照してください。
 

@@ -1,17 +1,23 @@
 ---
 title: Adobe LLM アプリの前提条件
 description: Adobe LLM Apps Betaオンボーディングセッションの前に設定する必要があるもの。
-source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '539'
-ht-degree: 2%
+source-wordcount: '571'
+ht-degree: 1%
 
 ---
 
 
 # Adobe LLM アプリの前提条件 {#prerequisites-for-adobe-llm-apps}
 
-Adobeを使用してオンボーディングセッションを実施する前に、次の点を確認してください。 可能であれば、次の検証手順を実行します。結果は、部屋に誰が必要かを示し、続行できるかどうかを示しません。
+>[!IMPORTANT]
+>
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+
+Adobeを使用して[!DNL Adobe LLM Apps]のオンボーディングセッションを行う前に、次の手順を実施していることを確認してください。 可能であれば、次の検証手順を実行します。結果は、部屋に誰が必要かを示し、続行できるかどうかを示しません。
 
 ## Adobe 開発者コンソール
 

@@ -1,9 +1,9 @@
 ---
 title: アプリの作成
 description: 最初のLLM アプリを作成し、GitHub リポジトリにリンクする方法を説明します。
-source-git-commit: 914b8a659e690ff47257c2c112f76816f4b0232c
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '735'
+source-wordcount: '745'
 ht-degree: 1%
 
 ---
@@ -11,19 +11,21 @@ ht-degree: 1%
 
 # アプリの作成
 
+>[!IMPORTANT]
+>
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+
 >[!NOTE]
 >
 >**Beta プログラム参加者**&#x200B;の場合は、代わりに[Beta オンボーディングガイド &#x200B;](/help/beta-onboarding/beta-onboarding.md)を使用してください。このガイドでは、特定のアプリの完全なエンドツーエンド設定について説明します。
-
->[!IMPORTANT]
->
->[!DNL Adobe LLM Apps]は現在Betaにいます。 ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。
 
 >[!NOTE]
 >
 >開始する前に、すべての[前提条件](/help/overview/overview.md#prerequisites)が満たされていることを確認してください。
 
-このガイドでは、最初のLLM アプリの作成を順を追って説明します。空の状態から、[!DNL GitHub] リポジトリにリンクされた完全に設定されたプロジェクトまで。
+このガイドでは、最初の[!DNL Adobe LLM Apps]の作成について、空の状態から[!DNL GitHub] リポジトリにリンクされた完全に構成されたプロジェクトに至るまで順を追って説明します。
 
 ## [!DNL LLM Apps] を開きます。
 

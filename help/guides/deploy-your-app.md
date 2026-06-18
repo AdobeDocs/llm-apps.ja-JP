@@ -1,9 +1,9 @@
 ---
 title: アプリをデプロイ
 description: LLM アプリ UIを使用して、Adobe LLM アプリをステージングおよび実稼動環境にデプロイする方法について説明します。
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '354'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**免責事項：**&#x200B;これは[!DNL LLM Apps]のベータ版リリースです。 ここに示す機能、ワークフロー、UIは、必ずしもアプリケーションまたは製品の最終状態を表すものではありません。
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
 ハンドラーコードを記述し、リンクされたリポジトリにプッシュしたら、[!DNL LLM Apps] UIからアプリをデプロイできます。
 

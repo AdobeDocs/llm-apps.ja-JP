@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM アプリのBeta オンボーディング
 description: Beta プログラム参加者としてAdobe LLM Appsを開始します。
-source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '1551'
+source-wordcount: '1557'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,15 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**免責事項：**&#x200B;これは[!DNL LLM Apps]のベータ版リリースです。 ここに示す機能、ワークフロー、UIは、必ずしもアプリケーションまたは製品の最終状態を表すものではありません。
+>[!DNL Adobe LLM Apps]は現在Betaにいます。
+>
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
 >[!NOTE]
 >
 >開始する前に、すべての[前提条件](/help/beta-onboarding/prerequisites.md)が満たされていることを確認してください。
 
-Beta プログラム参加者は、2つのzip アーカイブとアプリ設定リファレンスを含むメールを受け取ります。 アプリを公開するには、以下の手順に従ってください。
+[!DNL Adobe LLM Apps]のBeta プログラム参加者として、2つのzip アーカイブとアプリ構成参照を含むメールが届きます。 アプリを公開するには、以下の手順に従ってください。
 
 ## 開始する前に
 
