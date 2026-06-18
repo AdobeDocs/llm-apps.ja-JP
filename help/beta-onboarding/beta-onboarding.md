@@ -81,7 +81,7 @@ git push -u origin main
 
 [experience.adobe.com/llm-apps/](https://experience.adobe.com/llm-apps/)に移動し、**[!UICONTROL LLM アプリの作成]**&#x200B;をクリックします。
 
-![ アプリページ – まだアプリは作成されていません](/help/assets/guide-create-app/first-load.png)
+![&#x200B; アプリページ – まだアプリは作成されていません](/help/assets/guide-create-app/first-load.png)
 
 アプリ設定リファレンスの「**[!UICONTROL アプリの詳細]**」セクションの値を使用して、**[!UICONTROL アプリの詳細]**&#x200B;を入力します。
 
@@ -89,7 +89,7 @@ git push -u origin main
 - **[!UICONTROL LLM アプリの説明]**
 - **[!UICONTROL お客様のweb サイト]**
 
-![ アプリの作成ダイアログ ](/help/assets/guide-create-app/app-details-1.png)
+![&#x200B; アプリの作成ダイアログ &#x200B;](/help/assets/guide-create-app/app-details-1.png)
 
 **[!UICONTROL 分析データ領域]**&#x200B;で、分析データを保存する領域を選択します。 この&#x200B;**は、アプリの作成後に変更できません**。
 
@@ -97,7 +97,7 @@ git push -u origin main
 >
 >アプリの作成後に分析データ領域を変更することはできません。
 
-![Analytics データ領域ドロップダウン ](/help/assets/guide-create-app/app-details-analytics-dropdown.png)
+![Analytics データ領域ドロップダウン &#x200B;](/help/assets/guide-create-app/app-details-analytics-dropdown.png)
 
 **リポジトリ**&#x200B;で、[!DNL GitHub]組織と、先ほどプッシュした&#x200B;**アプリケーションコードリポジトリ**&#x200B;を選択します。
 
@@ -105,15 +105,15 @@ git push -u origin main
 >
 >アプリを初めて設定する場合、[!DNL GitHub]組織はまだリストに表示されません。 「**[!UICONTROL 別のGitHub組織を接続]**」をクリックして、組織をリンクし、リポジトリへのアクセス権を付与します。
 
-![ アプリの作成ダイアログ – リポジトリがリンクされています](/help/assets/guide-create-app/app-details-repo-linked.png)
+![&#x200B; アプリの作成ダイアログ – リポジトリがリンクされています](/help/assets/guide-create-app/app-details-repo-linked.png)
 
 Web サイトに基づいて&#x200B;**[!UICONTROL 自動的にアクションを提案]**&#x200B;します。このオプションは手動で設定します。
 
 **[!UICONTROL Adobe Developer条件]**&#x200B;に同意し、**[!UICONTROL アプリを作成]**&#x200B;をクリックします。
 
-![ アプリを作成しています – 画面を読み込んでいます](/help/assets/guide-create-app/app-loading.png)
+![&#x200B; アプリを作成しています – 画面を読み込んでいます](/help/assets/guide-create-app/app-loading.png)
 
-![ アプリの詳細ページ ](/help/assets/guide-create-app/app-detail-top.png)
+![&#x200B; アプリの詳細ページ &#x200B;](/help/assets/guide-create-app/app-detail-top.png)
 
 
 ## ステップ 3：ウィジェットを公開する
@@ -165,14 +165,14 @@ curl -X POST "https://admin.hlx.page/code/<your-github-org>/<your-eds-repo>/main
 
 [LLM アプリ UI](https://experience.adobe.com/llm-apps/)でアプリを開き、左側のサイドバーの&#x200B;**[!UICONTROL アクション]**&#x200B;に移動します。 **+**&#x200B;をクリックして、新しいアクションを作成します。 アプリ設定リファレンスに記載されているすべてのアクションについて、これを繰り返します（**アクション 1**、**アクション 2**、**アクション 3** セクションを参照）。
 
-![ アクションページ – まだアクションがありません](/help/assets/guide-create-action/actions-empty.png)
+![&#x200B; アクションページ – まだアクションがありません](/help/assets/guide-create-action/actions-empty.png)
 
 ### 「アクション」タブ
 
 - **アクション名**&#x200B;および&#x200B;**説明** — LLM プラットフォームがアクションを呼び出すタイミングを決定するために使用します。 アプリ設定リファレンスの「**アクション」タブ**」セクションの正確な値を使用します。
 - **入力パラメーター** – 各パラメーターの名前、種類、説明。 アプリ設定リファレンスの「**アクション」タブ**」セクションの値を使用します。
 
-![ アクションの作成 – 基本情報](/help/assets/guide-create-action/action-basic-info.png)
+![&#x200B; アクションの作成 – 基本情報](/help/assets/guide-create-action/action-basic-info.png)
 
 ### 「Widget Metadata」タブ
 
@@ -183,9 +183,9 @@ curl -X POST "https://admin.hlx.page/code/<your-github-org>/<your-eds-repo>/main
 - **[!UICONTROL CSP — ドメインを接続]** — アプリ設定リファレンスの「**ウィジェットメタデータ」タブ**」セクションの値を使用します。
 - **[!UICONTROL CSP — リソースドメイン]** — アプリ設定リファレンスの「**ウィジェットメタデータ」タブ**」セクションの値を使用します。
 
-![ アクションの作成 – ウィジェットのメタデータ ](/help/assets/guide-create-action/widget-metadata.png)
+![&#x200B; アクションの作成 – ウィジェットのメタデータ &#x200B;](/help/assets/guide-create-action/widget-metadata.png)
 
-![ アクションの作成 – 権限とCSP](/help/assets/guide-create-action/widget-permissions-csp.png)
+![&#x200B; アクションの作成 – 権限とCSP](/help/assets/guide-create-action/widget-permissions-csp.png)
 
 ### 「Widget Builder」タブ
 
@@ -196,24 +196,24 @@ curl -X POST "https://admin.hlx.page/code/<your-github-org>/<your-eds-repo>/main
 
 「**[!UICONTROL アクションを作成]**」をクリックします。 アクションは、**[!UICONTROL EDS]** バッジとパラメーター数を持つアクションページにカードとして表示されます。
 
-![ アクションページ – アクションが作成されました](/help/assets/guide-create-action/actions-with-action.png)
+![&#x200B; アクションページ – アクションが作成されました](/help/assets/guide-create-action/actions-with-action.png)
 
 
 ## 手順5：デプロイ
 
 すべてのアクションを設定したら、アプリの詳細ページに移動し、右上隅にある「**[!UICONTROL デプロイ]**」をクリックします。
 
-![ アプリの詳細 – デプロイの準備ができました](/help/assets/guide-deploy/app-detail-deploy-ready.png)
+![&#x200B; アプリの詳細 – デプロイの準備ができました](/help/assets/guide-deploy/app-detail-deploy-ready.png)
 
 ターゲット環境を選択し、**[!UICONTROL デプロイ]**&#x200B;をクリックします。 パイプラインは、資格情報の準備、デプロイメントの開始、リポジトリからのアプリの構築、[!DNL Adobe I/O Runtime]への公開の4つのステップで実行されます。
 
-![実行中のパイプラインのデプロイ ](/help/assets/guide-deploy/deploy-pipeline-deploying.png)
+![実行中のパイプラインのデプロイ &#x200B;](/help/assets/guide-deploy/deploy-pipeline-deploying.png)
 
 完了したら、「**[!UICONTROL アプリのテスト]**」セクションまでスクロールして、**[!UICONTROL MCP サーバーURL]**、つまり[!DNL ChatGPT]にアプリを登録する必要があります。
 
-![ デプロイが成功しました](/help/assets/guide-deploy/app-detail-deploy-finish.png)
+![&#x200B; デプロイが成功しました](/help/assets/guide-deploy/app-detail-deploy-finish.png)
 
-![ アプリのテスト – デプロイされたURL](/help/assets/guide-deploy/test-app-deployed.png)
+![&#x200B; アプリのテスト – デプロイされたURL](/help/assets/guide-deploy/test-app-deployed.png)
 
 
 ## 手順6: アプリを[!DNL ChatGPT]に追加する
@@ -228,9 +228,9 @@ curl -X POST "https://admin.hlx.page/code/<your-github-org>/<your-eds-repo>/main
 
    ![ChatGPT – 開発者モードが有効](/help/assets/guide-test-chatgpt/chatgpt-developer-mode.png)
 
-3. **[!UICONTROL 設定] → [!UICONTROL  アプリ]**&#x200B;に移動し、**[!UICONTROL アプリの作成]**&#x200B;をクリックします。
+3. **[!UICONTROL 設定] → [!UICONTROL &#x200B; アプリ]**&#x200B;に移動し、**[!UICONTROL アプリの作成]**&#x200B;をクリックします。
 
-   ![ChatGPT — アプリの作成ダイアログ ](/help/assets/guide-test-chatgpt/chatgpt-create-app.png)
+   ![ChatGPT — アプリの作成ダイアログ &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-create-app.png)
 
 4. [!DNL LLM Apps]からコピーした&#x200B;**[!UICONTROL MCP サーバーURL]**&#x200B;を貼り付け、**[!UICONTROL 認証]**&#x200B;を&#x200B;*認証*&#x200B;に設定し、確認チェックボックスをオンにして、**作成**&#x200B;をクリックします。
 
