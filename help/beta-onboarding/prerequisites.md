@@ -1,13 +1,15 @@
 ---
-title: 前提条件
+title: Adobe LLM アプリの前提条件
 description: Adobe LLM Apps Betaオンボーディングセッションの前に設定する必要があるもの。
-source-git-commit: 1ff383dff82068f68746d665d079216375ba523a
+source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '539'
 ht-degree: 2%
 
 ---
 
+
+# Adobe LLM アプリの前提条件 {#prerequisites-for-adobe-llm-apps}
 
 Adobeを使用してオンボーディングセッションを実施する前に、次の点を確認してください。 可能であれば、次の検証手順を実行します。結果は、部屋に誰が必要かを示し、続行できるかどうかを示しません。
 
