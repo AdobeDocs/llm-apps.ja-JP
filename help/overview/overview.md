@@ -1,10 +1,10 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリの概要、仕組み、導入に必要な機能をご紹介します。
-source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
+source-git-commit: 344c5457eb79a19b1dae823732a1cd9866dcd9dc
 workflow-type: tm+mt
-source-wordcount: '873'
-ht-degree: 1%
+source-wordcount: '831'
+ht-degree: 2%
 
 ---
 
@@ -117,10 +117,5 @@ LLMのインタラクションは、従来の検索とは根本的に異なり�
 
 ## 今すぐ始める
 
-次の手順で、状況に合ったパスを選択します。
-
-| | **Beta参加者** | **一般公開** |
-|---|---|---|
-| **あなたは**&#x200B;を持っています | Beta プログラムに参加し、Adobeからアプリケーションコードアーカイブ、EDS プロジェクトアーカイブ、およびアプリケーション設定リファレンスを受け取っています | ユースケースを念頭に置いたAdobeは、アプリの構築とデプロイを支援します |
-| **ここから開始** | [Beta オンボーディング &#x200B;](/help/beta-onboarding/beta-onboarding.md) | [&#x200B; アプリを作成](/help/guides/create-app.md) |
+ユースケースを念頭に置いて、[&#x200B; アプリを作成](/help/guides/create-app.md)し、[!DNL LLM Apps] エクスペリエンスの構築とデプロイを開始します。
 
