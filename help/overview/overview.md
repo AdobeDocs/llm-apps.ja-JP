@@ -1,10 +1,10 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリの概要、仕組み、導入に必要な機能をご紹介します。
-source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
+source-git-commit: 344c5457eb79a19b1dae823732a1cd9866dcd9dc
 workflow-type: tm+mt
-source-wordcount: '873'
-ht-degree: 1%
+source-wordcount: '831'
+ht-degree: 2%
 
 ---
 
@@ -91,7 +91,7 @@ LLMのインタラクションは、従来の検索とは根本的に異なり�
 
 代わりに&#x200B;**制限付きアクセス** メッセージが表示される場合は、開発者の役割がありません。 アクセスをリクエストするには、IMS組織の管理者にお問い合わせください。
 
-![Adobe Developer Console – 制限付きアクセス メッセージ &#x200B;](/help/assets/overview/dev-console-access-denied.png)
+![Adobe Developer Console – 制限付きアクセス メッセージ ](/help/assets/overview/dev-console-access-denied.png)
 
 ### [!DNL GitHub]
 
@@ -99,7 +99,7 @@ LLMのインタラクションは、従来の検索とは根本的に異なり�
 
 - **リポジトリを作成** – 組織内に2つのリポジトリ（アプリケーションコード用とEDS プロジェクト用）を作成する必要があります。 確認するには、[github.com/new](https://github.com/new)に移動します。**所有者** ドロップダウンから組織を選択できる場合は、権限があります。
 
-  組織の選択を表示する![GitHub新しいリポジトリ所有者ドロップダウン &#x200B;](/help/assets/overview/github-repo-owner-dropdown.png)
+  組織の選択を表示する![GitHub新しいリポジトリ所有者ドロップダウン ](/help/assets/overview/github-repo-owner-dropdown.png)
 
 - **アプリ [!DNL GitHub]をインストール** – 組織に[!DNL GitHub] アプリをインストールするには、適切な権限が必要です。 GitHub アプリをインストールするための[要件](https://docs.github.com/en/apps/using-github-apps/installing-a-github-app-from-a-third-party#requirements-to-install-a-github-app)を参照してください。
 
@@ -107,9 +107,9 @@ LLMのインタラクションは、従来の検索とは根本的に異なり�
 
 アクションウィジェットは&#x200B;**Adobe Experience Manager [!DNL Edge Delivery Services] （EDS）**&#x200B;でホストされます。 [!DNL Edge Delivery Services]を含むAEM Sites ライセンスが必要です。 EDS組織に&#x200B;**管理者**&#x200B;の役割が必要です。
 
-確認するには、[EDS ユーザー管理ツール &#x200B;](https://tools.aem.live/tools/user-admin/index.html)に移動し、組織名を入力し、**サイト**&#x200B;を空白のままにして、**ユーザーを取得**&#x200B;をクリックします。 リストでアカウントを検索し、**管理者** バッジが表示されていることを確認します。
+確認するには、[EDS ユーザー管理ツール ](https://tools.aem.live/tools/user-admin/index.html)に移動し、組織名を入力し、**サイト**&#x200B;を空白のままにして、**ユーザーを取得**&#x200B;をクリックします。 リストでアカウントを検索し、**管理者** バッジが表示されていることを確認します。
 
-![管理者の役割を持つユーザーを表示するEDS ユーザー管理ツール &#x200B;](/help/assets/overview/eds-user-admin.png)
+![管理者の役割を持つユーザーを表示するEDS ユーザー管理ツール ](/help/assets/overview/eds-user-admin.png)
 
 ### LLM プラットフォーム（テスト用）
 
@@ -117,10 +117,5 @@ LLMのインタラクションは、従来の検索とは根本的に異なり�
 
 ## 今すぐ始める
 
-次の手順で、状況に合ったパスを選択します。
-
-| | **Beta参加者** | **一般公開** |
-|---|---|---|
-| **あなたは**&#x200B;を持っています | Beta プログラムに参加し、Adobeからアプリケーションコードアーカイブ、EDS プロジェクトアーカイブ、およびアプリケーション設定リファレンスを受け取っています | ユースケースを念頭に置いたAdobeは、アプリの構築とデプロイを支援します |
-| **ここから開始** | [Beta オンボーディング &#x200B;](/help/beta-onboarding/beta-onboarding.md) | [&#x200B; アプリを作成](/help/guides/create-app.md) |
+ユースケースを念頭に置いて、[ アプリを作成](/help/guides/create-app.md)し、[!DNL LLM Apps] エクスペリエンスの構築とデプロイを開始します。
 

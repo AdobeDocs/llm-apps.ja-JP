@@ -2,10 +2,10 @@
 user-guide-title: LLM アプリガイド
 breadcrumb-title: LLM アプリ
 user-guide-description: Adobe LLM アプリを使用して、LLM プラットフォーム（ChatGPT、Claude）などのAI アシスタント内でインタラクティブなブランドエクスペリエンスを構築、デプロイ、測定します。
-source-git-commit: f144ccfc0ede6c556ccf4d99173f91d372add6f7
+source-git-commit: 344c5457eb79a19b1dae823732a1cd9866dcd9dc
 workflow-type: tm+mt
-source-wordcount: '59'
-ht-degree: 15%
+source-wordcount: '54'
+ht-degree: 11%
 
 ---
 
@@ -13,9 +13,6 @@ ht-degree: 15%
 # [!DNL LLM Apps] ガイド {#using}
 
 + [概要](/help/overview/overview.md)
-+ Beta プログラム {#beta}
-   + [前提条件](/help/beta-onboarding/prerequisites.md)
-   + [Beta オンボーディング](/help/beta-onboarding/beta-onboarding.md)
 + チュートリアルガイド {#guides}
    + [アプリの作成](/help/guides/create-app.md)
    + [アクションの作成](/help/guides/create-action.md)
