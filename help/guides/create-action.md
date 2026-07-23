@@ -1,7 +1,7 @@
 ---
 title: アクションの作成
 description: メタデータ、入力パラメーター、ウィジェット設定など、LLM アプリ UIでアクションを定義する方法について説明します。
-source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
+source-git-commit: ae2748319b5401555c3a616971f5697c17e74ac3
 workflow-type: tm+mt
 source-wordcount: '900'
 ht-degree: 1%
@@ -154,4 +154,3 @@ ht-degree: 1%
 ## 次の手順
 
 - [ガイド：ウィジェットの設定（EDS）](/help/guides/widgets.md)
-
