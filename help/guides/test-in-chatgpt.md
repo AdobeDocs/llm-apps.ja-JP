@@ -29,10 +29,10 @@ ht-degree: 1%
 
 [!DNL ChatGPT] に移動します。
 
-1. **[!UICONTROL 設定] → [!UICONTROL  セキュリティとログイン]**&#x200B;を開きます。
+1. **[!UICONTROL 設定] → [!UICONTROL &#x200B; セキュリティとログイン]**&#x200B;を開きます。
 2. **[!UICONTROL 開発者モード]**&#x200B;を有効にします。
 
-プラグインページのプラスボタンは、開発者モードが有効になった後にのみMCP-backed プラグインを作成します。 [ChatGPT開発者モード ](https://developers.openai.com/api/docs/guides/developer-mode)を参照してください。
+プラグインページのプラスボタンは、開発者モードが有効になった後にのみMCP-backed プラグインを作成します。 [ChatGPT開発者モード &#x200B;](https://developers.openai.com/api/docs/guides/developer-mode)を参照してください。
 
 ## MCP サーバーのURLをコピー
 
@@ -47,7 +47,7 @@ ht-degree: 1%
 1. [chatgpt.com/plugins](https://chatgpt.com/plugins)を開きます。
 2. 「**[!UICONTROL プラグイン]**」タブで、検索フィールドの横にある「**+**」を選択します。
 
-   ![ChatGPT — プラグインページ ](/help/assets/guide-onboarding-agent/chatgpt-plugins-page.png)
+   ![ChatGPT — プラグインページ &#x200B;](/help/assets/guide-onboarding-agent/chatgpt-plugins-page.png)
 
 3. **[!UICONTROL 新しいプラグイン]**&#x200B;で、次のように入力します。
    - **[!UICONTROL Name]** — プラグイン名。
@@ -80,5 +80,5 @@ ht-degree: 1%
 
 ## 次の手順
 
-- [生成されたウィジェットをカスタマイズ ](/help/guides/widgets.md)。
+- [生成されたウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)。
 - [最初からアクションを作成](/help/guides/create-action.md)。

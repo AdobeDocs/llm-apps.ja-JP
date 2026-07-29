@@ -17,7 +17,7 @@ ht-degree: 2%
 >
 >ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
-この参照は、ハンドラーをローカルで開発する際に使用します。 ハンドラー結果コントラクトについては、[生成されたハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
+この参照は、ハンドラーをローカルで開発する際に使用します。 ハンドラー結果コントラクトについては、[生成されたハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
 
 ## 要件
 
@@ -124,5 +124,5 @@ npm test                                      # all tests
 npx jest test/actions/echo                   # one action only
 ```
 
-ローカルテストが合格したら、変更をプッシュして[変更をデプロイ ](/help/guides/deploy-your-app.md)します。
+ローカルテストが合格したら、変更をプッシュして[変更をデプロイ &#x200B;](/help/guides/deploy-your-app.md)します。
 
