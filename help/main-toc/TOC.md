@@ -1,11 +1,11 @@
 ---
 user-guide-title: LLM アプリガイド
 breadcrumb-title: LLM アプリ
-user-guide-description: Adobe LLM アプリを使用して、LLM プラットフォーム（ChatGPT、Claude）などのAI アシスタント内でインタラクティブなブランドエクスペリエンスを構築、デプロイ、測定します。
-source-git-commit: 344c5457eb79a19b1dae823732a1cd9866dcd9dc
+user-guide-description: Adobe LLM アプリを使用して、ChatGPTなどのサポートされているLLM プラットフォームでインタラクティブなエクスペリエンスを構築、カスタマイズ、デプロイ、テストします。
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '54'
-ht-degree: 11%
+source-wordcount: '100'
+ht-degree: 4%
 
 ---
 
@@ -13,14 +13,20 @@ ht-degree: 11%
 # [!DNL LLM Apps] ガイド {#using}
 
 + [概要](/help/overview/overview.md)
-+ チュートリアルガイド {#guides}
-   + [アプリの作成](/help/guides/create-app.md)
-   + [アクションの作成](/help/guides/create-action.md)
-   + [ウィジェットの設定（EDS）](/help/guides/widgets.md)
-   + [アクションハンドラーの記述](/help/guides/write-action-handler.md)
-   + [アプリをデプロイ](/help/guides/deploy-your-app.md)
-   + [ChatGPTでテスト](/help/guides/test-in-chatgpt.md)
++ 最初のアプリをビルドして起動する {#build-first-app}
+  + [最初のアプリを自動的に作成](/help/guides/create-app.md)
++ 生成されたアプリのカスタマイズ {#customize-generated-app}
+  + [生成されたハンドラーのカスタマイズ](/help/guides/customize-handler.md)
+  + [生成されたウィジェットのカスタマイズ](/help/guides/widgets.md)
++ 新しいアクションを追加 {#add-new-action}
+  + [アクションをゼロから作成](/help/guides/create-action.md)
++ 既存のEDS プロジェクトの接続 {#connect-existing-eds}
+  + [独自のEDS プロジェクトを作成する](/help/guides/bring-your-own-eds.md)
++ デプロイとテスト {#deploy-and-test}
+  + [アプリをデプロイ](/help/guides/deploy-your-app.md)
+  + [ChatGPT プラグインとしてLLM アプリをテストする](/help/guides/test-in-chatgpt.md)
+  + [Claude コネクタとしてのLLM アプリのテスト](/help/guides/test-in-claude.md)
 + 参照 {#reference}
-   + [開発](/help/reference/development.md)
-   + [参照](/help/reference/reference-docs.md)
-   + [トラブルシューティング](/help/reference/troubleshooting.md)
+  + [ローカルハンドラーの開発とテスト](/help/reference/development.md)
+  + [アクションフィールドとウィジェットフィールド](/help/reference/reference-docs.md)
+  + [トラブルシューティング](/help/reference/troubleshooting.md)

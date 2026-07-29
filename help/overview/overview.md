@@ -1,10 +1,10 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリの概要、仕組み、導入に必要な機能をご紹介します。
-source-git-commit: 344c5457eb79a19b1dae823732a1cd9866dcd9dc
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '831'
-ht-degree: 2%
+source-wordcount: '970'
+ht-degree: 1%
 
 ---
 
@@ -19,9 +19,9 @@ ht-degree: 2%
 
 ## [!DNL Adobe LLM Apps]とは
 
-[!DNL Adobe LLM Apps]では、商品の発見、可用性チェック、サービスの予約などの主要なアクションを、[!DNL ChatGPT]やClaudeなどのAI アシスタント内で直接公開することができます。 AIの回答で受動的に言及するのではなく、顧客が会話から離れることなく、実際のビジネスフローを導くことができます。
+[!DNL Adobe LLM Apps]では、[!DNL ChatGPT]などのAI アシスタント内で、製品の発見、可用性チェック、サービス予約などの有用なアクションを企業が提供できます。
 
-[!DNL LLM Apps]は[experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)で利用できます。
+[!DNL LLM Apps]は[experience.adobe.com](https://experience.adobe.com/#/@llmapps/llm-apps/)で利用できます。
 
 ## [!DNL LLM Apps]でできること
 
@@ -34,17 +34,29 @@ ht-degree: 2%
 
 ## [!DNL LLM Apps]が重要な理由
 
-LLMのインタラクションは、従来の検索とは根本的に異なります。 平均[!DNL ChatGPT] セッションは、従来の検索セッションよりも4倍長く続きます。 消費者の40%以上が、複雑な購入決定をAI ツールで行っています。 [!DNL LLM Apps]がなければ、メンションに勝っても顧客を失う可能性があります。 [!DNL LLM Apps]は、ブランドが表示されるだけでなく、ユーザーが決定する準備ができた正確な瞬間に実用的であることを保証します。
+LLMのインタラクションは、従来の検索とは根本的に異なります。 LLMの平均セッションは、従来の検索セッションの4倍の長さで動作します。 消費者の40%以上が、複雑な購入決定をAI ツールで行っています。 [!DNL LLM Apps]がなければ、メンションに勝っても顧客を失う可能性があります。 [!DNL LLM Apps]は、ブランドが表示されるだけでなく、ユーザーが決定する準備ができた正確な瞬間に実用的であることを保証します。
 
-## 主な概念
+## 主な概念 {#key-concepts}
 
-**LLM アプリ** — ユーザーが[!DNL ChatGPT]またはその他のLLM プラットフォーム内で操作するブランド アシスタント。 すべてのアクションをグループ化し、1つのユニットとしてデプロイします。
+### LLM アプリ
 
-**アクション** — アプリが提供する機能。 例えば、「ディストリビューターを探す」や「製品を参照する」などです。 ユーザーが関連する質問をすると、各アクションがLLMによって呼び出されます。 すべてのアクションには、メタデータ（名前、説明、パラメーター）が[!DNL LLM Apps] UIで管理され、ハンドラー（コード）が[!DNL GitHub]で管理される2つの部分があります。
+ユーザーが[!DNL ChatGPT]またはその他のLLM プラットフォーム内で操作するブランド アシスタント。 すべてのアクションをグループ化し、1つのユニットとしてデプロイします。
 
-**アクションハンドラー** — アクションが呼び出されたときに実行されるコード。 APIを呼び出したり、ライブデータを取得したり、静的データを返したりできます。 ハンドラーは`actions/<name>/index.js`にある[!DNL GitHub] リポジトリにあります。
+### アクション {#actions}
 
-**Widget** — ユーザーに表示される視覚的な応答 – カード、カルーセル、テーブル、またはLLMのテキスト返信と共にレンダリングされるカスタム UI。 ウィジェットは、[!DNL Edge Delivery Services] （EDS）サイトでホストされているHTML ページです。
+アプリが提供する機能（*ディストリビューターの検索*&#x200B;または&#x200B;*製品の参照*&#x200B;など）。 LLM プラットフォームは、リクエストが説明と一致するとアクションを呼び出します。 アクションメタデータは[!DNL LLM Apps]で管理されますが、そのハンドラーは[!DNL GitHub] リポジトリ内のコードです。
+
+### アクションハンドラー
+
+アクションが呼び出されたときに実行されるサーバーサイド関数。 入力を検証し、APIを呼び出し、テキストと構造化データを返すことができます。
+
+### ウィジェット {#widgets-eds}
+
+カード、カルーセル、テーブルなど、LLMの返信が表示される視覚的な応答。 生成されたウィジェットは、自分が所有する[!DNL Edge Delivery Services] （EDS） リポジトリ内のブロックです。
+
+### MCP サーバー
+
+デプロイメント後に公開されたエンドポイント。 サポートされているLLM プラットフォームがこのエンドポイントに接続し、アクションを検出して呼び出します。
 
 ## 仕組み
 
@@ -79,43 +91,72 @@ LLMのインタラクションは、従来の検索とは根本的に異なり�
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 前提条件
+## 要件 {#requirements}
+
+アプリを作成する前に、次のすべての要件を満たしてください。
 
 ### Adobe 開発者コンソール
 
-[Adobe Developer Console](https://developer.adobe.com/console)にアクセスするには、Adobe IMS組織の&#x200B;**Developer** ロール（または&#x200B;**System Admin** ロール）が必要です。 組織が[[!DNL App Builder]](https://developer.adobe.com/app-builder/docs/intro_and_overview/)へのアクセス権を持っていることを確認します。
+Adobe IMS組織は[[!DNL App Builder]](https://developer.adobe.com/app-builder/docs/intro_and_overview/)へのアクセス権を持っている必要があります。 **開発者**&#x200B;または&#x200B;**システム管理者**&#x200B;の役割が必要です。
 
-確認するには、[developer.adobe.com/console](https://developer.adobe.com/console)に移動します。 クイックスタート画面が表示された場合は、権限が正しく設定されています。
+アクセスを確認するには、[Adobe Developer Console](https://developer.adobe.com/console)を開きます。 クイックスタート画面で、必要なアクセス権があることを確認します。
 
 ![Adobe Developer Console – 開発者へのアクセスを確認するクイックスタート画面](/help/assets/overview/dev-console-access-granted.png)
 
-代わりに&#x200B;**制限付きアクセス** メッセージが表示される場合は、開発者の役割がありません。 アクセスをリクエストするには、IMS組織の管理者にお問い合わせください。
+**制限付きアクセス**&#x200B;が表示された場合は、IMS組織管理者に連絡し、開発者の役割をリクエストしてください。
 
-![Adobe Developer Console – 制限付きアクセス メッセージ &#x200B;](/help/assets/overview/dev-console-access-denied.png)
+![Adobe Developer Console – 制限付きアクセス メッセージ ](/help/assets/overview/dev-console-access-denied.png)
 
 ### [!DNL GitHub]
 
-組織に次の権限を持つ[!DNL GitHub] アカウントが必要です。
+次の操作を実行できる[!DNL GitHub] アカウントが必要です：
 
-- **リポジトリを作成** – 組織内に2つのリポジトリ（アプリケーションコード用とEDS プロジェクト用）を作成する必要があります。 確認するには、[github.com/new](https://github.com/new)に移動します。**所有者** ドロップダウンから組織を選択できる場合は、権限があります。
+- アカウントまたは組織内で、アプリを所有する2つのリポジトリを作成します。
+- Adobe LLM アプリ [!DNL GitHub] アプリをインストールするか、インストールをリクエストします。
+- EDS リポジトリ用のAEM Code Syncをインストールするか、インストールをリクエストします。
 
-  組織の選択を表示する![GitHub新しいリポジトリ所有者ドロップダウン &#x200B;](/help/assets/overview/github-repo-owner-dropdown.png)
+リポジトリ作成アクセス権を確認するには、[github.com/new](https://github.com/new)を開き、目的のアカウントまたは組織が&#x200B;**所有者**&#x200B;の下に表示されていることを確認します。
 
-- **アプリ [!DNL GitHub]をインストール** – 組織に[!DNL GitHub] アプリをインストールするには、適切な権限が必要です。 GitHub アプリをインストールするための[要件](https://docs.github.com/en/apps/using-github-apps/installing-a-github-app-from-a-third-party#requirements-to-install-a-github-app)を参照してください。
+![GitHub — リポジトリ所有者を選択](/help/assets/overview/github-repo-owner-dropdown.png)
 
-### AEM Sitesと[!DNL Edge Delivery Services]
+組織が所有するリポジトリの場合、組織管理者は[!DNL GitHub] アプリを承認する必要がある場合があります。 各アプリにLLM アプリで使用されるリポジトリへのアクセス権のみを付与します。
 
-アクションウィジェットは&#x200B;**Adobe Experience Manager [!DNL Edge Delivery Services] （EDS）**&#x200B;でホストされます。 [!DNL Edge Delivery Services]を含むAEM Sites ライセンスが必要です。 EDS組織に&#x200B;**管理者**&#x200B;の役割が必要です。
+### AEM SitesとEdge Delivery Services
 
-確認するには、[EDS ユーザー管理ツール &#x200B;](https://tools.aem.live/tools/user-admin/index.html)に移動し、組織名を入力し、**サイト**&#x200B;を空白のままにして、**ユーザーを取得**&#x200B;をクリックします。 リストでアカウントを検索し、**管理者** バッジが表示されていることを確認します。
+Edge Delivery Services（EDS）を含むAdobe Experience Manager Sites ライセンスが必要です。 ウィジェットリポジトリから作成されたEDS サイトへの管理者アクセス権も必要です。
 
-![管理者の役割を持つユーザーを表示するEDS ユーザー管理ツール &#x200B;](/help/assets/overview/eds-user-admin.png)
+アクセスを確認するには、[EDS ユーザー管理ツール ](https://tools.aem.live/tools/user-admin/index.html)を開き、組織名を入力し、ユーザーを取得します。 アカウントに&#x200B;**管理者** バッジがあることを確認してください。
 
-### LLM プラットフォーム（テスト用）
+### Web サイト
 
-デプロイ済みアプリをテストするには、カスタム MCP アプリと&#x200B;**開発者モード**&#x200B;を有効にできる、サポートされているサブスクリプション層が必要です。 例えば、[!DNL ChatGPT]では、**Pro**、**Business**&#x200B;または&#x200B;**Enterprise / Edu**&#x200B;のサブスクリプションが必要です。
+アプリがサポートする必要がある製品、サービス、タスクを表すパブリック HTTPS web サイトが必要です。 プラットフォームは、このウェブサイトを分析して行動を提案し、代表的なサンプルデータを作成します。
 
-## 今すぐ始める
+機密情報やアクセス制御情報を公開するweb サイトは使用しないでください。
 
-ユースケースを念頭に置いて、[&#x200B; アプリを作成](/help/guides/create-app.md)し、[!DNL LLM Apps] エクスペリエンスの構築とデプロイを開始します。
+### テスト用の[!DNL ChatGPT]または[!DNL Claude]
+
+開始チュートリアルを完了するには、開発者モードが有効になっているサポートされている[!DNL ChatGPT] プランまたはカスタムコネクタが有効になっているサポートされている[!DNL Claude] プランを使用します。 Workspaceまたは組織の管理者は、アクセスを制限できます。 [ChatGPTでのテスト ](/help/guides/test-in-chatgpt.md#plan-requirements)または[ クロードでのテスト ](/help/guides/test-in-claude.md#plan-requirements)を参照してください。
+
+## ジャーニーの選択 {#choose-your-journey}
+
+### &#x200B;1. 最初のアプリをビルドして起動する
+
+[最初のアプリをビルドして起動します](/help/guides/create-app.md)。 このジャーニーは、2つの空のリポジトリから始まり、[!DNL ChatGPT]などのサポートされているLLM プラットフォームでプラグインとしてテストされた実稼動対応アプリで終了します。
+
+### &#x200B;2. 生成されたアプリのカスタマイズ
+
+プラットフォームがアプリを自動的に作成し、サンプル動作を置き換える場合は、このジャーニーを選択します。
+
+1. [生成されたハンドラー](/help/guides/customize-handler.md)をカスタマイズして、APIを接続し、各アクションによって返されるデータを定義します。
+2. [生成されたウィジェット ](/help/guides/widgets.md)をカスタマイズして、そのデータを使用し、インタラクションとデザインを適用します。
+
+### &#x200B;3. 新しいアクションを最初から追加
+
+[新しいメタデータを定義し、ハンドラーを記述し、ウィジェットを接続し、テストし、アクションをデプロイするには、](/help/guides/create-action.md)から新しいアクションを追加します。
+
+### &#x200B;4. 既存のEDS プロジェクトの接続
+
+既にEDS サイトを持っているか、アプリを自動的に構築していない場合は、[既存のEDS プロジェクトを接続](/help/guides/bring-your-own-eds.md)します。
+
+すべてのジャーニーでは、共有[ デプロイメント ](/help/guides/deploy-your-app.md) ステップを使用し、次に[ChatGPT プラグイン テスト ](/help/guides/test-in-chatgpt.md)または[Claude コネクタテスト ](/help/guides/test-in-claude.md)を使用します。
 
