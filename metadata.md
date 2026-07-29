@@ -6,7 +6,7 @@ product_v2:
 usetq: true
 type: Documentation
 mini-toc-levels: 2
-git-repo: https://github.com/Adobe-Enterprise-Docs/llm-apps.en
+git-repo: https://github.com/Adobe-Enterprise-Docs/llm-apps.ja-JP
 hide: true
 index: false
 source-git-commit: eec74b87457bc852d7a8dd0e46c2a4385a93ae0a
