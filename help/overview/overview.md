@@ -105,7 +105,7 @@ Adobe IMS組織は[[!DNL App Builder]](https://developer.adobe.com/app-builder/d
 
 **制限付きアクセス**&#x200B;が表示された場合は、IMS組織管理者に連絡し、開発者の役割をリクエストしてください。
 
-![Adobe Developer Console – 制限付きアクセス メッセージ ](/help/assets/overview/dev-console-access-denied.png)
+![Adobe Developer Console – 制限付きアクセス メッセージ &#x200B;](/help/assets/overview/dev-console-access-denied.png)
 
 ### [!DNL GitHub]
 
@@ -125,7 +125,7 @@ Adobe IMS組織は[[!DNL App Builder]](https://developer.adobe.com/app-builder/d
 
 Edge Delivery Services（EDS）を含むAdobe Experience Manager Sites ライセンスが必要です。 ウィジェットリポジトリから作成されたEDS サイトへの管理者アクセス権も必要です。
 
-アクセスを確認するには、[EDS ユーザー管理ツール ](https://tools.aem.live/tools/user-admin/index.html)を開き、組織名を入力し、ユーザーを取得します。 アカウントに&#x200B;**管理者** バッジがあることを確認してください。
+アクセスを確認するには、[EDS ユーザー管理ツール &#x200B;](https://tools.aem.live/tools/user-admin/index.html)を開き、組織名を入力し、ユーザーを取得します。 アカウントに&#x200B;**管理者** バッジがあることを確認してください。
 
 ### Web サイト
 
@@ -135,7 +135,7 @@ Edge Delivery Services（EDS）を含むAdobe Experience Manager Sites ライセ
 
 ### テスト用の[!DNL ChatGPT]または[!DNL Claude]
 
-開始チュートリアルを完了するには、開発者モードが有効になっているサポートされている[!DNL ChatGPT] プランまたはカスタムコネクタが有効になっているサポートされている[!DNL Claude] プランを使用します。 Workspaceまたは組織の管理者は、アクセスを制限できます。 [ChatGPTでのテスト ](/help/guides/test-in-chatgpt.md#plan-requirements)または[ クロードでのテスト ](/help/guides/test-in-claude.md#plan-requirements)を参照してください。
+開始チュートリアルを完了するには、開発者モードが有効になっているサポートされている[!DNL ChatGPT] プランまたはカスタムコネクタが有効になっているサポートされている[!DNL Claude] プランを使用します。 Workspaceまたは組織の管理者は、アクセスを制限できます。 [ChatGPTでのテスト &#x200B;](/help/guides/test-in-chatgpt.md#plan-requirements)または[&#x200B; クロードでのテスト &#x200B;](/help/guides/test-in-claude.md#plan-requirements)を参照してください。
 
 ## ジャーニーの選択 {#choose-your-journey}
 
@@ -148,7 +148,7 @@ Edge Delivery Services（EDS）を含むAdobe Experience Manager Sites ライセ
 プラットフォームがアプリを自動的に作成し、サンプル動作を置き換える場合は、このジャーニーを選択します。
 
 1. [生成されたハンドラー](/help/guides/customize-handler.md)をカスタマイズして、APIを接続し、各アクションによって返されるデータを定義します。
-2. [生成されたウィジェット ](/help/guides/widgets.md)をカスタマイズして、そのデータを使用し、インタラクションとデザインを適用します。
+2. [生成されたウィジェット &#x200B;](/help/guides/widgets.md)をカスタマイズして、そのデータを使用し、インタラクションとデザインを適用します。
 
 ### &#x200B;3. 新しいアクションを最初から追加
 
@@ -158,5 +158,5 @@ Edge Delivery Services（EDS）を含むAdobe Experience Manager Sites ライセ
 
 既にEDS サイトを持っているか、アプリを自動的に構築していない場合は、[既存のEDS プロジェクトを接続](/help/guides/bring-your-own-eds.md)します。
 
-すべてのジャーニーでは、共有[ デプロイメント ](/help/guides/deploy-your-app.md) ステップを使用し、次に[ChatGPT プラグイン テスト ](/help/guides/test-in-chatgpt.md)または[Claude コネクタテスト ](/help/guides/test-in-claude.md)を使用します。
+すべてのジャーニーでは、共有[&#x200B; デプロイメント &#x200B;](/help/guides/deploy-your-app.md) ステップを使用し、次に[ChatGPT プラグイン テスト &#x200B;](/help/guides/test-in-chatgpt.md)または[Claude コネクタテスト &#x200B;](/help/guides/test-in-claude.md)を使用します。
 

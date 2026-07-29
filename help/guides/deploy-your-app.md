@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ハンドラーコードを記述し、リンクされたリポジトリにプッシュしたら、[!DNL LLM Apps] UIからアプリをデプロイできます。
 
-あらゆるジャーニーで共有されるステップです。 デプロイメント後、引き続き[ChatGPT プラグインのテスト ](/help/guides/test-in-chatgpt.md)または[Claude コネクタのテスト ](/help/guides/test-in-claude.md)を行います。
+あらゆるジャーニーで共有されるステップです。 デプロイメント後、引き続き[ChatGPT プラグインのテスト &#x200B;](/help/guides/test-in-chatgpt.md)または[Claude コネクタのテスト &#x200B;](/help/guides/test-in-claude.md)を行います。
 
 ## デプロイメントを開始
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 ターゲット環境を選択し、**[!UICONTROL デプロイ]**&#x200B;を選択します。
 
-![ デプロイ – ターゲット環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
+![&#x200B; デプロイ – ターゲット環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
 
 デプロイメントは、次の4つの手順で実行されます。
 
@@ -36,7 +36,7 @@ ht-degree: 0%
 3. **アプリをビルド** – 依存関係をインストールし、最新のリポジトリコードをビルドします。
 4. **公開** — アプリを[!DNL Adobe I/O Runtime]に公開します。
 
-![ デプロイ – 実行中のデプロイメントパイプライン ](/help/assets/guide-onboarding-agent/deploy-running.png)
+![&#x200B; デプロイ – 実行中のデプロイメントパイプライン &#x200B;](/help/assets/guide-onboarding-agent/deploy-running.png)
 
 >[!NOTE]
 >
@@ -46,23 +46,23 @@ ht-degree: 0%
 
 すべての手順が完了すると、ダイアログに「**デプロイが成功しました**」と表示されます。
 
-![ デプロイ – 正常にデプロイされました](/help/assets/guide-onboarding-agent/deploy-successful.png)
+![&#x200B; デプロイ – 正常にデプロイされました](/help/assets/guide-onboarding-agent/deploy-successful.png)
 
 ダイアログを閉じるには、**閉じる**&#x200B;をクリックします。 アプリの詳細ページの「**[!UICONTROL アプリをテストする]**」セクションまで下にスクロールします。
 
-![ アプリの詳細 – MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
+![&#x200B; アプリの詳細 – MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
 
 デプロイされた各環境には、MCP サーバーのURLが表示されます。 「**[!UICONTROL URLをコピー]**」を選択し、それを使用してターゲット LLM プラットフォームにプラグインを作成します。
 
 **デプロイメント履歴** セクションには、最新10件のデプロイメントが表示されます。
 
-![ デプロイメント履歴](/help/assets/guide-deploy/deployment-history.png)
+![&#x200B; デプロイメント履歴](/help/assets/guide-deploy/deployment-history.png)
 
-各行には、ターゲット **環境** （ステージまたは実稼動）、**ステータス** （成功または失敗）、**デプロイ日**が表示されます。 このテーブルを使用して、デプロイメントが発生したタイミングを追跡し、デプロイメントが発生したことを
+各行には、ターゲット **環境** （ステージまたは実稼動）、**ステータス** （成功または失敗）、**デプロイ日**&#x200B;が表示されます。 このテーブルを使用して、デプロイメントが発生したタイミングを追跡し、デプロイメントが発生したことを
 最新の展開が成功しました。
 
 ## 次の手順
 
-- [ デプロイされたアプリをChatGPT プラグインとしてテストします](/help/guides/test-in-chatgpt.md)。
-- [ デプロイされたアプリをClaude コネクタとしてテストします](/help/guides/test-in-claude.md)。
+- [&#x200B; デプロイされたアプリをChatGPT プラグインとしてテストします](/help/guides/test-in-chatgpt.md)。
+- [&#x200B; デプロイされたアプリをClaude コネクタとしてテストします](/help/guides/test-in-claude.md)。
 

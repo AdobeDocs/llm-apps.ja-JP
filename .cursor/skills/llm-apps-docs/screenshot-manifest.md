@@ -103,7 +103,7 @@ Sourceのファイル名は、最終的なファイル名と一致する必要�
 ### `chatgpt-plugin-connect.png`
 
 - 状態：プラグイン作成後に確認します。
-- 含める：**追加 <plugin> ChatGPT **および** Connect **に送信します。
+- 含める：**追加 <plugin> ChatGPT &#x200B;** および **&#x200B; Connect &#x200B;** に送信します。
 - マスク：ブラウザーのURLとコネクタの識別子。
 - 代替テキスト：`ChatGPT — connect the new plugin`
 

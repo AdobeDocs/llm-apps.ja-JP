@@ -19,7 +19,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、最初に[EDS開発者チュートリアル ](https://www.aem.live/developer/tutorial)および[ ブロックの探索](https://www.aem.live/docs/exploring-blocks)を読んで、ウィジェットをカスタマイズする前に、ブロック、`decorate`関数、EDS プロジェクト構造などの基本を学びます。
+>このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、最初に[EDS開発者チュートリアル &#x200B;](https://www.aem.live/developer/tutorial)および[&#x200B; ブロックの探索](https://www.aem.live/docs/exploring-blocks)を読んで、ウィジェットをカスタマイズする前に、ブロック、`decorate`関数、EDS プロジェクト構造などの基本を学びます。
 
 このプラットフォームは、生成されたアクションごとにEDS ウィジェットを作成します。 ウィジェットは既にアクション結果を受け取り、サンプルデータをレンダリングし、ホストのスタイルを適用し、[!DNL LLM Apps]でアクションにリンクされています。
 
@@ -70,7 +70,7 @@ export default async function decorate(block, bridge) {
 - `bridge.callTool()`で別のアクションを呼び出します。
 - サイズを`bridge.autoResize()`と同期しておきます。
 
-このガイドでは、一般的なブリッジ方法について説明します。 完全なAPIについては、[`@adobe/llmapps-sdk` パッケージ ](https://www.npmjs.com/package/@adobe/llmapps-sdk)を参照してください。
+このガイドでは、一般的なブリッジ方法について説明します。 完全なAPIについては、[`@adobe/llmapps-sdk` パッケージ &#x200B;](https://www.npmjs.com/package/@adobe/llmapps-sdk)を参照してください。
 
 ## データコントラクトについて
 
@@ -93,7 +93,7 @@ export default async function decorate(block, bridge) {
 }
 ```
 
-`structuredContent`を変更する場合は、ハンドラーとウィジェットを一緒に更新します。 完全な返品契約については、[生成ハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
+`structuredContent`を変更する場合は、ハンドラーとウィジェットを一緒に更新します。 完全な返品契約については、[生成ハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
 
 ## 外部データの安全なレンダリング
 

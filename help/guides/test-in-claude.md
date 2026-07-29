@@ -41,7 +41,7 @@ ht-degree: 1%
    - **[!UICONTROL リモート MCP サーバーのURL]** — コピーしたMCP サーバーのURL。
 3. 「**[!UICONTROL 追加]**」を選択します。
 
-   ![ クラウド – カスタムコネクタダイアログを追加](/help/assets/guide-test-claude/claude-add-custom-connector.png)
+   ![&#x200B; クラウド – カスタムコネクタダイアログを追加](/help/assets/guide-test-claude/claude-add-custom-connector.png)
 
 >[!NOTE]
 >
@@ -73,5 +73,5 @@ ht-degree: 1%
 
 ## 次の手順
 
-- [生成されたウィジェットをカスタマイズ ](/help/guides/widgets.md)。
+- [生成されたウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)。
 - [最初からアクションを作成](/help/guides/create-action.md)。

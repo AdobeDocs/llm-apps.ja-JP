@@ -262,14 +262,14 @@ module.exports = async ({ query = '' } = {}) => {
 npm test
 ```
 
-ローカル MCP テストについては、[ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照してください。
+ローカル MCP テストについては、[&#x200B; ローカルハンドラーの開発とテスト &#x200B;](/help/reference/development.md)を参照してください。
 
 ## 変更をデプロイ
 
 1. ハンドラーの変更を確定してプッシュします。
 2. データシェイプが変更された場合は、ウィジェットを更新してプッシュします。
-3. [ アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
-4. [ChatGPT プラグインをテスト ](/help/guides/test-in-chatgpt.md)。
+3. [&#x200B; アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
+4. [ChatGPT プラグインをテスト &#x200B;](/help/guides/test-in-chatgpt.md)。
 5. ステージが成功したら、実稼動環境にデプロイします。
 
-次に、[生成されたウィジェットのカスタマイズ ](/help/guides/widgets.md)を参照してください。
+次に、[生成されたウィジェットのカスタマイズ &#x200B;](/help/guides/widgets.md)を参照してください。
