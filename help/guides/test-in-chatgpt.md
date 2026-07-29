@@ -1,15 +1,15 @@
 ---
-title: ChatGPTでテスト
-description: デプロイされたAdobe LLM アプリをChatGPTに追加し、実際の会話でテストする方法について説明します。
-source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
+title: ChatGPT プラグインとしてLLM アプリをテストする
+description: Adobe LLM Apps MCP サーバーのURLからChatGPT プラグインを作成し、会話でテストします。
+source-git-commit: b7199fbb387d91a5c77deac47a2bc883381931c1
 workflow-type: tm+mt
-source-wordcount: '804'
-ht-degree: 2%
+source-wordcount: '335'
+ht-degree: 1%
 
 ---
 
 
-# [!DNL ChatGPT]でテスト
+# LLM アプリを[!DNL ChatGPT] プラグインとしてテストする {#test-in-chatgpt}
 
 >[!IMPORTANT]
 >
@@ -17,143 +17,68 @@ ht-degree: 2%
 >
 >ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
->[!NOTE]
->
->このガイドでは、[!DNL ChatGPT]を例として使用します。 一般的な手順（MCP サーバーのURLの登録と会話でのテスト）は、他のLLM プラットフォームにも適用されますが、設定フローとUIは異なります。
+デプロイメント後、LLM アプリはMCP サーバーのURLを公開します。 このURLを[!DNL ChatGPT]にプラグインとして追加し、生成されたアクションとウィジェットをテストします。
 
-[!DNL Adobe LLM Apps]でのデプロイメントが成功すると、アプリは[!DNL Adobe I/O Runtime]で実行され、MCP サーバーのURLが公開されます。 このガイドでは、[!DNL ChatGPT]に追加して、実際の会話でテストする方法について説明します。
+これは、アプリの構築、カスタマイズ、拡張の後の最後の検証ステップです。
 
 ## プランの要件
 
-カスタム開発者アプリの[!DNL ChatGPT]への追加は、OpenAIのサブスクリプション層によって管理されます。これは[!DNL LLM Apps]の制限ではなく、OpenAIが現在カスタム MCP アプリへのアクセスを管理する方法です。
-
-| [!DNL ChatGPT] プラン | カスタム MCP アプリ |
-|--------------|-----------------|
-| 無料 | 使用不可 |
-| 移動 | 使用不可 |
-| プラス | 使用不可 |
-| Pro | 使用可 |
-| ビジネス | 使用可 |
-| エンタープライズ/教育機関 | 使用可 |
-
->[!NOTE]
->
->無料、Go、またはPlus プランを利用している場合、**はデプロイ済みアプリ**&#x200B;を[!DNL ChatGPT]に追加できません。 **Pro**&#x200B;にアップグレードするか、組織の管理者に&#x200B;**Business**&#x200B;または&#x200B;**Enterprise** ワークスペースで有効にするように依頼してください。
+開発者モードは、Pro、Plus、Business、Enterprise、Education アカウントのwebで利用できます。 Workspaceの管理者は、アクセスを制限できます。
 
 ## 開発者モードを有効にする
 
-カスタム MCP アプリを追加するには、[!DNL ChatGPT] アカウントで&#x200B;**開発者モード**&#x200B;を有効にする必要があります。 フォロー
-検証して有効にするには、次の手順を実行します。
+[!DNL ChatGPT] に移動します。
 
-### 設定を開く
+1. **[!UICONTROL 設定] → [!UICONTROL &#x200B; セキュリティとログイン]**&#x200B;を開きます。
+2. **[!UICONTROL 開発者モード]**&#x200B;を有効にします。
 
-左下隅のプロファイルアバターをクリックし、**[!UICONTROL 設定]**&#x200B;をクリックします。
+プラグインページのプラスボタンは、開発者モードが有効になった後にのみMCP-backed プラグインを作成します。 [ChatGPT開発者モード &#x200B;](https://developers.openai.com/api/docs/guides/developer-mode)を参照してください。
 
-![ChatGPT – 設定メニュー](/help/assets/guide-test-chatgpt/chatgpt-settings-menu.png)
+## MCP サーバーのURLをコピー
 
-### アプリに移動
+[!DNL LLM Apps] に移動します。
 
-設定ダイアログで、左側のサイドバーで「**[!UICONTROL アプリ]**」を選択します。 下部の「**[!UICONTROL 詳細設定]**」をクリックします。
+1. アプリの詳細ページを開きます。
+2. **[!UICONTROL アプリのテスト]**&#x200B;を検索します。
+3. **[!UICONTROL ステージング環境]**&#x200B;で、**[!UICONTROL URLをコピー]**&#x200B;を選択します。
 
-![ChatGPT — アプリ設定](/help/assets/guide-test-chatgpt/chatgpt-apps-settings.png)
+## プラグインの作成
 
-### 開発者モードを有効にする
+1. [chatgpt.com/plugins](https://chatgpt.com/plugins)を開きます。
+2. 「**[!UICONTROL プラグイン]**」タブで、検索フィールドの横にある「**+**」を選択します。
 
-**[!UICONTROL 開発者モード]** トグルが（青）になっていることを確認します。 これにより、未検証のカスタム MCP サーバーURLを登録できます。
+   ![ChatGPT — プラグインページ &#x200B;](/help/assets/guide-onboarding-agent/chatgpt-plugins-page.png)
 
->[!NOTE]
->
->開発者モードは、OpenAIによるレビューを受けていないアプリを許可するため、*高リスク*&#x200B;とラベル付けされます。 [!DNL ChatGPT]は、開発者モード アプリを使用する会話のメモリを自動的に無効にします。
+3. **[!UICONTROL 新しいプラグイン]**&#x200B;で、次のように入力します。
+   - **[!UICONTROL Name]** — プラグイン名。
+   - **[!UICONTROL 説明]** — オプション。
+   - **[!UICONTROL 接続]** — **[!UICONTROL サーバーURL]**&#x200B;を選択し、MCP サーバーURLを貼り付けます。
+   - **[!UICONTROL 認証]** — **[!UICONTROL 認証なし]**&#x200B;を選択します。
+4. 「**[!UICONTROL I understand and want to continue]**」を選択します。
+5. 「**[!UICONTROL 作成]**」を選択します。
 
-![ChatGPT – 開発者モードが有効](/help/assets/guide-test-chatgpt/chatgpt-developer-mode.png)
+   ![ChatGPT — MCP サーバーのURL](/help/assets/guide-onboarding-agent/chatgpt-new-plugin.png)を使用したプラグインの作成
 
-## アプリを[!DNL ChatGPT]に追加
+6. 確認ダイアログで、**[!UICONTROL Connect]**&#x200B;を選択します。
 
-### MCP サーバーのURLをコピー
+   ![ChatGPT – 新しいプラグインを接続](/help/assets/guide-onboarding-agent/chatgpt-plugin-connect.png)
 
-[!DNL LLM Apps]の&#x200B;**アプリの詳細** ページに移動し、**[!UICONTROL アプリのテスト]** セクションを見つけます。 **ステージング**&#x200B;または&#x200B;**実稼動** URLをコピーします。次のようになります。
+## プラグインをテストする
 
-```
-https://<namespace>.adobeioruntime.net/api/v1/web/llm-apps/mcp
-```
+1. 新しいチャットを開始します。
+2. プラスメニューから、**[!UICONTROL 開発者モード]**&#x200B;を選択し、プラグインを選択します。
+3. 生成されたアクションのいずれかに一致する質問をしてください。 例：*コーヒーを見せてください。*
 
-### アプリページを開く
+![ChatGPT — LLM アプリのプラグイン応答を生成](/help/assets/guide-onboarding-agent/chatgpt-generated-app.png)
 
-[!DNL ChatGPT]で、**[!UICONTROL 設定] → [!UICONTROL &#x200B; アプリ]**&#x200B;に移動します。
+次のことを確認します。
 
-![ChatGPT — アプリページ &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-apps-page.png)
-
-### 新しいアプリを作成
-
-詳細設定行の「**[!UICONTROL アプリを作成]**」をクリックします。
-
-![ChatGPT — アプリの作成ダイアログ &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-create-app.png)
-
-次の項目を入力します。
-
-| フィールド | 値 |
-|-------|-------|
-| **アイコン** | オプション - 128 x 128 PNG （最大10 KB）をアップロード |
-| **名前** | アプリの表示名（例：*My Brand App*） |
-| **説明** | アプリの機能の簡単な説明 |
-| **MCP サーバーURL** | [!DNL LLM Apps]のURLを貼り付けます |
-| **[!UICONTROL 認証]** | *認証なし*&#x200B;を選択 |
-
-「**I understand and want to continue**」チェックボックスをオンにします。これにより、MCP サーバーが
-はOpenAIによるレビューを受けていません。**作成**&#x200B;をクリックしてください。
-
-### アプリが有効になっていることを確認します
-
-作成後、アプリは&#x200B;**[!UICONTROL 有効なアプリ]**&#x200B;の下に&#x200B;**[!UICONTROL DEV]** バッジで表示され、アクティブであることを確認します。
-
->[!NOTE]
->
->アプリは&#x200B;**下書き**&#x200B;にも表示されます。これらは、開発者モードで作成したプライベートアプリで、アカウントでのみ表示されます。
-
-これで、アプリを[!DNL ChatGPT]の会話で使用する準備ができました。
-
-![ChatGPT — アプリが有効](/help/assets/guide-test-chatgpt/chatgpt-app-enabled.png)
-
-## 会話でテスト
-
-アプリが有効になったら、[!DNL ChatGPT]で新しい会話を開始します。 質問する前に、2つの方法のいずれかを使用してアプリを添付します。
-
-### オプション 1 - メニューから選択します
-
-チャット入力の「**+**」ボタンをクリックし、**詳細**&#x200B;をクリックして、使用可能なツールの完全なリストを展開します。 リストからアプリを選択して、現在の会話に添付します。
-
-![ChatGPT — メニューからアプリを選択](/help/assets/guide-test-chatgpt/chatgpt-select-app.png)
-
-### オプション 2 - @mentionを使用する
-
-チャット入力に「**@**」と入力し、ドロップダウンからアプリを選択します。 これにより、アプリがインラインに添付され、同じメッセージで引き続き質問を入力できます。
-
->[!NOTE]
->
->同じアプリで&#x200B;**@mention**&#x200B;をもう一度使用すると、そのアプリの選択が解除され、会話から削除されます。
-
-![ChatGPT — アプリ@mention インストール &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-mention-app.png)
-
-選択すると、アプリがインラインで添付され、同じメッセージで質問を入力できます。
-
-![ChatGPT — @mention](/help/assets/guide-test-chatgpt/chatgpt-mention.png)経由で添付されたアプリ
-
-### 結果を見る
-
-アプリが添付されたら、設定したアクションのいずれかに沿った質問を入力します。例：*「製品を表示する」* [!DNL ChatGPT]は関連するアクションと一致し、入力パラメーターを抽出し、[!DNL Adobe I/O Runtime]でハンドラーを呼び出し、結果をレンダリングします。
-
-![ChatGPT — アクション結果](/help/assets/guide-test-chatgpt/chatgpt-response.png)
-
-応答には、次が含まれます。
-
-- **EDS ウィジェット** – 画像、評価、アクションボタンを含むリッチ UI コンポーネント。
-- **テキスト応答** — ウィジェットの下、[!DNL ChatGPT]はハンドラーから返された`content`を使用します
-結果の自然言語サマリーを作成します。
-- **ステータスインジケーター** — アクションの作成ダイアログで設定した&#x200B;*呼び出されたステータステキスト*。
+- [!DNL ChatGPT]が期待されるアクションを呼び出します。
+- ウィジェットには、想定されるサンプルデータが表示されます。
+- テキスト応答はウィジェットと一致します。
+- ウィジェットのコントロールが期待どおりに動作します。
 
 ## 次の手順
 
-- **さらにアクションを追加** — UIで追加のアクションを定義し、そのハンドラーを記述して、再デプロイします。
-- **実稼動環境にデプロイ** — ステージでテストした場合は、ライブエクスペリエンスの実稼動環境にデプロイします。
-- **チームと共有** — アプリの詳細ページの&#x200B;**URLをコピー**&#x200B;して、MCP サーバーのURLをチームメイトと共有します。
-
+- [生成されたウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)。
+- [最初からアクションを作成](/help/guides/create-action.md)。

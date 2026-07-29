@@ -1,15 +1,15 @@
 ---
 title: アプリをデプロイ
 description: LLM アプリ UIを使用して、Adobe LLM アプリをステージングおよび実稼動環境にデプロイする方法について説明します。
-source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '359'
+source-wordcount: '322'
 ht-degree: 0%
 
 ---
 
 
-# アプリをデプロイ
+# アプリをデプロイ {#deploy-your-app}
 
 >[!IMPORTANT]
 >
@@ -19,26 +19,24 @@ ht-degree: 0%
 
 ハンドラーコードを記述し、リンクされたリポジトリにプッシュしたら、[!DNL LLM Apps] UIからアプリをデプロイできます。
 
+あらゆるジャーニーで共有されるステップです。 デプロイメント後、引き続き[ChatGPT プラグインのテスト &#x200B;](/help/guides/test-in-chatgpt.md)または[Claude コネクタのテスト &#x200B;](/help/guides/test-in-claude.md)を行います。
+
 ## デプロイメントを開始
 
-アプリの詳細ページに移動します。 右上隅の「**[!UICONTROL デプロイ]**」ボタンをクリックします。
+アプリの詳細ページを開き、**[!UICONTROL デプロイ]**&#x200B;を選択します。
 
-![&#x200B; アプリの詳細 – デプロイの準備ができました](/help/assets/guide-deploy/app-detail-deploy-ready.png)
+ターゲット環境を選択し、**[!UICONTROL デプロイ]**&#x200B;を選択します。
 
-デプロイメントダイアログが開きます。 ドロップダウンからターゲット環境を選択します。
+![&#x200B; デプロイ – ターゲット環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
 
-![&#x200B; デプロイ ダイアログ – ターゲット環境を選択](/help/assets/guide-deploy/deploy-pipeline-dropdown.png)
+デプロイメントは、次の4つの手順で実行されます。
 
-「**[!UICONTROL デプロイ]**」をクリックして、パイプラインを開始します。 4つのステップは次のとおりです。
+1. **準備中** — アプリのデプロイに必要な設定を取得します。
+2. **展開を開始** – バックグラウンド展開プロセスを開始します。
+3. **アプリをビルド** – 依存関係をインストールし、最新のリポジトリコードをビルドします。
+4. **公開** — アプリを[!DNL Adobe I/O Runtime]に公開します。
 
-1. **資格情報の収集** — アプリのメタデータを読み取り、[!DNL GitHub] トークンを生成し、コンソール APIからランタイム資格情報を取得します。
-2. **トリガービルドパイプライン** – すべてのパラメーターをビルドパイプラインに送信します。
-3. **複製とビルド** — パイプラインがリポジトリを複製し、UI メタデータから`actions.json`を生成し、`npm install`とwebpackを実行して`dist/index.js`を生成します。
-4. **ランタイムにデプロイ** — バンドルをアプリの[!DNL Adobe I/O Runtime]名前空間にデプロイします。
-
-開始すると、パイプラインが自動的に実行され、進行状況がリアルタイムで表示されます。
-
-![実行中のパイプラインのデプロイ &#x200B;](/help/assets/guide-deploy/deploy-pipeline-deploying.png)
+![&#x200B; デプロイ – 実行中のデプロイメントパイプライン &#x200B;](/help/assets/guide-onboarding-agent/deploy-running.png)
 
 >[!NOTE]
 >
@@ -46,20 +44,25 @@ ht-degree: 0%
 
 ## デプロイメントが成功した後
 
-すべての手順が完了すると、ダイアログに、デプロイ済みURLとアーティファクトの詳細を含む&#x200B;**デプロイが成功した**&#x200B;の確認が表示されます。
+すべての手順が完了すると、ダイアログに「**デプロイが成功しました**」と表示されます。
 
-![&#x200B; デプロイが成功しました](/help/assets/guide-deploy/app-detail-deploy-finish.png)
+![&#x200B; デプロイ – 正常にデプロイされました](/help/assets/guide-onboarding-agent/deploy-successful.png)
 
 ダイアログを閉じるには、**閉じる**&#x200B;をクリックします。 アプリの詳細ページの「**[!UICONTROL アプリをテストする]**」セクションまで下にスクロールします。
 
-![&#x200B; アプリのテスト – デプロイされたURL](/help/assets/guide-deploy/test-app-deployed.png)
+![&#x200B; アプリの詳細 – MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
 
-各環境（**ステージング**&#x200B;および&#x200B;**実稼動**）は、[!DNL Adobe I/O Runtime]にMCP サーバーのURLを表示します。 これは、アプリの登録時にLLM プラットフォームに提供するURLです。 「**URLをコピー**」をクリックして、クリップボードにコピーします。
+デプロイされた各環境には、MCP サーバーのURLが表示されます。 「**[!UICONTROL URLをコピー]**」を選択し、それを使用してターゲット LLM プラットフォームにプラグインを作成します。
 
-以下の&#x200B;**デプロイメント履歴** セクションでは、環境全体のすべてのデプロイメントの完全なログを保持します。
+**デプロイメント履歴** セクションには、最新10件のデプロイメントが表示されます。
 
 ![&#x200B; デプロイメント履歴](/help/assets/guide-deploy/deployment-history.png)
 
 各行には、ターゲット **環境** （ステージまたは実稼動）、**ステータス** （成功または失敗）、**デプロイ日**&#x200B;が表示されます。 このテーブルを使用して、デプロイメントが発生したタイミングを追跡し、デプロイメントが発生したことを
 最新の展開が成功しました。
+
+## 次の手順
+
+- [&#x200B; デプロイされたアプリをChatGPT プラグインとしてテストします](/help/guides/test-in-chatgpt.md)。
+- [&#x200B; デプロイされたアプリをClaude コネクタとしてテストします](/help/guides/test-in-claude.md)。
 
