@@ -46,7 +46,7 @@ README、`.gitignore`、またはライセンスを使用してリポジトリ�
 
 ## アプリを起動
 
-1. [Adobe LLM アプリ ](https://experience.adobe.com/#/@llmapps/llm-apps/)を開き、**[!UICONTROL アプリの作成]**&#x200B;を選択します。
+1. [Adobe LLM アプリ &#x200B;](https://experience.adobe.com/#/@llmapps/llm-apps/)を開き、**[!UICONTROL アプリの作成]**&#x200B;を選択します。
 2. **[!UICONTROL LLM アプリ名]**&#x200B;とオプションの説明を入力します。
 3. **[!UICONTROL Analytics領域]**&#x200B;を選択します。
 
@@ -92,7 +92,7 @@ Adobe LLM アプリ [!DNL GitHub] アプリは、[!DNL LLM Apps]に選択した�
 1. **[!UICONTROL Boilerplate Repository]**&#x200B;で、組織と空のハンドラーリポジトリを選択します。
 2. **[!UICONTROL EDS リポジトリ]**&#x200B;で、組織と空のEDS リポジトリを選択します。
 
-   ![ マイアプリのビルド — GitHub組織、Boilerplate リポジトリ、およびEDS リポジトリを選択](/help/assets/guide-onboarding-agent/repos-selected.png)
+   ![&#x200B; マイアプリのビルド — GitHub組織、Boilerplate リポジトリ、およびEDS リポジトリを選択](/help/assets/guide-onboarding-agent/repos-selected.png)
 
 3. 「**[!UICONTROL 利用条件]**」で、「**[!UICONTROL Adobe Developer利用条件に同意します]**」を確認します。
 4. 「**[!UICONTROL アプリを作成]**」を選択します。
@@ -129,7 +129,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 
 左から&#x200B;**[!UICONTROL アクション]** ページに移動します。 アクションページには、**担当者がweb サイトを分析してアプリを生成する際に、会話エクスペリエンスのアクションを検出する**&#x200B;と表示されます。 通常、生成には約15分かかります。 このページを離れて、後で戻ることができます。
 
-![ アクション – レコメンデーションの生成](/help/assets/guide-onboarding-agent/actions-generating.png)
+![&#x200B; アクション – レコメンデーションの生成](/help/assets/guide-onboarding-agent/actions-generating.png)
 
 生成中、[!DNL LLM Apps]:
 
@@ -145,7 +145,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 
 生成が完了すると、アクション ページには、生成されたアクションとウィジェットのプレビューが表示されます。 各アクションには&#x200B;**[!UICONTROL AIが生成したアクションがあり、レビュー]** バッジが必要です。
 
-![ アクション – レビュー用に生成されたアクション ](/help/assets/guide-onboarding-agent/actions-ready-for-review.png)
+![&#x200B; アクション – レビュー用に生成されたアクション &#x200B;](/help/assets/guide-onboarding-agent/actions-ready-for-review.png)
 
 各アクションについて：
 
@@ -158,7 +158,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 
 すべてのアクションを確認したら、**[!UICONTROL アプリページに移動]**&#x200B;を選択します。
 
-![ アクション – 生成されたすべてのアクションがレビューされました](/help/assets/guide-onboarding-agent/actions-reviewed.png)
+![&#x200B; アクション – 生成されたすべてのアクションがレビューされました](/help/assets/guide-onboarding-agent/actions-reviewed.png)
 
 >[!NOTE]
 >
@@ -171,17 +171,17 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 3. ターゲット環境として&#x200B;**[!UICONTROL ステージ]**&#x200B;を選択します。
 4. 「**[!UICONTROL デプロイ]**」を選択します。
 
-![ デプロイ – ステージ環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
+![&#x200B; デプロイ – ステージ環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
 
 [!DNL LLM Apps]がアプリを準備、ビルド、公開するのを待ちます。
 
-![ デプロイ – 実行中のデプロイメントパイプライン ](/help/assets/guide-onboarding-agent/deploy-running.png)
+![&#x200B; デプロイ – 実行中のデプロイメントパイプライン &#x200B;](/help/assets/guide-onboarding-agent/deploy-running.png)
 
-![ デプロイ – ステージングのデプロイメントが成功しました](/help/assets/guide-onboarding-agent/deploy-successful.png)
+![&#x200B; デプロイ – ステージングのデプロイメントが成功しました](/help/assets/guide-onboarding-agent/deploy-successful.png)
 
 デプロイメント後、**[!UICONTROL アプリのテスト]** セクションにステージング MCP サーバーのURLが表示されます。 「**[!UICONTROL URLをコピー]**」を選択します。
 
-![ アプリの詳細 – ステージング MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
+![&#x200B; アプリの詳細 – ステージング MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
 
 ## [!DNL ChatGPT]でテスト
 
@@ -205,7 +205,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 1. **システムを接続** — [生成された各ハンドラー](/help/guides/customize-handler.md)をカスタマイズして、サンプルデータをAPIまたはデータソースへの呼び出しに置き換えます。
 2. **資格情報を保護** — API URLと資格情報を管理されたランタイム設定に保存します。ソースコードやウィジェット JavaScriptには保存されません。
 3. **データの検証** — アクションの引数とAPI応答を検証し、リクエストのタイムアウトを追加し、安全なエラーメッセージを返します。
-4. **ウィジェットを更新** – 各ウィジェットをハンドラーの`structuredContent`に合わせてから、ブランディングとアクセシビリティの要件を適用します。 [生成されたウィジェットのカスタマイズ ](/help/guides/widgets.md)を参照してください。
+4. **ウィジェットを更新** – 各ウィジェットをハンドラーの`structuredContent`に合わせてから、ブランディングとアクセシビリティの要件を適用します。 [生成されたウィジェットのカスタマイズ &#x200B;](/help/guides/widgets.md)を参照してください。
 5. **ハンドラーをテスト** – 有効な入力、無効な入力、空の結果、API エラー、およびウィジェットで想定されるデータ形状をカバーします。
 6. **ステージ**&#x200B;で検証 – [!DNL ChatGPT] プラグインを使用して、すべてのアクションを再デプロイしてテストします。
 7. **実稼動環境へのデプロイ** — ステージテストが成功した後、実稼動環境にデプロイし、実稼動環境のMCP サーバーURLを使用してプラグインを作成または更新します。
