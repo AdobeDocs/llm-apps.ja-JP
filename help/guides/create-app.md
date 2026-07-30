@@ -1,9 +1,9 @@
 ---
 title: 最初のLLM アプリを自動的に作成
 description: web サイトからAdobe LLM アプリを作成し、生成されたアクションを確認してデプロイし、ChatGPTなどのサポートされているLLM プラットフォームでテストします。
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: f91bb73a39cc5aacf44979ee55dd0ab5f69d4c81
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1272'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
-このプラットフォームにより、web サイトがアプリの有効な基盤になります。 アクションの提案、ハンドラーのコードとテストの作成、EDS ウィジェットの作成、生成されたファイルの所有している2つの[!DNL GitHub] リポジトリへの送信を行います。
+このプラットフォームにより、web サイトが機能的なアプリに変わります。 アクションの提案、ハンドラーのコードとテストの作成、EDS ウィジェットの作成、生成されたファイルの所有している2つの[!DNL GitHub] リポジトリへの送信を行います。
 
 生成には約15分かかります。 このチュートリアルの最後に、サポートされている[!DNL ChatGPT]などのLLM プラットフォームでテストできるデプロイ済みアプリがあります。
 
@@ -103,6 +103,11 @@ Adobe LLM アプリ [!DNL GitHub] アプリは、[!DNL LLM Apps]に選択した�
 
 1. EDS リポジトリの下のメッセージで、**[!UICONTROL AEM Code Syncのインストール]**&#x200B;を選択します。
 2. [!DNL GitHub]にAEM Code Syncをインストールし、EDS リポジトリへのアクセス権を付与します。
+
+   **AEM Code Sync registered**&#x200B;確認ページの&#x200B;**[!UICONTROL Site users]**&#x200B;で、**[!UICONTROL 以上のAdd user]**&#x200B;を選択し、**[!UICONTROL 管理者]**&#x200B;の役割で[!DNL LLM Apps]にサインインするために使用する電子メールアドレスを追加します。 次に、ページの下部にある「**[!UICONTROL 設定を完了]**」を選択します。
+
+   ![AEM Code Syncが登録されました – 管理者ロールを持つサイトユーザーとして自分自身を追加してください](/help/assets/guide-onboarding-agent/aem-code-sync-site-users-admin.png)
+
 3. LLM アプリを作成ダイアログに戻ります。
 
 ![Create LLM App – 空のEDS リポジトリが初期化され、AEM Code Syncが必要](/help/assets/guide-onboarding-agent/install-aem-code-sync.png)
@@ -191,7 +196,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 
 ![ChatGPT — LLM アプリのプラグイン応答を生成](/help/assets/guide-onboarding-agent/chatgpt-generated-app.png)
 
-これで、エンドツーエンドの有効な基礎モードができました。
+これで、完全に機能し、動作するエンドツーエンドのアプリができました。
 
 ## アプリを本番環境で利用できるようにします
 

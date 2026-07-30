@@ -1,10 +1,10 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリの概要、仕組み、導入に必要な機能をご紹介します。
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: 1d677c4e21963d1b126abb6287fccedfc1933c1a
 workflow-type: tm+mt
-source-wordcount: '970'
-ht-degree: 1%
+source-wordcount: '938'
+ht-degree: 2%
 
 ---
 
@@ -109,23 +109,20 @@ Adobe IMS組織は[[!DNL App Builder]](https://developer.adobe.com/app-builder/d
 
 ### [!DNL GitHub]
 
-次の操作を実行できる[!DNL GitHub] アカウントが必要です：
+**can**&#x200B;が次の操作を行うには、[!DNL GitHub] アカウントが必要です。 これは権限の確認です。まだ何もインストールしないでください。
 
 - アカウントまたは組織内で、アプリを所有する2つのリポジトリを作成します。
-- Adobe LLM アプリ [!DNL GitHub] アプリをインストールするか、インストールをリクエストします。
-- EDS リポジトリ用のAEM Code Syncをインストールするか、インストールをリクエストします。
+- [!DNL GitHub] アプリをセットアップ プロセスの後半でインストールするか、それらを承認できる組織管理者を設定します。
 
 リポジトリ作成アクセス権を確認するには、[github.com/new](https://github.com/new)を開き、目的のアカウントまたは組織が&#x200B;**所有者**&#x200B;の下に表示されていることを確認します。
 
 ![GitHub — リポジトリ所有者を選択](/help/assets/overview/github-repo-owner-dropdown.png)
 
-組織が所有するリポジトリの場合、組織管理者は[!DNL GitHub] アプリを承認する必要がある場合があります。 各アプリにLLM アプリで使用されるリポジトリへのアクセス権のみを付与します。
+組織が所有するリポジトリの場合、組織管理者は[!DNL GitHub] アプリを承認する必要がある場合があります。
 
-### AEM SitesとEdge Delivery Services
-
-Edge Delivery Services（EDS）を含むAdobe Experience Manager Sites ライセンスが必要です。 ウィジェットリポジトリから作成されたEDS サイトへの管理者アクセス権も必要です。
-
-アクセスを確認するには、[EDS ユーザー管理ツール &#x200B;](https://tools.aem.live/tools/user-admin/index.html)を開き、組織名を入力し、ユーザーを取得します。 アカウントに&#x200B;**管理者** バッジがあることを確認してください。
+>[!NOTE]
+>
+>これは権限チェックで、設定ステップではありません。 まだ[!DNL GitHub] アプリをインストールしないでください – [最初のアプリを自動的に作成する](/help/guides/create-app.md)では、作成した正確なリポジトリを対象として、必要な時点で各アプリをインストールする手順を説明します。
 
 ### Web サイト
 
