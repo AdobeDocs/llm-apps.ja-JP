@@ -1,9 +1,9 @@
 ---
 title: 最初のLLM アプリを自動的に作成
 description: web サイトからAdobe LLM アプリを作成し、生成されたアクションを確認してデプロイし、ChatGPTなどのサポートされているLLM プラットフォームでテストします。
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: f91bb73a39cc5aacf44979ee55dd0ab5f69d4c81
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1272'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
-このプラットフォームにより、web サイトがアプリの有効な基盤になります。 アクションの提案、ハンドラーのコードとテストの作成、EDS ウィジェットの作成、生成されたファイルの所有している2つの[!DNL GitHub] リポジトリへの送信を行います。
+このプラットフォームにより、web サイトが機能的なアプリに変わります。 アクションの提案、ハンドラーのコードとテストの作成、EDS ウィジェットの作成、生成されたファイルの所有している2つの[!DNL GitHub] リポジトリへの送信を行います。
 
 生成には約15分かかります。 このチュートリアルの最後に、サポートされている[!DNL ChatGPT]などのLLM プラットフォームでテストできるデプロイ済みアプリがあります。
 
@@ -46,7 +46,7 @@ README、`.gitignore`、またはライセンスを使用してリポジトリ�
 
 ## アプリを起動
 
-1. [Adobe LLM アプリ &#x200B;](https://experience.adobe.com/#/@llmapps/llm-apps/)を開き、**[!UICONTROL アプリの作成]**&#x200B;を選択します。
+1. [Adobe LLM アプリ ](https://experience.adobe.com/#/@llmapps/llm-apps/)を開き、**[!UICONTROL アプリの作成]**&#x200B;を選択します。
 2. **[!UICONTROL LLM アプリ名]**&#x200B;とオプションの説明を入力します。
 3. **[!UICONTROL Analytics領域]**&#x200B;を選択します。
 
@@ -92,7 +92,7 @@ Adobe LLM アプリ [!DNL GitHub] アプリは、[!DNL LLM Apps]に選択した�
 1. **[!UICONTROL Boilerplate Repository]**&#x200B;で、組織と空のハンドラーリポジトリを選択します。
 2. **[!UICONTROL EDS リポジトリ]**&#x200B;で、組織と空のEDS リポジトリを選択します。
 
-   ![&#x200B; マイアプリのビルド — GitHub組織、Boilerplate リポジトリ、およびEDS リポジトリを選択](/help/assets/guide-onboarding-agent/repos-selected.png)
+   ![ マイアプリのビルド — GitHub組織、Boilerplate リポジトリ、およびEDS リポジトリを選択](/help/assets/guide-onboarding-agent/repos-selected.png)
 
 3. 「**[!UICONTROL 利用条件]**」で、「**[!UICONTROL Adobe Developer利用条件に同意します]**」を確認します。
 4. 「**[!UICONTROL アプリを作成]**」を選択します。
@@ -103,6 +103,11 @@ Adobe LLM アプリ [!DNL GitHub] アプリは、[!DNL LLM Apps]に選択した�
 
 1. EDS リポジトリの下のメッセージで、**[!UICONTROL AEM Code Syncのインストール]**&#x200B;を選択します。
 2. [!DNL GitHub]にAEM Code Syncをインストールし、EDS リポジトリへのアクセス権を付与します。
+
+   **AEM Code Sync registered**&#x200B;確認ページの&#x200B;**[!UICONTROL Site users]**&#x200B;で、**[!UICONTROL 以上のAdd user]**&#x200B;を選択し、**[!UICONTROL 管理者]**&#x200B;の役割で[!DNL LLM Apps]にサインインするために使用する電子メールアドレスを追加します。 次に、ページの下部にある「**[!UICONTROL 設定を完了]**」を選択します。
+
+   ![AEM Code Syncが登録されました – 管理者ロールを持つサイトユーザーとして自分自身を追加してください](/help/assets/guide-onboarding-agent/aem-code-sync-site-users-admin.png)
+
 3. LLM アプリを作成ダイアログに戻ります。
 
 ![Create LLM App – 空のEDS リポジトリが初期化され、AEM Code Syncが必要](/help/assets/guide-onboarding-agent/install-aem-code-sync.png)
@@ -124,7 +129,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 
 左から&#x200B;**[!UICONTROL アクション]** ページに移動します。 アクションページには、**担当者がweb サイトを分析してアプリを生成する際に、会話エクスペリエンスのアクションを検出する**&#x200B;と表示されます。 通常、生成には約15分かかります。 このページを離れて、後で戻ることができます。
 
-![&#x200B; アクション – レコメンデーションの生成](/help/assets/guide-onboarding-agent/actions-generating.png)
+![ アクション – レコメンデーションの生成](/help/assets/guide-onboarding-agent/actions-generating.png)
 
 生成中、[!DNL LLM Apps]:
 
@@ -140,7 +145,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 
 生成が完了すると、アクション ページには、生成されたアクションとウィジェットのプレビューが表示されます。 各アクションには&#x200B;**[!UICONTROL AIが生成したアクションがあり、レビュー]** バッジが必要です。
 
-![&#x200B; アクション – レビュー用に生成されたアクション &#x200B;](/help/assets/guide-onboarding-agent/actions-ready-for-review.png)
+![ アクション – レビュー用に生成されたアクション ](/help/assets/guide-onboarding-agent/actions-ready-for-review.png)
 
 各アクションについて：
 
@@ -153,7 +158,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 
 すべてのアクションを確認したら、**[!UICONTROL アプリページに移動]**&#x200B;を選択します。
 
-![&#x200B; アクション – 生成されたすべてのアクションがレビューされました](/help/assets/guide-onboarding-agent/actions-reviewed.png)
+![ アクション – 生成されたすべてのアクションがレビューされました](/help/assets/guide-onboarding-agent/actions-reviewed.png)
 
 >[!NOTE]
 >
@@ -166,17 +171,17 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 3. ターゲット環境として&#x200B;**[!UICONTROL ステージ]**&#x200B;を選択します。
 4. 「**[!UICONTROL デプロイ]**」を選択します。
 
-![&#x200B; デプロイ – ステージ環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
+![ デプロイ – ステージ環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
 
 [!DNL LLM Apps]がアプリを準備、ビルド、公開するのを待ちます。
 
-![&#x200B; デプロイ – 実行中のデプロイメントパイプライン &#x200B;](/help/assets/guide-onboarding-agent/deploy-running.png)
+![ デプロイ – 実行中のデプロイメントパイプライン ](/help/assets/guide-onboarding-agent/deploy-running.png)
 
-![&#x200B; デプロイ – ステージングのデプロイメントが成功しました](/help/assets/guide-onboarding-agent/deploy-successful.png)
+![ デプロイ – ステージングのデプロイメントが成功しました](/help/assets/guide-onboarding-agent/deploy-successful.png)
 
 デプロイメント後、**[!UICONTROL アプリのテスト]** セクションにステージング MCP サーバーのURLが表示されます。 「**[!UICONTROL URLをコピー]**」を選択します。
 
-![&#x200B; アプリの詳細 – ステージング MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
+![ アプリの詳細 – ステージング MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
 
 ## [!DNL ChatGPT]でテスト
 
@@ -191,7 +196,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 
 ![ChatGPT — LLM アプリのプラグイン応答を生成](/help/assets/guide-onboarding-agent/chatgpt-generated-app.png)
 
-これで、エンドツーエンドの有効な基礎モードができました。
+これで、完全に機能し、動作するエンドツーエンドのアプリができました。
 
 ## アプリを本番環境で利用できるようにします
 
@@ -200,7 +205,7 @@ EDS サイトの管理者でなければなりません。 ダイアログで、
 1. **システムを接続** — [生成された各ハンドラー](/help/guides/customize-handler.md)をカスタマイズして、サンプルデータをAPIまたはデータソースへの呼び出しに置き換えます。
 2. **資格情報を保護** — API URLと資格情報を管理されたランタイム設定に保存します。ソースコードやウィジェット JavaScriptには保存されません。
 3. **データの検証** — アクションの引数とAPI応答を検証し、リクエストのタイムアウトを追加し、安全なエラーメッセージを返します。
-4. **ウィジェットを更新** – 各ウィジェットをハンドラーの`structuredContent`に合わせてから、ブランディングとアクセシビリティの要件を適用します。 [生成されたウィジェットのカスタマイズ &#x200B;](/help/guides/widgets.md)を参照してください。
+4. **ウィジェットを更新** – 各ウィジェットをハンドラーの`structuredContent`に合わせてから、ブランディングとアクセシビリティの要件を適用します。 [生成されたウィジェットのカスタマイズ ](/help/guides/widgets.md)を参照してください。
 5. **ハンドラーをテスト** – 有効な入力、無効な入力、空の結果、API エラー、およびウィジェットで想定されるデータ形状をカバーします。
 6. **ステージ**&#x200B;で検証 – [!DNL ChatGPT] プラグインを使用して、すべてのアクションを再デプロイしてテストします。
 7. **実稼動環境へのデプロイ** — ステージテストが成功した後、実稼動環境にデプロイし、実稼動環境のMCP サーバーURLを使用してプラグインを作成または更新します。
