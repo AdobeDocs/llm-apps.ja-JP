@@ -2,10 +2,10 @@
 user-guide-title: LLM アプリガイド
 breadcrumb-title: LLM アプリ
 user-guide-description: Adobe LLM アプリを使用して、ChatGPTなどのサポートされているLLM プラットフォームでインタラクティブなエクスペリエンスを構築、カスタマイズ、デプロイ、テストします。
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: e066f66b37914e2f747176e865e26dcc074bff20
 workflow-type: tm+mt
-source-wordcount: '100'
-ht-degree: 4%
+source-wordcount: '106'
+ht-degree: 3%
 
 ---
 
@@ -13,6 +13,7 @@ ht-degree: 4%
 # [!DNL LLM Apps] ガイド {#using}
 
 + [概要](/help/overview/overview.md)
++ [アプリを連携する方法](/help/overview/app-architecture.md)
 + 最初のアプリをビルドして起動する {#build-first-app}
   + [最初のアプリを自動的に作成](/help/guides/create-app.md)
 + 生成されたアプリのカスタマイズ {#customize-generated-app}

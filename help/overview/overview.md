@@ -1,10 +1,10 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリの概要、仕組み、導入に必要な機能をご紹介します。
-source-git-commit: 1d677c4e21963d1b126abb6287fccedfc1933c1a
+source-git-commit: e066f66b37914e2f747176e865e26dcc074bff20
 workflow-type: tm+mt
-source-wordcount: '938'
-ht-degree: 2%
+source-wordcount: '973'
+ht-degree: 1%
 
 ---
 
@@ -60,36 +60,22 @@ LLMのインタラクションは、従来の検索とは根本的に異なり�
 
 ## 仕組み
 
-次の図は、UIでのアプリの定義から、LLM プラットフォームでの結果の確認まで、各要素の組み合わせを示しています。
+大まかに言うと、3つのことが起こります。つまり、[!DNL LLM Apps]さんにブランドを伝えることです
+AI アシスタントがアクションに移せるように支援し
+顧客はチャット内で回答を得ることができます。
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                      LLM Apps UI                            │
-│  ┌──────────┐   ┌──────────┐   ┌───────────────────────┐    │
-│  │   App    │──▶│ Actions  │──▶│ Metadata + Widget cfg │    │
-│  └──────────┘   └──────────┘   └───────────┬───────────┘    │
-└─────────────────────────────────────────── │ ────────────-──┘
-                                             │ deploy
-                                             ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  Adobe I/O Runtime                          │
-│               MCP Server (auto-generated)                   │
-│  ┌───────────────┐ ┌──────────────────┐ ┌───────────────┐   │
-│  │ search-       │ │ get-product-     │ │ find-where-   │   │
-│  │ products      │ │ details          │ │ to-buy        │   │
-│  └───────────────┘ └──────────────────┘ └───────────────┘   │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ MCP protocol
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                        ChatGPT                              │
-│  Conversation                                               │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │  EDS Widget                                           │  │
-│  │  Product carousel, store locator, detail card ...     │  │
-│  └───────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────┐          ┌────────────────────┐          ┌────────────────────┐
+│     Your brand     │          │      LLM Apps      │          │    AI assistant    │
+│                    │          │                    │          │                    │
+│   What you offer   │   ───▶   │  Turns that into   │   ───▶   │ Answers with your  │
+│  and how you help  │          │    something AI    │          │    brand, live     │
+│  customers today   │          │     can act on     │          │  inside the chat   │
+└────────────────────┘          └────────────────────┘          └────────────────────┘
 ```
+
+技術的な詳細を確認する：どのような要素を構築し、どのように組み合わせるのかを確認します
+[ アプリの接続方法](/help/overview/app-architecture.md)を参照してください。
 
 ## 要件 {#requirements}
 
@@ -105,7 +91,7 @@ Adobe IMS組織は[[!DNL App Builder]](https://developer.adobe.com/app-builder/d
 
 **制限付きアクセス**&#x200B;が表示された場合は、IMS組織管理者に連絡し、開発者の役割をリクエストしてください。
 
-![Adobe Developer Console – 制限付きアクセス メッセージ &#x200B;](/help/assets/overview/dev-console-access-denied.png)
+![Adobe Developer Console – 制限付きアクセス メッセージ ](/help/assets/overview/dev-console-access-denied.png)
 
 ### [!DNL GitHub]
 
@@ -132,7 +118,7 @@ Adobe IMS組織は[[!DNL App Builder]](https://developer.adobe.com/app-builder/d
 
 ### テスト用の[!DNL ChatGPT]または[!DNL Claude]
 
-開始チュートリアルを完了するには、開発者モードが有効になっているサポートされている[!DNL ChatGPT] プランまたはカスタムコネクタが有効になっているサポートされている[!DNL Claude] プランを使用します。 Workspaceまたは組織の管理者は、アクセスを制限できます。 [ChatGPTでのテスト &#x200B;](/help/guides/test-in-chatgpt.md#plan-requirements)または[&#x200B; クロードでのテスト &#x200B;](/help/guides/test-in-claude.md#plan-requirements)を参照してください。
+開始チュートリアルを完了するには、開発者モードが有効になっているサポートされている[!DNL ChatGPT] プランまたはカスタムコネクタが有効になっているサポートされている[!DNL Claude] プランを使用します。 Workspaceまたは組織の管理者は、アクセスを制限できます。 [ChatGPTでのテスト ](/help/guides/test-in-chatgpt.md#plan-requirements)または[ クロードでのテスト ](/help/guides/test-in-claude.md#plan-requirements)を参照してください。
 
 ## ジャーニーの選択 {#choose-your-journey}
 
@@ -145,7 +131,7 @@ Adobe IMS組織は[[!DNL App Builder]](https://developer.adobe.com/app-builder/d
 プラットフォームがアプリを自動的に作成し、サンプル動作を置き換える場合は、このジャーニーを選択します。
 
 1. [生成されたハンドラー](/help/guides/customize-handler.md)をカスタマイズして、APIを接続し、各アクションによって返されるデータを定義します。
-2. [生成されたウィジェット &#x200B;](/help/guides/widgets.md)をカスタマイズして、そのデータを使用し、インタラクションとデザインを適用します。
+2. [生成されたウィジェット ](/help/guides/widgets.md)をカスタマイズして、そのデータを使用し、インタラクションとデザインを適用します。
 
 ### &#x200B;3. 新しいアクションを最初から追加
 
@@ -155,5 +141,5 @@ Adobe IMS組織は[[!DNL App Builder]](https://developer.adobe.com/app-builder/d
 
 既にEDS サイトを持っているか、アプリを自動的に構築していない場合は、[既存のEDS プロジェクトを接続](/help/guides/bring-your-own-eds.md)します。
 
-すべてのジャーニーでは、共有[&#x200B; デプロイメント &#x200B;](/help/guides/deploy-your-app.md) ステップを使用し、次に[ChatGPT プラグイン テスト &#x200B;](/help/guides/test-in-chatgpt.md)または[Claude コネクタテスト &#x200B;](/help/guides/test-in-claude.md)を使用します。
+すべてのジャーニーでは、共有[ デプロイメント ](/help/guides/deploy-your-app.md) ステップを使用し、次に[ChatGPT プラグイン テスト ](/help/guides/test-in-chatgpt.md)または[Claude コネクタテスト ](/help/guides/test-in-claude.md)を使用します。
 
