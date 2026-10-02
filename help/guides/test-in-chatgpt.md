@@ -1,13 +1,11 @@
 ---
 title: ChatGPT プラグインとしてLLM アプリをテストする
 description: Adobe LLM Apps MCP サーバーのURLからChatGPT プラグインを作成し、会話でテストします。
-source-git-commit: b7199fbb387d91a5c77deac47a2bc883381931c1
+source-git-commit: fd41dbcabc4db0cae766de19cb042d7c85d8b7aa
 workflow-type: tm+mt
-source-wordcount: '335'
+source-wordcount: '378'
 ht-degree: 1%
-
 ---
-
 
 # LLM アプリを[!DNL ChatGPT] プラグインとしてテストする {#test-in-chatgpt}
 
@@ -54,6 +52,11 @@ ht-degree: 1%
    - **[!UICONTROL 説明]** — オプション。
    - **[!UICONTROL 接続]** — **[!UICONTROL サーバーURL]**&#x200B;を選択し、MCP サーバーURLを貼り付けます。
    - **[!UICONTROL 認証]** — **[!UICONTROL 認証なし]**&#x200B;を選択します。
+
+   >[!NOTE]
+   >
+   >アプリ上のすべてのアクションが公開されている間、**[!UICONTROL 認証]**&#x200B;は適用されません。 エンドユーザー認証を有効にした場合、すべてのアクションが&#x200B;**[!UICONTROL 必須]**&#x200B;に設定されている場合は&#x200B;**[!UICONTROL OAuth]**&#x200B;を選択し、その他の組み合わせについては&#x200B;**[!UICONTROL 混在]**&#x200B;を選択します。独自のID プロバイダーでエンドユーザーを認証する[を参照してください](/help/guides/authentication.md)。
+
 4. 「**[!UICONTROL I understand and want to continue]**」を選択します。
 5. 「**[!UICONTROL 作成]**」を選択します。
 

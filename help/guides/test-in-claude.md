@@ -1,13 +1,11 @@
 ---
 title: Claude コネクタとしてのLLM アプリのテスト
 description: Adobe LLM Apps MCP サーバーのURLからClaude コネクタを作成し、会話でテストします。
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: fd41dbcabc4db0cae766de19cb042d7c85d8b7aa
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '448'
 ht-degree: 1%
-
 ---
-
 
 # LLM アプリを[!DNL Claude] コネクタとしてテストします {#test-in-claude}
 
@@ -20,6 +18,8 @@ ht-degree: 1%
 デプロイメント後、LLM アプリはMCP サーバーのURLを公開します。 このURLを[!DNL Claude]にカスタムコネクタとして追加し、生成されたアクションとウィジェットをテストします。
 
 これは、アプリの構築、カスタマイズ、拡張の後の最後の検証ステップです。
+
+このガイドでは、アプリのアクションが公開されていることを前提としています。 アプリでエンドユーザー認証が有効になっている場合、[!DNL Claude]はコネクタを使用する前にアプリのID プロバイダーでログインするよう求め、ログインするまでツールは表示されません。 [独自のID プロバイダーでエンドユーザーを認証する](/help/guides/authentication.md)を参照してください。
 
 ## プランの要件
 

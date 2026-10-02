@@ -2,13 +2,11 @@
 user-guide-title: LLM アプリガイド
 breadcrumb-title: LLM アプリ
 user-guide-description: Adobe LLM アプリを使用して、ChatGPTなどのサポートされているLLM プラットフォームでインタラクティブなエクスペリエンスを構築、カスタマイズ、デプロイ、テストします。
-source-git-commit: b1d44a4911e1169b53ff01adb695142a98673c00
+source-git-commit: fd41dbcabc4db0cae766de19cb042d7c85d8b7aa
 workflow-type: tm+mt
-source-wordcount: '106'
-ht-degree: 3%
-
+source-wordcount: '119'
+ht-degree: 5%
 ---
-
 
 # [!DNL LLM Apps] ガイド {#using}
 
@@ -23,6 +21,8 @@ ht-degree: 3%
   + [アクションをゼロから作成](/help/guides/create-action.md)
 + 既存のEDS プロジェクトの接続 {#connect-existing-eds}
   + [独自のEDS プロジェクトを作成する](/help/guides/bring-your-own-eds.md)
++ エンドユーザーの認証 {#authenticate-end-users}
+  + [独自のID プロバイダーを使用したエンドユーザーの認証](/help/guides/authentication.md)
 + デプロイとテスト {#deploy-and-test}
   + [アプリをデプロイ](/help/guides/deploy-your-app.md)
   + [ChatGPT プラグインとしてLLM アプリをテストする](/help/guides/test-in-chatgpt.md)
@@ -30,4 +30,5 @@ ht-degree: 3%
 + 参照 {#reference}
   + [ローカルハンドラーの開発とテスト](/help/reference/development.md)
   + [アクションフィールドとウィジェットフィールド](/help/reference/reference-docs.md)
+  + [認証リファレンス](/help/reference/authentication-reference.md)
   + [トラブルシューティング](/help/reference/troubleshooting.md)
