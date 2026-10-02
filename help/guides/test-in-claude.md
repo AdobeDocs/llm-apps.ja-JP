@@ -1,13 +1,11 @@
 ---
 title: Claude コネクタとしてのLLM アプリのテスト
 description: Adobe LLM Apps MCP サーバーのURLからClaude コネクタを作成し、会話でテストします。
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: fd41dbcabc4db0cae766de19cb042d7c85d8b7aa
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '448'
 ht-degree: 1%
-
 ---
-
 
 # LLM アプリを[!DNL Claude] コネクタとしてテストします {#test-in-claude}
 
@@ -20,6 +18,8 @@ ht-degree: 1%
 デプロイメント後、LLM アプリはMCP サーバーのURLを公開します。 このURLを[!DNL Claude]にカスタムコネクタとして追加し、生成されたアクションとウィジェットをテストします。
 
 これは、アプリの構築、カスタマイズ、拡張の後の最後の検証ステップです。
+
+このガイドでは、アプリのアクションが公開されていることを前提としています。 アプリでエンドユーザー認証が有効になっている場合、[!DNL Claude]はコネクタを使用する前にアプリのID プロバイダーでログインするよう求め、ログインするまでツールは表示されません。 [独自のID プロバイダーでエンドユーザーを認証する](/help/guides/authentication.md)を参照してください。
 
 ## プランの要件
 
@@ -41,7 +41,7 @@ ht-degree: 1%
    - **[!UICONTROL リモート MCP サーバーのURL]** — コピーしたMCP サーバーのURL。
 3. 「**[!UICONTROL 追加]**」を選択します。
 
-   ![&#x200B; クラウド – カスタムコネクタダイアログを追加](/help/assets/guide-test-claude/claude-add-custom-connector.png)
+   ![ クラウド – カスタムコネクタダイアログを追加](/help/assets/guide-test-claude/claude-add-custom-connector.png)
 
 >[!NOTE]
 >
@@ -73,5 +73,5 @@ ht-degree: 1%
 
 ## 次の手順
 
-- [生成されたウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)。
+- [生成されたウィジェットをカスタマイズ ](/help/guides/widgets.md)。
 - [最初からアクションを作成](/help/guides/create-action.md)。

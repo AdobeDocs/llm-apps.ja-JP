@@ -1,13 +1,11 @@
 ---
 title: ChatGPT プラグインとしてLLM アプリをテストする
 description: Adobe LLM Apps MCP サーバーのURLからChatGPT プラグインを作成し、会話でテストします。
-source-git-commit: b7199fbb387d91a5c77deac47a2bc883381931c1
+source-git-commit: fd41dbcabc4db0cae766de19cb042d7c85d8b7aa
 workflow-type: tm+mt
-source-wordcount: '335'
+source-wordcount: '378'
 ht-degree: 1%
-
 ---
-
 
 # LLM アプリを[!DNL ChatGPT] プラグインとしてテストする {#test-in-chatgpt}
 
@@ -29,10 +27,10 @@ ht-degree: 1%
 
 [!DNL ChatGPT] に移動します。
 
-1. **[!UICONTROL 設定] → [!UICONTROL &#x200B; セキュリティとログイン]**&#x200B;を開きます。
+1. **[!UICONTROL 設定] → [!UICONTROL  セキュリティとログイン]**&#x200B;を開きます。
 2. **[!UICONTROL 開発者モード]**&#x200B;を有効にします。
 
-プラグインページのプラスボタンは、開発者モードが有効になった後にのみMCP-backed プラグインを作成します。 [ChatGPT開発者モード &#x200B;](https://developers.openai.com/api/docs/guides/developer-mode)を参照してください。
+プラグインページのプラスボタンは、開発者モードが有効になった後にのみMCP-backed プラグインを作成します。 [ChatGPT開発者モード ](https://developers.openai.com/api/docs/guides/developer-mode)を参照してください。
 
 ## MCP サーバーのURLをコピー
 
@@ -47,13 +45,18 @@ ht-degree: 1%
 1. [chatgpt.com/plugins](https://chatgpt.com/plugins)を開きます。
 2. 「**[!UICONTROL プラグイン]**」タブで、検索フィールドの横にある「**+**」を選択します。
 
-   ![ChatGPT — プラグインページ &#x200B;](/help/assets/guide-onboarding-agent/chatgpt-plugins-page.png)
+   ![ChatGPT — プラグインページ ](/help/assets/guide-onboarding-agent/chatgpt-plugins-page.png)
 
 3. **[!UICONTROL 新しいプラグイン]**&#x200B;で、次のように入力します。
    - **[!UICONTROL Name]** — プラグイン名。
    - **[!UICONTROL 説明]** — オプション。
    - **[!UICONTROL 接続]** — **[!UICONTROL サーバーURL]**&#x200B;を選択し、MCP サーバーURLを貼り付けます。
    - **[!UICONTROL 認証]** — **[!UICONTROL 認証なし]**&#x200B;を選択します。
+
+   >[!NOTE]
+   >
+   >アプリ上のすべてのアクションが公開されている間、**[!UICONTROL 認証]**&#x200B;は適用されません。 エンドユーザー認証を有効にした場合、すべてのアクションが&#x200B;**[!UICONTROL 必須]**&#x200B;に設定されている場合は&#x200B;**[!UICONTROL OAuth]**&#x200B;を選択し、その他の組み合わせについては&#x200B;**[!UICONTROL 混在]**&#x200B;を選択します。独自のID プロバイダーでエンドユーザーを認証する[を参照してください](/help/guides/authentication.md)。
+
 4. 「**[!UICONTROL I understand and want to continue]**」を選択します。
 5. 「**[!UICONTROL 作成]**」を選択します。
 
@@ -80,5 +83,5 @@ ht-degree: 1%
 
 ## 次の手順
 
-- [生成されたウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)。
+- [生成されたウィジェットをカスタマイズ ](/help/guides/widgets.md)。
 - [最初からアクションを作成](/help/guides/create-action.md)。
