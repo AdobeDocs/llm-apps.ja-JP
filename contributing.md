@@ -19,7 +19,7 @@ ht-degree: 1%
 
 ## Contributor Guide Documentation
 
-[&#x200B; コントリビューターガイド &#x200B;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)を参照してください。
+[&#x200B; コントリビューターガイド &#x200B;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=ja)を参照してください。
 
 ## よくある質問と？
 
