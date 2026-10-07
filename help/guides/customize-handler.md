@@ -1,13 +1,11 @@
 ---
 title: 生成されたアクションハンドラーのカスタマイズ
 description: Adobe LLM Apps ハンドラーコントラクトを理解し、生成されたサンプルデータを置き換え、ハンドラー出力をウィジェットに合わせます。
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: 2d8f44f4f258bf217992131de9d9450a4023560d
 workflow-type: tm+mt
-source-wordcount: '541'
+source-wordcount: '537'
 ht-degree: 0%
-
 ---
-
 
 # 生成されたハンドラーのカスタマイズ {#customize-generated-handler}
 
@@ -15,7 +13,7 @@ ht-degree: 0%
 >
 >[!DNL Adobe LLM Apps]は現在Betaにいます。
 >
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、メールを`llm-apps-beta@adobe.com`様に送信してください。
 
 プラットフォームは、生成されるあらゆるアクションに対して動作するハンドラーを作成します。 ハンドラーは最初にサンプルデータを返すので、完全なエクスペリエンスをテストできます。
 
@@ -262,14 +260,14 @@ module.exports = async ({ query = '' } = {}) => {
 npm test
 ```
 
-ローカル MCP テストについては、[&#x200B; ローカルハンドラーの開発とテスト &#x200B;](/help/reference/development.md)を参照してください。
+ローカル MCP テストについては、[ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照してください。
 
 ## 変更をデプロイ
 
 1. ハンドラーの変更を確定してプッシュします。
 2. データシェイプが変更された場合は、ウィジェットを更新してプッシュします。
-3. [&#x200B; アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
-4. [ChatGPT プラグインをテスト &#x200B;](/help/guides/test-in-chatgpt.md)。
+3. [ アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
+4. [ChatGPT プラグインをテスト ](/help/guides/test-in-chatgpt.md)。
 5. ステージが成功したら、実稼動環境にデプロイします。
 
-次に、[生成されたウィジェットのカスタマイズ &#x200B;](/help/guides/widgets.md)を参照してください。
+次に、[生成されたウィジェットのカスタマイズ ](/help/guides/widgets.md)を参照してください。
