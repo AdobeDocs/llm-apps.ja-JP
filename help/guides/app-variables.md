@@ -62,7 +62,7 @@ npm install @adobe/llm-apps-runtime@latest
 3. **[!UICONTROL Workspace]**&#x200B;で、**[!UICONTROL ステージ]**&#x200B;または&#x200B;**[!UICONTROL 実稼動]**&#x200B;を選択します。
 4. 「**[!UICONTROL 追加]**」を選択します。
 
-   ![変数と秘密鍵 – 「追加」ボタン付きの空のステージワークスペース ](/help/assets/guide-app-variables/variables-empty.png)
+   ![変数と秘密鍵 – 「追加」ボタン付きの空のステージワークスペース &#x200B;](/help/assets/guide-app-variables/variables-empty.png)
 
 5. ダイアログで、次のように入力します。
    - **[!UICONTROL 名前]**: `GREETING_PREFIX`。
@@ -107,12 +107,12 @@ module.exports = async ({ name = 'there' } = {}, extra) => {
 >
 >変数は、アプリのアクションハンドラーでのみ使用できます。ウィジェットで自動的に使用できるのは&#x200B;**個ではなく**&#x200B;個です。
 
-ハンドラーの変更の準備ができたら、それらをコミットしてアプリのハンドラーリポジトリにプッシュします。 次のデプロイメントでは、最新のプッシュコードを使用します。 ハンドラーの編集について詳しくは、[生成ハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
+ハンドラーの変更の準備ができたら、それらをコミットしてアプリのハンドラーリポジトリにプッシュします。 次のデプロイメントでは、最新のプッシュコードを使用します。 ハンドラーの編集について詳しくは、[生成ハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
 
 #### ステップ 3：デプロイとテスト {#deploy-and-verify}
 
-1. [Workspace ]**で選択した環境と同じ環境にアプリ ](/help/guides/deploy-your-app.md)をデプロイします。**[!UICONTROL 
-2. `name`が`Ada`に設定されているサポートされているLLM プラットフォームからアクションを呼び出します。 [ChatGPT プラグインのテスト ](/help/guides/test-in-chatgpt.md)または[Claude コネクタのテスト ](/help/guides/test-in-claude.md)を参照してください。
+1. [Workspace ]&#x200B;**で選択した環境と同じ環境にアプリ (/help/guides/deploy-your-app.md)をデプロイします。**
+2. `name`が`Ada`に設定されているサポートされているLLM プラットフォームからアクションを呼び出します。 [ChatGPT プラグインのテスト &#x200B;](/help/guides/test-in-chatgpt.md)または[Claude コネクタのテスト &#x200B;](/help/guides/test-in-claude.md)を参照してください。
 3. 応答が`Good day, Ada!`であることを確認してください。 これにより、ハンドラーが設定された変数を読み取り、デフォルトの挨拶を上書きすることを確認します。
 
 他の環境を設定するには、**[!UICONTROL Workspace]**&#x200B;で選択し、適切な値で設定を繰り返してからデプロイして、その環境で検証します。
@@ -120,11 +120,11 @@ module.exports = async ({ name = 'there' } = {}, extra) => {
 
 >[!NOTE]
 >
->ステージと実稼動には&#x200B;**独立した設定**&#x200B;があります。 一方の環境の変更は、もう一方の環境に影響を与えることはありません&#x200B;**1}。**&#x200B;必要に応じて、両方の環境で同じ名前を使用し、それぞれに適切な値を選択します。
+>ステージと実稼動には&#x200B;**独立した設定**&#x200B;があります。 一方の環境の変更は、もう一方の環境に影響を与えることはありません&#x200B;**1&rbrace;。**&#x200B;必要に応じて、両方の環境で同じ名前を使用し、それぞれに適切な値を選択します。
 
 >[!TIP]
 >
->デプロイする前にローカルでテストするには、[ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照し、変数をローカルサーバーに渡します。
+>デプロイする前にローカルでテストするには、[&#x200B; ローカルハンドラーの開発とテスト &#x200B;](/help/reference/development.md)を参照し、変数をローカルサーバーに渡します。
 >
 >`node server/local.js --param 'LLMA_VARIABLE_NAMES=["GREETING_PREFIX"]' --param GREETING_PREFIX=Howdy`
 
