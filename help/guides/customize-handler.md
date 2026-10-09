@@ -1,9 +1,9 @@
 ---
 title: 生成されたアクションハンドラーのカスタマイズ
 description: Adobe LLM Apps ハンドラーコントラクトを理解し、生成されたサンプルデータを置き換え、ハンドラー出力をウィジェットに合わせます。
-source-git-commit: 2d8f44f4f258bf217992131de9d9450a4023560d
+source-git-commit: d9fb493c0b1708e4566e93a4f883e99bb4166e18
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '581'
 ht-degree: 0%
 ---
 
@@ -215,6 +215,8 @@ module.exports = async ({ query = '' } = {}) => {
 ```
 
 ハンドラー内の保護されたネットワーク アクセスを維持します。 Widget JavaScriptやソースコントロールにAPI資格情報を絶対に入力しない。
+
+サービス URLなど、ハンドラーが必要とする機密性のない設定については、[&#x200B; アプリ変数とシークレットの設定](/help/guides/app-variables.md)を参照してください。 変数は環境ごとに設定され、次のデプロイメントに適用されます。 シークレットのサポートはまだ利用できません。変数を使用してAPI資格情報を保存しないでください。
 
 ## 期待状態の処理
 

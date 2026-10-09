@@ -1,7 +1,7 @@
 ---
-source-git-commit: 03c918b1643d9c4e8ebee40fd67694acb6751a14
+source-git-commit: 41bd4b6239171c7a3af7dc6349eaa3cbb880449c
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1279'
 ht-degree: 0%
 ---
 # スクリーンショットマニフェスト
@@ -214,3 +214,51 @@ missはMCP サーバーのURLです。
 - 会話の途中のサインインプロンプト「**[!UICONTROL オプション]**」アクションが発生します。 プラットフォームが所有するUIは頻繁に変更され、既に散文で説明されています。
 
 ID プロバイダー独自のサインインページを取得しないでください。 このドキュメントでは言及していないベンダーを特定します。
+
+&#x200B;# アプリ変数ガイド
+
+出力ディレクトリ：`help/assets/guide-app-variables/`
+
+[app-variables.md](../../../help/guides/app-variables.md)が参照しています。
+
+**[!UICONTROL ステージ]** ワークスペースで、固定子変数`GREETING_PREFIX`を値`Good day`で使用します。 変数の値はテーブルに表示されるため、実際の設定をキャプチャすることはできません。
+
+## 必要なキャプチャ
+
+### `variables-empty.png`
+
+- 状態：**[!UICONTROL 設定]** > **[!UICONTROL 変数と秘密鍵]**。変数は&#x200B;**[!UICONTROL ステージ]**&#x200B;にありません。
+- 含める：設定ナビゲーション、**[!UICONTROL Workspace]** ピッカー、**[!UICONTROL 追加]**。
+- 代替テキスト：`Variables & Secrets — empty Stage workspace with the Add button`
+
+2026-10-05をキャプチャ。 切り抜いて空のキャンバスをドロップします。マスクするものはありません。
+
+### `add-variable-dialog.png`
+
+- 状態：保存する前に、**[!UICONTROL 変数または秘密鍵を追加]** ダイアログが入力されました。
+- 含める：*秘密鍵はまだサポートされていません*&#x200B;通知、**[!UICONTROL 名前]** `GREETING_PREFIX`、**[!UICONTROL タイプ]** **[!UICONTROL 変数]**、**[!UICONTROL 値]** `Good day`。
+- 代替テキスト：`Add Variable or Secret — GREETING_PREFIX set to Good day`
+
+2026-10-05をキャプチャ。 ダイアログの下で切り抜かれました。マスクするものはありません。
+
+### `variable-added.png`
+
+- 状態：保存後の変数テーブル （1行`GREETING_PREFIX`）。
+- 次を含める：**[!UICONTROL 名前]**、**[!UICONTROL 種類]**、**[!UICONTROL 値]**、**[!UICONTROL 最終更新日]**、およびコピー、編集、削除コントロール。
+- 代替テキスト：`Variables & Secrets — GREETING_PREFIX saved in the Stage workspace`
+
+2026-10-05をキャプチャ。 切り抜いて空のキャンバスをドロップします。マスクするものはありません。
+
+### `update-variable-dialog.png`
+
+- 状態：**[!UICONTROL 現在の値]** `Good day`と&#x200B;**[!UICONTROL 新しい値]** `Howdy`を含むGREETING_PREFIX **ダイアログを更新します。**
+- 代替テキスト：`Update GREETING_PREFIX — change the value from Good day to Howdy`
+
+2026-10-05をキャプチャ。 クリップされたページタイトルと、ダイアログの下の空のオーバーレイを切り抜きました。`Howdy`の後のテキストキャレットが塗りつぶされました。 マスクするものはありません。
+
+### `delete-variable-dialog.png`
+
+- 状態：**[!UICONTROL GREETING_PREFIXを削除しますか？]** 確認ダイアログ：
+- 代替テキスト：`Delete GREETING_PREFIX — confirm the permanent deletion`
+
+2026-10-05をキャプチャ。 ダイアログの下の空のオーバーレイを切り抜きました。マスクするものはありません。

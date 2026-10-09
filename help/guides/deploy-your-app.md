@@ -1,13 +1,11 @@
 ---
 title: アプリをデプロイ
 description: LLM アプリ UIを使用して、Adobe LLM アプリをステージングおよび実稼動環境にデプロイする方法について説明します。
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: 4e447562c5d38f68c209ded7370e9d384a7c9701
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '352'
 ht-degree: 0%
-
 ---
-
 
 # アプリをデプロイ {#deploy-your-app}
 
@@ -26,6 +24,8 @@ ht-degree: 0%
 アプリの詳細ページを開き、**[!UICONTROL デプロイ]**&#x200B;を選択します。
 
 ターゲット環境を選択し、**[!UICONTROL デプロイ]**&#x200B;を選択します。
+
+ハンドラーで[&#x200B; アプリ変数](/help/guides/app-variables.md)を使用している場合は、デプロイする前にターゲット環境に設定します。 追加、更新、または削除された変数は、このデプロイメントで有効になります。ステージングと実稼動には独立した値があります。
 
 ![&#x200B; デプロイ – ターゲット環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
 
@@ -65,4 +65,3 @@ ht-degree: 0%
 
 - [&#x200B; デプロイされたアプリをChatGPT プラグインとしてテストします](/help/guides/test-in-chatgpt.md)。
 - [&#x200B; デプロイされたアプリをClaude コネクタとしてテストします](/help/guides/test-in-claude.md)。
-
