@@ -1,9 +1,9 @@
 ---
 title: 生成されたアクションハンドラーのカスタマイズ
 description: Adobe LLM Apps ハンドラーコントラクトを理解し、生成されたサンプルデータを置き換え、ハンドラー出力をウィジェットに合わせます。
-source-git-commit: 2d8f44f4f258bf217992131de9d9450a4023560d
+source-git-commit: d9fb493c0b1708e4566e93a4f883e99bb4166e18
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '581'
 ht-degree: 0%
 ---
 
@@ -216,6 +216,8 @@ module.exports = async ({ query = '' } = {}) => {
 
 ハンドラー内の保護されたネットワーク アクセスを維持します。 Widget JavaScriptやソースコントロールにAPI資格情報を絶対に入力しない。
 
+サービス URLなど、ハンドラーが必要とする機密性のない設定については、[ アプリ変数とシークレットの設定](/help/guides/app-variables.md)を参照してください。 変数は環境ごとに設定され、次のデプロイメントに適用されます。 シークレットのサポートはまだ利用できません。変数を使用してAPI資格情報を保存しないでください。
+
 ## 期待状態の処理
 
 結果ごとに予測可能な出力シェイプを保持します。
@@ -260,14 +262,14 @@ module.exports = async ({ query = '' } = {}) => {
 npm test
 ```
 
-ローカル MCP テストについては、[&#x200B; ローカルハンドラーの開発とテスト &#x200B;](/help/reference/development.md)を参照してください。
+ローカル MCP テストについては、[ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照してください。
 
 ## 変更をデプロイ
 
 1. ハンドラーの変更を確定してプッシュします。
 2. データシェイプが変更された場合は、ウィジェットを更新してプッシュします。
-3. [&#x200B; アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
-4. [ChatGPT プラグインをテスト &#x200B;](/help/guides/test-in-chatgpt.md)。
+3. [ アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
+4. [ChatGPT プラグインをテスト ](/help/guides/test-in-chatgpt.md)。
 5. ステージが成功したら、実稼動環境にデプロイします。
 
-次に、[生成されたウィジェットのカスタマイズ &#x200B;](/help/guides/widgets.md)を参照してください。
+次に、[生成されたウィジェットのカスタマイズ ](/help/guides/widgets.md)を参照してください。

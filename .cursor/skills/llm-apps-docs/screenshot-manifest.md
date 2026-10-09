@@ -1,7 +1,7 @@
 ---
-source-git-commit: 03c918b1643d9c4e8ebee40fd67694acb6751a14
+source-git-commit: 41bd4b6239171c7a3af7dc6349eaa3cbb880449c
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1279'
 ht-degree: 0%
 ---
 # スクリーンショットマニフェスト
@@ -14,7 +14,7 @@ Sourceのファイル名は、最終的なファイル名と一致する必要�
 
 以下の各ガイドは、独自の出力ディレクトリを宣言します。 キャプチャが属するセクションに対して1つを使用します。
 
-&#x200B;# オンボーディングガイド
+# オンボーディングガイド
 
 出力ディレクトリ：`help/assets/guide-onboarding-agent/`
 
@@ -106,7 +106,7 @@ Sourceのファイル名は、最終的なファイル名と一致する必要�
 ### `chatgpt-plugin-connect.png`
 
 - 状態：プラグイン作成後に確認します。
-- 含める：**追加 <plugin> ChatGPT &#x200B;** および **&#x200B; Connect &#x200B;** に送信します。
+- 含める：**追加 <plugin> ChatGPT **および** Connect **に送信します。
 - マスク：ブラウザーのURLとコネクタの識別子。
 - 代替テキスト：`ChatGPT — connect the new plugin`
 
@@ -127,13 +127,13 @@ Sourceのファイル名は、最終的なファイル名と一致する必要�
 
 既に散文中にクリアされている静的フィールドリストのスクリーンショットを追加しないでください。
 
-&#x200B;# 認証ガイド
+# 認証ガイド
 
 出力ディレクトリ：`help/assets/guide-authentication/`
 
 [authentication.md](../../../help/guides/authentication.md)が参照しています。
 
-**[!UICONTROL リソース IDをコピー]**&#x200B;手順では、オンボーディングガイドの
+**[!UICONTROL リソース IDをコピー]**手順では、オンボーディングガイドの
 `app-mcp-url.png`. もう一度キャプチャしないでください。
 
 このセクションのすべてのキャプチャには、セキュリティ設定が表示されます。 保存する前のマスク：
@@ -158,7 +158,7 @@ Sourceのファイル名は、最終的なファイル名と一致する必要�
 
 2026-08-25をキャプチャ。 空のキャンバスをドロップするために切り抜きました。マスクは不要です。理由
 **[!UICONTROL Issuer]**&#x200B;は製品の`https://auth.example.com`に設定され、
-キャプチャ。 後で画像を編集するよりも優先できます。 **[!UICONTROL 個のスコープがサポートされています]**&#x200B;件の保持
+キャプチャ。 後で画像を編集するよりも優先できます。 **[!UICONTROL 個のスコープがサポートされています]**件の保持
 1つの範囲（`read:all`）。2つの値の方がフィールドを示しますが、これは値がありません
 独自に再キャプチャします。
 
@@ -171,15 +171,15 @@ Sourceのファイル名は、最終的なファイル名と一致する必要�
 - 代替テキスト：`Authentication — set an auth mode and scopes for each action`
 
 2026-08-25をキャプチャ。 切り抜きのみで、マスクするものはありません。 3つのモードをすべて表示します。入力された
-**[!UICONTROL スコープ]**&#x200B;のセルと&#x200B;**[!UICONTROL すべてのアクションに対する認証を要求]**&#x200B;の
+**[!UICONTROL スコープ]**&#x200B;のセルと&#x200B;**[!UICONTROL すべてのアクションに対する認証を要求]**の
 状態は不定で、`Test Action 1/2/3`がフィクスチャ名として使用されます。
 
-設定パネルの独自のコンテナ境界の&#x200B;**内側**&#x200B;を切り抜きます。各コンテナには、フルハイトの1 px ルールが適用されます
+設定パネルの独自のコンテナ境界の&#x200B;**内側**を切り抜きます。各コンテナには、フルハイトの1 px ルールが適用されます
 キャプチャの側面で、フレーム内に一方を残すと、の端に迷路として読み込まれます。
 画像：
 
 コネクタごとの認証を適用する[!DNL Claude]に関する製品独自の警告は次のとおりです
-**2回のキャプチャラウンド**&#x200B;でこのタブでは観察されないため、ここでは必須ではありません。  
+**2回のキャプチャラウンド**でこのタブでは観察されないため、ここでは必須ではありません。  
 ガイドでは、代わりにproseで動作すると述べています。 警告が後のビルドに存在する場合は、
 `auth-claude-warning.png`としてキャプチャし、エントリを追加します。
 
@@ -195,14 +195,14 @@ Sourceのファイル名は、最終的なファイル名と一致する必要�
 カード。
 
 2026-08-25のライトモードをキャプチャして、ドキュメント内の他のすべてのキャプチャと一致させます。  
-ドロップダウンには&#x200B;**[!UICONTROL サーバーURL]** フィールドが含まれているので、MCP URLは読み取れませんが
+ドロップダウンには**[!UICONTROL サーバーURL]** フィールドが含まれているので、MCP URLは読み取れませんが
 その半透明の素材は、そのフィールドのコンテンツのぼやけた画像を、そのフィールドのコンテンツの横に染み込ませます
 オプション： ハイライト表示されていない3つの行は、パネルの塗りつぶしとラベルで再描画されました
 再レンダリングされ、削除されます。 目ではなくサンプリングで確認する：出血が十分に弱い
 missはMCP サーバーのURLです。
 
-ライブコントロールは&#x200B;**4**&#x200B;個の値を提供しています – **[!UICONTROL OAuth]**、**アクセス
-トークン / API キー&rbrack;**、**&#x200B;[!UICONTROL 認証なし]&#x200B;**、**&#x200B;[!UICONTROL 混在]**。 ガイドのマッピング
+ライブコントロールは&#x200B;**4**&#x200B;個の値を提供しています – **[!UICONTROL OAuth]**、**[!UICONTROL アクセス
+トークン / API キー]**、**[!UICONTROL 認証なし]**、**[!UICONTROL 混在]**。 ガイドのマッピング
 表は、アプリの認証モードがマッピングできる3つのみをカバーしていますが、正しくありません
 ドロップダウンには3つのオプションがあると説明します。
 
@@ -214,3 +214,51 @@ missはMCP サーバーのURLです。
 - 会話の途中のサインインプロンプト「**[!UICONTROL オプション]**」アクションが発生します。 プラットフォームが所有するUIは頻繁に変更され、既に散文で説明されています。
 
 ID プロバイダー独自のサインインページを取得しないでください。 このドキュメントでは言及していないベンダーを特定します。
+
+# アプリ変数ガイド
+
+出力ディレクトリ：`help/assets/guide-app-variables/`
+
+[app-variables.md](../../../help/guides/app-variables.md)が参照しています。
+
+**[!UICONTROL ステージ]** ワークスペースで、固定子変数`GREETING_PREFIX`を値`Good day`で使用します。 変数の値はテーブルに表示されるため、実際の設定をキャプチャすることはできません。
+
+## 必要なキャプチャ
+
+### `variables-empty.png`
+
+- 状態：**[!UICONTROL 設定]** > **[!UICONTROL 変数と秘密鍵]**。変数は&#x200B;**[!UICONTROL ステージ]**&#x200B;にありません。
+- 含める：設定ナビゲーション、**[!UICONTROL Workspace]** ピッカー、**[!UICONTROL 追加]**。
+- 代替テキスト：`Variables & Secrets — empty Stage workspace with the Add button`
+
+2026-10-05をキャプチャ。 切り抜いて空のキャンバスをドロップします。マスクするものはありません。
+
+### `add-variable-dialog.png`
+
+- 状態：保存する前に、**[!UICONTROL 変数または秘密鍵を追加]** ダイアログが入力されました。
+- 含める：*秘密鍵はまだサポートされていません*&#x200B;通知、**[!UICONTROL 名前]** `GREETING_PREFIX`、**[!UICONTROL タイプ]** **[!UICONTROL 変数]**、**[!UICONTROL 値]** `Good day`。
+- 代替テキスト：`Add Variable or Secret — GREETING_PREFIX set to Good day`
+
+2026-10-05をキャプチャ。 ダイアログの下で切り抜かれました。マスクするものはありません。
+
+### `variable-added.png`
+
+- 状態：保存後の変数テーブル （1行`GREETING_PREFIX`）。
+- 次を含める：**[!UICONTROL 名前]**、**[!UICONTROL 種類]**、**[!UICONTROL 値]**、**[!UICONTROL 最終更新日]**、およびコピー、編集、削除コントロール。
+- 代替テキスト：`Variables & Secrets — GREETING_PREFIX saved in the Stage workspace`
+
+2026-10-05をキャプチャ。 切り抜いて空のキャンバスをドロップします。マスクするものはありません。
+
+### `update-variable-dialog.png`
+
+- 状態：**[!UICONTROL 現在の値]** `Good day`と&#x200B;**[!UICONTROL 新しい値]** `Howdy`を含むGREETING_PREFIX ]**ダイアログを更新します。**[!UICONTROL 
+- 代替テキスト：`Update GREETING_PREFIX — change the value from Good day to Howdy`
+
+2026-10-05をキャプチャ。 クリップされたページタイトルと、ダイアログの下の空のオーバーレイを切り抜きました。`Howdy`の後のテキストキャレットが塗りつぶされました。 マスクするものはありません。
+
+### `delete-variable-dialog.png`
+
+- 状態：**[!UICONTROL GREETING_PREFIXを削除しますか？]** 確認ダイアログ：
+- 代替テキスト：`Delete GREETING_PREFIX — confirm the permanent deletion`
+
+2026-10-05をキャプチャ。 ダイアログの下の空のオーバーレイを切り抜きました。マスクするものはありません。
