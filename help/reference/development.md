@@ -1,13 +1,11 @@
 ---
 title: ローカルハンドラーの開発とテスト
 description: Adobe LLM アプリのプロジェクト構造、ローカルサーバーコマンド、MCP テスト、単体テストを処理します。
-source-git-commit: eec74b87457bc852d7a8dd0e46c2a4385a93ae0a
+source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
 workflow-type: tm+mt
-source-wordcount: '280'
-ht-degree: 2%
-
+source-wordcount: '664'
+ht-degree: 0%
 ---
-
 
 # ローカルハンドラーの開発とテスト {#development}
 
@@ -17,7 +15,7 @@ ht-degree: 2%
 >
 >ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
-この参照は、ハンドラーをローカルで開発する際に使用します。 ハンドラー結果コントラクトについては、[生成されたハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
+この参照は、ハンドラーをローカルで開発する際に使用します。 ハンドラー結果コントラクトについては、[生成されたハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
 
 ## 要件
 
@@ -25,9 +23,11 @@ ht-degree: 2%
 - npm:
 - リンクされたハンドラーリポジトリのローカルクローン。
 
+Adobe Managed Infrastructureの場合は、このリファレンスに従う前にリポジトリアクセスをリクエストしてください。 ローカルハンドラーの実行にはAdobeの資格情報は必要ありませんが、保護されたアップストリームサービスには、独自の承認済みアクセスが必要です。
+
 ## プロジェクト構造
 
-リンクされたリポジトリは、次のレイアウトに従います。
+現在のハンドラーボイラープレートは、次のレイアウトに従います。
 
 ```
 your-llm-app/
@@ -53,28 +53,75 @@ your-llm-app/
 
 重要なポイント：
 
-- **`entry.js`**&#x200B;はwebpack エントリポイントです。 ビルド時には、すべての`actions/*/index.js` ファイルが検出され、1つの`dist/index.js`にバンドルされます。 修正しないでください。
+- **`entry.js`**&#x200B;はwebpack エントリポイントです。 ビルド時に、すべての`actions/*/index.js` ファイルが検出され、1つの`dist/index.js`にバンドルされます。 エントリポイントは変更しないでください。
 - **`actions.json`**&#x200B;は許可されています。 デプロイメントパイプラインは、[!DNL LLM Apps]のアクションメタデータから自動的に書き込みます。
-- **テスト**&#x200B;は、`actions/`内の`test/actions/`、**ではなく**&#x200B;に存在します。 Webpackは`actions/`以下のすべての要素をデプロイ済みのアーティファクトにバンドルします。テストを共同で配置すると、[!DNL Adobe I/O Runtime]に送信されます。
+- **テスト**&#x200B;は、`actions/`内の`test/actions/`、**ではなく**&#x200B;に存在します。 ビルドはハンドラーのエントリポイントを検出し、そのインポートをバンドルします。その検出ツリーの外にテストを保持します。
+- **アクションパス**&#x200B;は、コード識別子またはそのハイフネーション付きフォームを使用します。 例えば、`search_products`は`actions/search_products/index.js`に解決されるか、生成されたコードの場合は`actions/search-products/index.js`に解決されます。 表示名がルックアップキーではありません。
+- **生成された`data.json`などのサポートデータ**&#x200B;は、ハンドラーが読み込むときにバンドルされます。
 
 ## ローカル開発
 
-Adobeの資格情報を使用せずに、ローカルでハンドラーを開発およびテストできます。
+Adobe資格情報を使用せずにローカルでハンドラーを開発およびテストするには、次を実行します。
 
 ```bash
 npm install
 npm run dev:local
 ```
 
-これにより、webpackでプロジェクトが構築され、`http://localhost:9080`にプレーン Node.js HTTP サーバーが開始されます。 サーバーは`actions/`の下にあるハンドラーファイルを自動検出し、MCP ツールとして登録します。
+開発コマンドは、webpackを使用してプロジェクトを構築し、`http://localhost:9080`にプレーン Node.js HTTP サーバーを起動します。 ハンドラーまたはローカル メタデータの変更後に`npm run dev:local`を停止して再実行します。コマンドはファイルを監視しません。
+
+別のポートを使用するには：
+
+```bash
+PORT=9081 npm run dev:local
+```
 
 ### ローカルメタデータの動作
 
-現在のUIには`actions.json` ダウンロードが提供されていません。 このファイルを使用せずにローカルサーバーを実行できます。`actions/`以下のハンドラーを検出し、最小限のメタデータで登録します。
+ボイラープレート READMEとランタイム スタートアップ バナーが言及されていても、現在のUIでは`actions.json` ダウンロードは提供されません。 ローカルサーバーも入力されたファイルなしで開始します。ビルドは、ファイルが見つからないときに`{"actions":[]}`を作成し、ランタイムはハンドラー検出にフォールバックします。
 
-`actions.json`がない場合、UI入力スキーマに対してローカル アクション引数は検証されません。 単体テストと統合テストでは、代表的なメタデータに`test/fixtures/actions.json`を使用します。
+検出はハンドラーのリスト作成には便利ですが、完全な引数テストモードではありません。 入力スキーマがない場合、MCP SDKは、通常の`(args, extra)`署名を使用する代わりに、ランタイムコンテキストを最初の引数としてハンドラーを呼び出します。 SDKは、指定されたアクション引数を転送しません。
+
+引数を含むMCP呼び出しの場合は、アクションエディターに一致する代表メタデータを含む&#x200B;**ローカルのみ** `actions.json`を作成します。 ボイラープレート `echo` ハンドラーの場合：
+
+```json
+{
+  "actions": [
+    {
+      "name": "echo",
+      "description": "Echo the supplied message.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "message": { "type": "string" }
+        },
+        "required": ["message"]
+      }
+    }
+  ]
+}
+```
+
+`actions`配列が空でない場合、ランタイムは配列にという名前のアクションのみを登録します。 各アクションのコード IDを`name`として使用します。 パラメーターを持たないアクションでも、通常のハンドラー署名を保持するために`"properties": {}`を持つオブジェクトスキーマが必要です。
+
+ローカルメタデータは、UIまたはデプロイメント設定を更新しません。 ランタイムは、サポートされているタイプ、必須フィールド、列挙、配列項目を検証しますが、すべてのJSON スキーマ制約を検証するわけではありません。ハンドラーの長さ、範囲、ネストされたオブジェクト、およびビジネスルールを検証します。 ボイラープレート統合テストでは、`test/fixtures/actions.json`を代表的なメタデータとして使用します。
+
+### ローカルアプリ変数
+
+アプリ変数は`process.env`ではなく`extra.variables`を通じてハンドラーに到達します。 `@adobe/llm-apps-runtime`の`getVariable(extra, name)`で読み上げます。 ビルド後に機密性のない設定をシミュレートするには：
+
+```bash
+npm run build
+node server/local.js \
+  --param 'LLMA_VARIABLE_NAMES=["GREETING_PREFIX"]' \
+  --param GREETING_PREFIX=Howdy
+```
+
+JSON マニフェストと名前付き値の両方を指定します。 通常の`(args, extra)`契約をテストする際に、入力スキーマを使用してローカル `actions.json`にハンドラーを含めます。 コマンドラインフラグは、プラットフォームからアプリ設定を読み込みません。 環境固有のデプロイメント設定については、[ アプリ変数とシークレットの設定](/help/guides/app-variables.md)を参照してください。
 
 ### curlでテスト
+
+上記のローカル `echo` メタデータを追加したら、サーバーをビルドして起動し、次を実行します。
 
 ```bash
 # List all registered tools
@@ -83,7 +130,7 @@ curl -sX POST "http://localhost:9080" \
   -H 'accept: application/json;q=1.0, text/event-stream;q=0.5' \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'
 
-# Call the boilerplate echo action
+# Call the boilerplate echo action (returns "Echo: hello")
 curl -sX POST "http://localhost:9080" \
   -H 'content-type: application/json' \
   -H 'accept: application/json;q=1.0, text/event-stream;q=0.5' \
@@ -100,7 +147,7 @@ npx @modelcontextprotocol/inspector
 
 ## テスト
 
-ハンドラー単体テストは`test/actions/`の下にあり、`actions/` レイアウトをミラーリングします。
+ハンドラー単体テストは`test/actions/`の下に存在し、MCP スキーマ検証なしで、書き出された関数を直接呼び出します。
 
 ```javascript
 // test/actions/echo.test.js
@@ -120,9 +167,12 @@ test('always returns content parts', async () => {
 次を使用してテストを実行：
 
 ```bash
-npm test                                      # all tests
-npx jest test/actions/echo                   # one action only
+npm test                                 # configured Jest suite
+npm test -- --runInBand test/actions/echo.test.js  # one boilerplate action
 ```
 
-ローカルテストが合格したら、変更をプッシュして[変更をデプロイ &#x200B;](/help/guides/deploy-your-app.md)します。
+生成されたテストの中には、Jestの代わりにNodeの組み込みのテストランナーを使用するものもあります。 テストのインポートを確認し、一致するランナー（例：`node --test test/actions/search-products.test.js`）を`node:test`をインポートするファイルに使用します。 ファイルを`test/actions/`の下に配置した後、生成された相対インポートを確認します。
 
+単体テストだけでは、メタデータ、MCP検証、ウィジェットの読み込み、ホストの動作は検証されません。 代表的なメタデータを使用してローカルエンドポイントをテストし、サポートされているLLM プラットフォームでデプロイされたアプリをテストします。
+
+ローカルテストが合格したら、変更をプッシュして[変更をデプロイ ](/help/guides/deploy-your-app.md)します。

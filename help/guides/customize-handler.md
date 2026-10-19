@@ -1,9 +1,9 @@
 ---
 title: 生成されたアクションハンドラーのカスタマイズ
 description: Adobe LLM Apps ハンドラーコントラクトを理解し、生成されたサンプルデータを置き換え、ハンドラー出力をウィジェットに合わせます。
-source-git-commit: d9fb493c0b1708e4566e93a4f883e99bb4166e18
+source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '880'
 ht-degree: 0%
 ---
 
@@ -13,40 +13,41 @@ ht-degree: 0%
 >
 >[!DNL Adobe LLM Apps]は現在Betaにいます。
 >
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、メールを`llm-apps-beta@adobe.com`様に送信してください。
+>ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
 
-プラットフォームは、生成されるあらゆるアクションに対して動作するハンドラーを作成します。 ハンドラーは最初にサンプルデータを返すので、完全なエクスペリエンスをテストできます。
+プラットフォームは、生成されるあらゆるアクションに対して動作するハンドラーを作成します。 ハンドラーは、最初にエクスペリエンス全体をテストするためのサンプルデータを返します。
 
-このガイドでは、ハンドラー契約について説明し、サンプルデータをAPIまたはデータソースに置き換えます。
-
-**ジャーニー:**&#x200B;生成されたハンドラーを見つけ→その入力を理解し、結果→システムを接続→て、ウィジェットのコントラクトをテストおよびデプロイ→維持します。
+**このガイドでは、**&#x200B;生成されたハンドラーを見つけ、サンプルデータをシステムへの呼び出しに置き換え、ウィジェットと互換性のある応答を維持する方法について説明します。 変更をテストしてデプロイします。
 
 ## 生成されたハンドラーの検索
 
-オンボーディング中に選択したハンドラーリポジトリを開きます。
+[ インフラストラクチャのセットアップ ](/help/guides/create-app.md)中に接続されたハンドラーリポジトリを開きます。 Adobeのマネージドインフラストラクチャを使用している場合は、続行する前にコードアクセスをリクエストしてください。
 
 ```text
 actions/
-└── <action-name>/
-    └── index.js
+└── <action-slug>/
+    ├── index.js
+    └── data.json
 ```
 
-一致するテストは別々に保存されます。
+一致するテストは別のディレクトリにあります。
 
 ```text
 test/
 └── actions/
-    └── <action-name>.test.js
+    └── <action-slug>.test.js
 ```
 
-生成された`index.js`を編集します。 `entry.js`などのランタイムファイルは変更しないでください。
+生成されたプルリクエストを使用して、正確なファイルを見つけます。 フォルダースラグはハイフンを使用しています。プラットフォームは、`actions/search-products/`の下にコード識別子`search_products`を含むアクションを生成します。 ランタイムは、ハイフネーションされたフォームと、識別子に正確に一致するフォルダーを認識します。
+
+生成された`index.js`と関連するサンプルデータを編集します。 `entry.js`などのランタイムファイルは変更しないでください。
 
 ## ハンドラーコントラクト
 
 各ハンドラーは、次の1つの非同期関数を書き出します。
 
 ```javascript
-module.exports = async (args) => {
+module.exports = async (args, extra) => {
   return {
     content: [
       { type: 'text', text: 'Response for the LLM platform.' }
@@ -58,7 +59,7 @@ module.exports = async (args) => {
 };
 ```
 
-関数は`args` オブジェクトを受け取り、結果オブジェクトを返します。
+入力スキーマを持つアクションの場合、関数は`args` オブジェクトとオプションのランタイムコンテキスト `extra`を受け取り、結果オブジェクトを返します。 `getVariable(extra, 'PRODUCT_API_ORIGIN')`などのランタイムヘルパーには`extra`を使用します。アプリ変数は`process.env`を通じて自動的に公開されません。 [ アプリ変数とシークレットの設定](/help/guides/app-variables.md)を参照してください。
 
 ### 入力：`args`
 
@@ -67,12 +68,14 @@ module.exports = async (args) => {
 `category`および`query` パラメーターを含むアクションの場合：
 
 ```javascript
-module.exports = async ({ category = '', query = '' } = {}) => {
-  // Use the validated action arguments.
+module.exports = async ({ category = '', query = '' } = {}, extra) => {
+  // Validate business rules before using the arguments.
 };
 ```
 
-ランタイムは、アクションのメタデータに`inputSchema`が含まれている場合、デプロイメント後と同様に入力スキーマを検証します。 `actions.json`のないローカルハンドラー検出では、スキーマ検証は適用されません。 ハンドラーは、サポートされる値、最大長、許可される組み合わせなどのビジネスルールを常に適用する必要があります。
+アクションメタデータを使用すると、ランタイムは宣言された入力スキーマを、必須フィールド、プリミティブタイプ、列挙、配列項目など、サポートされているルールの検証に変換します。 ランタイムは完全なJSON スキーマ検証を実行しません。 ハンドラーの文字列長、数値範囲、ネストされたオブジェクトプロパティなどの制約を確認します。
+
+スキーマメタデータのないローカル検出は、デプロイメントと同等ではありません。ランタイムは通常の`(args, extra)` フォームでアクション引数を渡しません。 ダイレクトハンドラーテストまたは代表的なローカル `actions.json` メタデータを使用して、引数をテストします。 [ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照してください。
 
 ### 出力：`content`
 
@@ -87,7 +90,7 @@ content: [
 ]
 ```
 
-この回答はできるだけ簡潔にしてください。 ユーザーに表示を許可していない資格情報、内部エラー、データは含めないでください。
+テキストの反応を簡潔にする： ユーザーに表示を許可していない資格情報、内部エラー、データは含めないでください。
 
 ### 出力：`structuredContent`
 
@@ -95,128 +98,118 @@ content: [
 
 ```javascript
 structuredContent: {
-  products: [
+  arguments: { query: 'coffee' },
+  records: [
     {
       id: 'P-100',
       name: 'Frescopa House Blend',
       price: '$14.99'
     }
-  ],
-  total: 1
+  ]
 }
 ```
 
-`structuredContent`はLLMではなくウィジェットに送信されます。 インターフェイスで必要なフィールドのみを返します。
+`structuredContent`は、ホストに配信されたMCP アクション結果の一部です。 モデルやユーザーから隠されていると仮定しないでください。 エクスペリエンスに必要な承認済みデータのみを返します。資格情報やプライベートサーバー設定は返しません。
 
-テキストのみのアクションの場合、`structuredContent`は省略できます。
+テキストのみのアクションの場合、`structuredContent`を返すことはオプションです。
 
 ## handler-widget コントラクト
 
 ハンドラーとウィジェットは1つの契約を共有しています：`structuredContent`。
 
-```text
-Action arguments
-      ↓
-Handler
-      ├── content → LLM text response
-      └── structuredContent → Widget
-                                  ↓
-                           bridge.toolResult
-```
+| ハンドラー出力 | 目的 |
+|---|---|
+| `content` | モデル読み取り可能な応答とテキストのみのフォールバック |
+| `structuredContent` | データはホストに配信され、`bridge.toolResult`を通じてウィジェットで読み取られます |
 
 このウィジェットは、LLM Apps SDK ブリッジからハンドラー結果を読み取ります。
 
 ```javascript
 export default async function decorate(block, bridge) {
+  if (!bridge?.isConnected || bridge.hostContext?.preview === true) {
+    // Render the block's local preview data instead.
+    return;
+  }
   const result = await bridge.toolResult;
-  const products = result?.structuredContent?.products ?? [];
+  const records = result?.structuredContent?.records ?? [];
 
-  // Render products.
+  // Render records.
 }
 ```
 
-ハンドラーが次の値を返した場合：
-
-```javascript
-structuredContent: {
-  products: [...],
-  total: 3
-}
-```
-
-ウィジェットは`structuredContent.products`と`structuredContent.total`を読む必要があります。
-
-フィールド名またはタイプを変更すると、ウィジェットが壊れる可能性があります。 ハンドラー、ウィジェット、テストを一緒に更新します。
+現在の生成ハンドラーは、`arguments`と`records`を含むオブジェクトを使用しています。 既存のアプリでは別のシェイプを使用できるので、編集する前に生成されたファイルを確認してください。 フィールド名またはタイプを変更すると、ウィジェットが壊れる可能性があります。 ハンドラー、ウィジェット、テストを一緒に更新します。
 
 ## サンプルデータの置き換え
 
-生成されたハンドラーには、通常、メモリ内のサンプル配列が含まれます。 そのデータルックアップを、システムへのサーバーサイド呼び出しに置き換えます。
+生成されたハンドラーは、`data.json`から代表レコードを読み込みます。 サンプルデータ検索を、システムへのサーバーサイド呼び出しに置き換えます。 次の例では、パブリック HTTPS カタログ APIを使用し、その機密性のないオリジンをアプリ変数から読み取ります。 応答の検証をAPIに適応させます。
 
 ```javascript
-const API_ORIGIN = process.env.PRODUCT_API_ORIGIN;
-const API_TOKEN = process.env.PRODUCT_API_TOKEN;
+const { getVariable } = require('@adobe/llm-apps-runtime');
 
-module.exports = async ({ query = '' } = {}) => {
-  const normalizedQuery = String(query).trim();
+module.exports = async ({ query = '' } = {}, extra) => {
+  const normalizedQuery = typeof query === 'string' ? query.trim() : '';
   if (!normalizedQuery || normalizedQuery.length > 200) {
     return {
       content: [{ type: 'text', text: 'Enter a valid product search.' }],
-      structuredContent: { products: [], total: 0 }
+      structuredContent: { arguments: {}, records: [] },
+      isError: true
     };
   }
 
-  if (!API_ORIGIN || !API_TOKEN) {
-    throw new Error('Product API configuration is unavailable.');
-  }
-
-  const origin = new URL(API_ORIGIN);
-  if (origin.protocol !== 'https:') {
-    throw new Error('Product API configuration must use HTTPS.');
-  }
-
-  const url = new URL('/v1/products', origin);
-  url.searchParams.set('query', normalizedQuery);
-
-  const response = await fetch(url, {
-    headers: { Authorization: `Bearer ${API_TOKEN}` },
-    signal: AbortSignal.timeout(8000)
-  });
-
-  if (!response.ok) {
-    throw new Error('Product service request failed.');
-  }
-
-  const payload = await response.json();
-  if (!payload || !Array.isArray(payload.products)
-      || !payload.products.every((product) =>
-        product
-        && typeof product.id === 'string'
-        && typeof product.name === 'string'
-        && typeof product.price === 'string')) {
-    throw new Error('Product service returned an unexpected response.');
-  }
-
-  const products = payload.products.map(({ id, name, price }) => ({
-    id,
-    name,
-    price
-  }));
-
-  return {
-    content: [
-      { type: 'text', text: `Found ${products.length} matching products.` }
-    ],
-    structuredContent: {
-      products,
-      total: products.length
+  const knownArguments = { query };
+  try {
+    const apiOrigin = getVariable(extra, 'PRODUCT_API_ORIGIN');
+    if (!apiOrigin) {
+      throw new Error('Missing configuration');
     }
-  };
+    const origin = new URL(apiOrigin);
+    if (origin.protocol !== 'https:' || origin.username || origin.password) {
+      throw new Error('Invalid API origin');
+    }
+    const url = new URL('/v1/products', origin);
+    url.searchParams.set('query', normalizedQuery);
+
+    const response = await fetch(url, {
+      signal: AbortSignal.timeout(8000)
+    });
+    if (!response.ok) {
+      throw new Error('Request failed');
+    }
+    const payload = await response.json();
+    if (!payload || !Array.isArray(payload.products)
+        || !payload.products.every((product) =>
+          product
+          && typeof product.id === 'string'
+          && typeof product.name === 'string'
+          && typeof product.price === 'string')) {
+      throw new Error('Unexpected response');
+    }
+
+    const records = payload.products.map(({ id, name, price }) => ({
+      id,
+      name,
+      price
+    }));
+
+    return {
+      content: [
+        { type: 'text', text: `Found ${records.length} matching products.` }
+      ],
+      structuredContent: { arguments: knownArguments, records }
+    };
+  } catch {
+    return {
+      content: [{ type: 'text', text: 'Product search is unavailable. Try again later.' }],
+      structuredContent: { arguments: knownArguments, records: [] },
+      isError: true
+    };
+  }
 };
 ```
 
-ハンドラー内の保護されたネットワーク アクセスを維持します。 Widget JavaScriptやソースコントロールにAPI資格情報を絶対に入力しない。
+ハンドラー内の保護されたネットワーク アクセスを維持します。 Widget JavaScriptやソースコントロールにAPI資格情報を絶対に入力しない。 サインイン ユーザーの代理で行われたリクエストについては、[ エンドユーザーの認証](/help/guides/authentication.md)を参照してください。
 
-サービス URLなど、ハンドラーが必要とする機密性のない設定については、[&#x200B; アプリ変数とシークレットの設定](/help/guides/app-variables.md)を参照してください。 変数は環境ごとに設定され、次のデプロイメントに適用されます。 シークレットのサポートはまだ利用できません。変数を使用してAPI資格情報を保存しないでください。
+サービス URLなど、ハンドラーが必要とする機密性のない設定については、[ アプリ変数とシークレットの設定](/help/guides/app-variables.md)を参照してください。 環境ごとに変数を個別に設定します。 変数の変更は、次のデプロイメントで有効になります。 現在のUIでは、変数の追加のみがサポートされています。変数を使用してAPI資格情報を保存しないでください。
 
 ## 期待状態の処理
 
@@ -227,7 +220,7 @@ module.exports = async ({ query = '' } = {}) => {
 ```javascript
 {
   content: [{ type: 'text', text: 'Found 3 products.' }],
-  structuredContent: { products: [...], total: 3 }
+  structuredContent: { arguments: { query: 'coffee' }, records: [...] }
 }
 ```
 
@@ -236,13 +229,13 @@ module.exports = async ({ query = '' } = {}) => {
 ```javascript
 {
   content: [{ type: 'text', text: 'No matching products were found.' }],
-  structuredContent: { products: [], total: 0 }
+  structuredContent: { arguments: { query: 'coffee' }, records: [] }
 }
 ```
 
-ウィジェットは、`products`が存在するかどうかを推測せずに、空の状態をレンダリングできるようになりました。
+予測可能な結果シェイプを使用すると、`records`が存在するかどうかを推測せずに、ウィジェットが空の状態をレンダリングできます。
 
-サービス障害の場合、スタックトレース、トークン、内部ホスト、またはアップストリームの応答ボディを公開せずに、安全なエラーを返すかスローします。
+サービス失敗の場合は、例に示すように、`isError: true`という安全なエラー結果を返します。 失敗したリクエストが正常な空の検索として表示されないように、ウィジェットで`result.isError`を確認します。 スタックトレース、資格情報、内部ホスト、またはアップストリーム応答ボディは公開しないでください。
 
 ## 契約のテスト
 
@@ -252,24 +245,26 @@ module.exports = async ({ query = '' } = {}) => {
 - 結果と結果なし状態：
 - APIのエラーとタイムアウト：
 - 形式が正しくないAPI応答。
-- `content`は常に存在します。
-- `structuredContent`はプレーンオブジェクトです。
+- すべての結果に`content`が含まれています。
+- `structuredContent`のプレーンオブジェクト。
 - ウィジェットで期待される形状。
 
-実行:
+リポジトリの設定されたテストスイートを実行します。
 
 ```bash
 npm test
 ```
 
-ローカル MCP テストについては、[&#x200B; ローカルハンドラーの開発とテスト &#x200B;](/help/reference/development.md)を参照してください。
+生成されたテストがJestではなく`node:test`をインポートする場合は、`node --test test/actions/<action-slug>.test.js`で実行し、そのインポートパスが`test/actions/`から解決することを確認します。 ファイルに適したテストランナーを使用します。ボイラープレートの`npm test` コマンドはJestを実行します。
+
+ローカル MCP テストについては、[ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照してください。
 
 ## 変更をデプロイ
 
 1. ハンドラーの変更を確定してプッシュします。
-2. データシェイプが変更された場合は、ウィジェットを更新してプッシュします。
-3. [&#x200B; アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
-4. [ChatGPT プラグインをテスト &#x200B;](/help/guides/test-in-chatgpt.md)。
-5. ステージが成功したら、実稼動環境にデプロイします。
+2. データシェイプを変更する場合は、ウィジェットを更新してプッシュします。
+3. [ アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
+4. サポートされているLLM プラットフォームでテストする。 [ChatGPTでのテスト ](/help/guides/test-in-chatgpt.md)または[ クロードでのテスト ](/help/guides/test-in-claude.md)を参照してください。
+5. ステージでテストが合格したら、実稼動環境にデプロイします。
 
-次に、[生成されたウィジェットのカスタマイズ &#x200B;](/help/guides/widgets.md)を参照してください。
+次に、[生成されたウィジェットのカスタマイズ ](/help/guides/widgets.md)を参照してください。
