@@ -21,7 +21,7 @@ ht-degree: 0%
 
 **このガイドでは、** ID プロバイダーを接続し、ログインが必要なアクションを選択する方法について説明します。 ハンドラーで検証済みのIDを使用して、アプリをデプロイし、サインインと保護されたアクションをテストします。
 
-認証の設定は高度なタスクです。 [ インフラストラクチャの設定](/help/guides/create-app.md)、[ アクションの作成](/help/guides/creating-actions.md)、[ アプリのデプロイ ](/help/guides/deploy-your-app.md)を最初に実行します。
+認証の設定は高度なタスクです。 [&#x200B; インフラストラクチャの設定](/help/guides/create-app.md)、[&#x200B; アクションの作成](/help/guides/creating-actions.md)、[&#x200B; アプリのデプロイ &#x200B;](/help/guides/deploy-your-app.md)を最初に実行します。
 
 ## 仕組み
 
@@ -53,7 +53,7 @@ ht-degree: 0%
 
 ## 始める前に
 
-- 非対称アルゴリズムで署名された&#x200B;**JWT** アクセストークンを発行するOAuth 2.1またはOpenID Connect ID プロバイダー。 不透明なトークンとHMAC署名済みトークンはサポートされていません。 [ トークン要件](/help/reference/authentication-reference.md#token-requirements)を参照してください。
+- 非対称アルゴリズムで署名された&#x200B;**JWT** アクセストークンを発行するOAuth 2.1またはOpenID Connect ID プロバイダー。 不透明なトークンとHMAC署名済みトークンはサポートされていません。 [&#x200B; トークン要件](/help/reference/authentication-reference.md#token-requirements)を参照してください。
 - APIとクライアントを登録するためのID プロバイダーへの管理者アクセス権。
 - 設定している環境にアプリを少なくとも1回デプロイします。 デプロイされたMCP サーバーのURLは、トークンのスコープを設定する必要がある値です。
 
@@ -65,7 +65,7 @@ ht-degree: 0%
 2. **[!UICONTROL アプリのテスト]**&#x200B;までスクロールします。
 3. 設定中の環境で、「**[!UICONTROL URLをコピー]**」を選択します。
 
-![ アプリの詳細 – ステージング MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
+![&#x200B; アプリの詳細 – ステージング MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
 
 次の手順で、ID プロバイダー設定のコピーしたMCP サーバーのURLを保持します。 URLを再入力せずに貼り付けます。 オーディエンスチェックには、パスを含む正確な文字列一致が必要です。 1文字の違いがあると、すべてのトークンの検証が失敗します。
 
@@ -80,7 +80,7 @@ ht-degree: 0%
 1. **アプリをAPI （リソース）として登録します。** 識別子（プロバイダーがトークンの`aud`要求に入力する値）を、コピーされたMCP サーバーURLに設定します。 プロバイダーは通常、このフィールドに&#x200B;*識別子*&#x200B;または&#x200B;*オーディエンス*&#x200B;というラベルを付けます。 別のサービスに対して発行されたトークンの使用を防ぐには、`api`などの一般的な値ではなく、アプリに固有の識別子を使用します。
 2. **アクションを保護するスコープ**&#x200B;を定義します（例：`orders:read`または`profile:read`）。 意味のある権限ごとに1つの範囲を使用して、各アクションが必要なアクセスのみを要求するようにします。
 3. **PKCEをサポートします。** LLM プラットフォームは、すべての認証リクエストに`code_challenge_method=S256`を含む`code_challenge`を送信するので、認証サーバーはS256 PKCEをサポートし、そのメタデータで`"code_challenge_methods_supported": ["S256"]`をアドバタイズする必要があります。
-4. **LLM プラットフォームがOAuth クライアントを識別する方法を選択します。** プロバイダーがプラットフォームの要件、動的クライアント登録（DCR）、または事前登録済みのOAuth クライアントをサポートしている場合は、クライアント ID メタデータ ドキュメント（CIMD）を使用します。 選択したメソッドが必要な場合にのみ、クライアント IDとシークレットを指定します。 [!DNL Claude]のホストされたサーフェス `https://claude.ai/api/mcp/auth_callback`について、プラットフォームによって文書化または表示された正確なリダイレクト URIを登録します。 [!DNL ChatGPT]は、プロバイダーの広告付き機能に応じて、安定したコールバックまたはコネクタ固有のコールバックを使用する可能性があるので、推測ではなく、表示されたURIをコピーします。 現在の[ChatGPT認証ドキュメント ](https://developers.openai.com/plugins/build/auth)および[ クラウド認証ドキュメント ](https://claude.com/docs/connectors/building/authentication)を参照してください。
+4. **LLM プラットフォームがOAuth クライアントを識別する方法を選択します。** プロバイダーがプラットフォームの要件、動的クライアント登録（DCR）、または事前登録済みのOAuth クライアントをサポートしている場合は、クライアント ID メタデータ ドキュメント（CIMD）を使用します。 選択したメソッドが必要な場合にのみ、クライアント IDとシークレットを指定します。 [!DNL Claude]のホストされたサーフェス `https://claude.ai/api/mcp/auth_callback`について、プラットフォームによって文書化または表示された正確なリダイレクト URIを登録します。 [!DNL ChatGPT]は、プロバイダーの広告付き機能に応じて、安定したコールバックまたはコネクタ固有のコールバックを使用する可能性があるので、推測ではなく、表示されたURIをコピーします。 現在の[ChatGPT認証ドキュメント &#x200B;](https://developers.openai.com/plugins/build/auth)および[&#x200B; クラウド認証ドキュメント &#x200B;](https://claude.com/docs/connectors/building/authentication)を参照してください。
 
 >[!IMPORTANT]
 >
@@ -141,7 +141,7 @@ ht-degree: 0%
 
 ## 変更をデプロイ
 
-認証の変更は、このアプリの次回のデプロイに反映されます。 **設定した環境にアプリを再び** デプロイします。 [ アプリのデプロイ ](/help/guides/deploy-your-app.md)を参照してください。
+認証の変更は、このアプリの次回のデプロイに反映されます。 **設定した環境にアプリを再び** デプロイします。 [&#x200B; アプリのデプロイ &#x200B;](/help/guides/deploy-your-app.md)を参照してください。
 
 MCP サーバーのURLは変更されません。 接続のメタデータを更新し、認証設定がアプリの新しい設定と一致することを確認します。 プラットフォームの認証方法が変更されたときに、接続を再接続または再作成する必要がある場合があります。
 
@@ -202,9 +202,9 @@ module.exports = async ({ signIn }, extra) => {
 >
 >`extra.challengeAuth()`は、[!DNL ChatGPT]に対するツール結果チャレンジを返します。 代わりに、[!DNL Claude]は、ハンドラーを実行する前にHTTP認証チャレンジを必要とします。 サポートされているプラットフォーム間でログインが必要な操作の場合は、**[!UICONTROL 必須]** アクションを使用します。 必要に応じて、パブリックエクスペリエンス用に個別の&#x200B;**[!UICONTROL None]** アクションを保持します。
 
-IDはサーバーサイドにしておきます。 ウィジェットに必要なデータのみを`structuredContent`に渡します。 `structuredContent`にアクセストークンを絶対に含めないでください。 [生成ハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
+IDはサーバーサイドにしておきます。 ウィジェットに必要なデータのみを`structuredContent`に渡します。 `structuredContent`にアクセストークンを絶対に含めないでください。 [生成ハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
 
-完全な契約については、[ ハンドラー認証API](/help/reference/authentication-reference.md#handler-auth-api)を参照してください。
+完全な契約については、[&#x200B; ハンドラー認証API](/help/reference/authentication-reference.md#handler-auth-api)を参照してください。
 
 ## 保護されたアプリのテスト
 
@@ -222,11 +222,11 @@ IDはサーバーサイドにしておきます。 ウィジェットに必要�
 
 **[!UICONTROL オプション]** アクションは常に匿名呼び出しを受け付けるので、それを含むアプリは完全にゲートされることはありません。すべてのアクションが&#x200B;**[!UICONTROL オプション]**&#x200B;に設定されている場合でも、**[!UICONTROL 混在]**&#x200B;を選択します。 未認証の発信者を拒否するのは&#x200B;**[!UICONTROL 必須]**&#x200B;のみです。
 
-ダイアログの残りの部分については、[ChatGPT プラグインのテスト ](/help/guides/test-in-chatgpt.md)を参照してください。
+ダイアログの残りの部分については、[ChatGPT プラグインのテスト &#x200B;](/help/guides/test-in-chatgpt.md)を参照してください。
 
 ### [!DNL Claude]
 
-カスタムコネクタを追加し、認証設定を確認します。 公開と保護が混在するアプリの場合は、必要に応じて&#x200B;**[!UICONTROL ログインを選択します]**。 コネクタを使用する前にログインをリクエストするには、**[!UICONTROL 今すぐログイン]**&#x200B;を選択します。 ダイアログはアカウントまたは組織によって異なります。[Claude コネクタのテスト ](/help/guides/test-in-claude.md)を参照してください。
+カスタムコネクタを追加し、認証設定を確認します。 公開と保護が混在するアプリの場合は、必要に応じて&#x200B;**[!UICONTROL ログインを選択します]**。 コネクタを使用する前にログインをリクエストするには、**[!UICONTROL 今すぐログイン]**&#x200B;を選択します。 ダイアログはアカウントまたは組織によって異なります。[Claude コネクタのテスト &#x200B;](/help/guides/test-in-claude.md)を参照してください。
 
 ### 確認
 
@@ -236,7 +236,7 @@ IDはサーバーサイドにしておきます。 ウィジェットに必要�
 - 混在アプリでは、**[!UICONTROL None]**&#x200B;に設定されたアクションは、ログインせずに応答します。 [!DNL Claude]で、必要に応じて&#x200B;**[!UICONTROL ログインして公開アクションを確認します]**。
 - ログイン後、保護されたアクションを再試行し、ランタイムが期待される権限を適用することを確認します。
 
-ログインが開始されない場合、またはトークンが拒否された場合は、[ トラブルシューティング ](/help/reference/troubleshooting.md#authentication)を参照してください。
+ログインが開始されない場合、またはトークンが拒否された場合は、[&#x200B; トラブルシューティング &#x200B;](/help/reference/troubleshooting.md#authentication)を参照してください。
 
 ## セキュリティガイダンス
 
@@ -251,5 +251,5 @@ IDはサーバーサイドにしておきます。 ウィジェットに必要�
 ## 次の手順
 
 - [認証参照](/help/reference/authentication-reference.md) — フィールド、トークン要件、プラットフォーム動作。
-- [生成されたハンドラーをカスタマイズ ](/help/guides/customize-handler.md) – 保護されたアップストリーム APIをハンドラーから呼び出します。
-- [ アプリをデプロイ ](/help/guides/deploy-your-app.md)。
+- [生成されたハンドラーをカスタマイズ &#x200B;](/help/guides/customize-handler.md) – 保護されたアップストリーム APIをハンドラーから呼び出します。
+- [&#x200B; アプリをデプロイ &#x200B;](/help/guides/deploy-your-app.md)。

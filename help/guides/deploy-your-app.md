@@ -25,9 +25,9 @@ ht-degree: 0%
 
 ターゲット環境を選択し、**[!UICONTROL デプロイ]**&#x200B;を選択します。
 
-ハンドラーで[ アプリ変数](/help/guides/app-variables.md)を使用している場合は、デプロイする前にターゲット環境に設定します。 追加、更新、または削除された変数は、このデプロイメントで有効になります。ステージングと実稼動には独立した値があります。
+ハンドラーで[&#x200B; アプリ変数](/help/guides/app-variables.md)を使用している場合は、デプロイする前にターゲット環境に設定します。 追加、更新、または削除された変数は、このデプロイメントで有効になります。ステージングと実稼動には独立した値があります。
 
-![ デプロイ – ターゲット環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
+![&#x200B; デプロイ – ターゲット環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
 
 デプロイメントは、次の4つの手順で実行されます。
 
@@ -46,13 +46,13 @@ ht-degree: 0%
 
 ダイアログを閉じるには、**閉じる**&#x200B;を選択します。 アプリの詳細ページで、**[!UICONTROL アプリのテスト]**&#x200B;までスクロールします。
 
-![ アプリの詳細 – MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
+![&#x200B; アプリの詳細 – MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
 
 デプロイされた各環境には、MCP サーバーのURLが表示されます。 「**[!UICONTROL URLをコピー]**」を選択し、それを使用してターゲット LLM プラットフォームでプラグインまたはコネクタを作成します。
 
 **デプロイメント履歴** セクションには、最新10件のデプロイメントが表示されます。
 
-![ デプロイメント履歴](/help/assets/guide-deploy/deployment-history.png)
+![&#x200B; デプロイメント履歴](/help/assets/guide-deploy/deployment-history.png)
 
 各行には、ターゲット **環境** （ステージまたは実稼動）、**ステータス** （成功または失敗）、**デプロイ日**&#x200B;が表示されます。 この表を使用して、デプロイメントの日付を追跡し、最新のデプロイメントが成功したことを確認します。
 
@@ -64,5 +64,5 @@ ht-degree: 0%
 
 ## 次の手順
 
-- [ デプロイされたアプリをChatGPT プラグインとしてテストします](/help/guides/test-in-chatgpt.md)。
-- [ デプロイされたアプリをClaude コネクタとしてテストします](/help/guides/test-in-claude.md)。
+- [&#x200B; デプロイされたアプリをChatGPT プラグインとしてテストします](/help/guides/test-in-chatgpt.md)。
+- [&#x200B; デプロイされたアプリをClaude コネクタとしてテストします](/help/guides/test-in-claude.md)。

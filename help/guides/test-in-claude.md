@@ -37,7 +37,7 @@ ht-degree: 0%
 
 ## カスタムコネクタの追加
 
-1. [ カスタマイズ/コネクタ ](https://claude.ai/customize/connectors)を開きます。 組織全体のコネクタの場合、代わりに承認済み所有者が[組織設定> コネクタ ](https://claude.ai/admin-settings/connectors)を開きます。
+1. [&#x200B; カスタマイズ/コネクタ &#x200B;](https://claude.ai/customize/connectors)を開きます。 組織全体のコネクタの場合、代わりに承認済み所有者が[組織設定> コネクタ &#x200B;](https://claude.ai/admin-settings/connectors)を開きます。
 2. 組織フローの「**[!UICONTROL カスタムコネクタを追加]**」または「**[!UICONTROL 追加]** > **[!UICONTROL カスタム]** > **[!UICONTROL Web]**」を選択します。
 3. 必要に応じてコネクタ名を入力し、HTTPS MCP サーバーの完全なURLを貼り付けます。
 4. ダイアログに複数の手順がある場合は、**[!UICONTROL 続行]**&#x200B;を選択して、検出された認証設定を確認します。
@@ -78,5 +78,5 @@ ht-degree: 0%
 
 ## 次の手順
 
-- [生成されたウィジェットをカスタマイズ ](/help/guides/widgets.md)。
+- [生成されたウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)。
 - [最初からアクションを作成](/help/guides/create-action.md)。
