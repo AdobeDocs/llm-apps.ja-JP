@@ -1,13 +1,13 @@
 ---
 title: ChatGPT プラグインとしてLLM アプリをテストする
 description: Adobe LLM Apps MCP サーバーのURLからChatGPT プラグインを作成し、会話でテストします。
-source-git-commit: fd41dbcabc4db0cae766de19cb042d7c85d8b7aa
+source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
 workflow-type: tm+mt
-source-wordcount: '378'
-ht-degree: 1%
+source-wordcount: '546'
+ht-degree: 0%
 ---
 
-# LLM アプリを[!DNL ChatGPT] プラグインとしてテストする {#test-in-chatgpt}
+# LLM アプリを[!DNL ChatGPT] プラグインとしてテストします {#test-in-chatgpt}
 
 >[!IMPORTANT]
 >
@@ -17,20 +17,15 @@ ht-degree: 1%
 
 デプロイメント後、LLM アプリはMCP サーバーのURLを公開します。 このURLを[!DNL ChatGPT]にプラグインとして追加し、生成されたアクションとウィジェットをテストします。
 
-これは、アプリの構築、カスタマイズ、拡張の後の最後の検証ステップです。
+**このガイドでは、**&#x200B;展開されたアプリを[!DNL ChatGPT]に接続し、会話でアクションとウィジェットをテストする方法を説明します。 アプリを変更した後、接続を更新します。
 
 ## プランの要件
 
-開発者モードは、Pro、Plus、Business、Enterprise、Education アカウントのwebで利用できます。 Workspaceの管理者は、アクセスを制限できます。
+カスタム MCP サーバーの追加を許可するアカウントとワークスペースを使用します。 可用性と管理者の制御は、アカウントとワークスペースによって異なります。 OpenAIの現在の[Connectを参照し、プラグインをテストしてください](https://developers.openai.com/plugins/deploy/connect-chatgpt) ドキュメント。
 
-## 開発者モードを有効にする
+## カスタム MCP サーバーへのアクセスを確認する
 
-[!DNL ChatGPT] に移動します。
-
-1. **[!UICONTROL 設定] → [!UICONTROL &#x200B; セキュリティとログイン]**&#x200B;を開きます。
-2. **[!UICONTROL 開発者モード]**&#x200B;を有効にします。
-
-プラグインページのプラスボタンは、開発者モードが有効になった後にのみMCP-backed プラグインを作成します。 [ChatGPT開発者モード &#x200B;](https://developers.openai.com/api/docs/guides/developer-mode)を参照してください。
+[ChatGPT プラグイン &#x200B;](https://chatgpt.com/plugins)を開き、アカウントでカスタム MCP サーバーの追加が許可されていることを確認します。 アカウントで開発者モードが必要な場合は、アカウントのコントロールを使用してそのモードを有効にします。 カスタム MCP サーバーオプションが見つからないか、ブロックされている場合は、ワークスペース管理者に問い合わせます。
 
 ## MCP サーバーのURLをコピー
 
@@ -43,36 +38,30 @@ ht-degree: 1%
 ## プラグインの作成
 
 1. [chatgpt.com/plugins](https://chatgpt.com/plugins)を開きます。
-2. 「**[!UICONTROL プラグイン]**」タブで、検索フィールドの横にある「**+**」を選択します。
-
-   ![ChatGPT — プラグインページ &#x200B;](/help/assets/guide-onboarding-agent/chatgpt-plugins-page.png)
-
-3. **[!UICONTROL 新しいプラグイン]**&#x200B;で、次のように入力します。
+2. **+**&#x200B;を選択してから、**[!UICONTROL カスタム MCP サーバー]**&#x200B;を追加します。
+3. 接続を設定します。
    - **[!UICONTROL Name]** — プラグイン名。
    - **[!UICONTROL 説明]** — オプション。
-   - **[!UICONTROL 接続]** — **[!UICONTROL サーバーURL]**&#x200B;を選択し、MCP サーバーURLを貼り付けます。
-   - **[!UICONTROL 認証]** — **[!UICONTROL 認証なし]**&#x200B;を選択します。
+   - パブリックサーバーの接続方法を選択し、アプリの完全なHTTPS MCP サーバーURLを入力します。
+   - アプリに一致する認証方法を選択します。 認証が無効になっている公開アプリの場合は、提供されている場所で&#x200B;**[!UICONTROL 認証なし]**&#x200B;を使用します。
 
    >[!NOTE]
    >
-   >アプリ上のすべてのアクションが公開されている間、**[!UICONTROL 認証]**&#x200B;は適用されません。 エンドユーザー認証を有効にした場合、すべてのアクションが&#x200B;**[!UICONTROL 必須]**&#x200B;に設定されている場合は&#x200B;**[!UICONTROL OAuth]**&#x200B;を選択し、その他の組み合わせについては&#x200B;**[!UICONTROL 混在]**&#x200B;を選択します。独自のID プロバイダーでエンドユーザーを認証する[を参照してください](/help/guides/authentication.md)。
+   >エンドユーザー認証を有効にしている場合は、すべてのアクションが&#x200B;**[!UICONTROL 必須]**&#x200B;に設定されている場合は&#x200B;**[!UICONTROL OAuth]**&#x200B;を選択し、パブリック アクションと保護アクションの組み合わせで&#x200B;**[!UICONTROL 混在]**&#x200B;を選択します。これらのオプションが提供されます。 [独自のID プロバイダーでエンドユーザーを認証する](/help/guides/authentication.md)を参照してください。
 
 4. 「**[!UICONTROL I understand and want to continue]**」を選択します。
-5. 「**[!UICONTROL 作成]**」を選択します。
+5. 「**[!UICONTROL プラグインとして作成]**」を選択します。
+6. 検出されたツールとメタデータを確認し、生成されたプラグインをインストールまたは接続します。 アプリに必要な場合は、ログインを完了してください。
 
-   ![ChatGPT — MCP サーバーのURL](/help/assets/guide-onboarding-agent/chatgpt-new-plugin.png)を使用したプラグインの作成
-
-6. 確認ダイアログで、**[!UICONTROL Connect]**&#x200B;を選択します。
-
-   ![ChatGPT – 新しいプラグインを接続](/help/assets/guide-onboarding-agent/chatgpt-plugin-connect.png)
+OpenAIは設定UIを所有し、そのレイアウトはアカウントによって異なります。 表示されるラベルが異なる場合は、現在の[接続手順](https://developers.openai.com/plugins/deploy/connect-chatgpt)に従います。
 
 ## プラグインをテストする
 
 1. 新しいチャットを開始します。
-2. プラスメニューから、**[!UICONTROL 開発者モード]**&#x200B;を選択し、プラグインを選択します。
+2. プロンプトボックスに「`@`」と入力し、インストールされているプラグインを選択します。
 3. 生成されたアクションのいずれかに一致する質問をしてください。 例：*コーヒーを見せてください。*
 
-![ChatGPT — LLM アプリのプラグイン応答を生成](/help/assets/guide-onboarding-agent/chatgpt-generated-app.png)
+![Illustrative ChatGPT応答 – Frescopa アクションが会話で商品カードを返す](/help/assets/guide-onboarding-agent/chatgpt-generated-app.png)
 
 次のことを確認します。
 
@@ -80,6 +69,17 @@ ht-degree: 1%
 - ウィジェットには、想定されるサンプルデータが表示されます。
 - テキスト応答はウィジェットと一致します。
 - ウィジェットのコントロールが期待どおりに動作します。
+
+また、無効な入力、空の結果、アプリを呼び出さない無関係なプロンプト、データを変更するアクションもテストします。 すべてのリクエストを事前に承認するのではなく、各確認および認証プロンプトを確認します。
+
+## アプリの変更後に更新
+
+アクションの説明、入力、認証、またはウィジェット設定を変更した後：
+
+1. 更新されたアプリを同じ環境にデプロイします。
+2. [ChatGPT プラグイン &#x200B;](https://chatgpt.com/plugins)で接続を開き、**[!UICONTROL 更新]**&#x200B;を選択します。
+3. 通知されたアクションが変更されたことを確認します。
+4. 新しい会話を開始し、影響を受けるテストを繰り返します。
 
 ## 次の手順
 

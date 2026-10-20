@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Build a shareable, offline HTML review bundle from llm-apps.en.
+ * Build a shareable, offline HTML review bundle from the repository-local Copilot skill.
  *
  * Safety: all source and output paths are derived from this checked-in script.
  * The only subprocesses use fixed executables and arguments; no user input is
@@ -12,6 +12,7 @@ import { execFileSync } from 'node:child_process';
 import {
   cpSync,
   mkdirSync,
+  readdirSync,
   readFileSync,
   writeFileSync
 } from 'node:fs';
@@ -279,11 +280,22 @@ cpSync(join(helpRoot, 'assets'), join(bundleRoot, 'assets'), { recursive: true }
 writeFileSync(join(bundleRoot, 'review.css'), styles);
 
 const toc = parseToc(readFileSync(tocPath, 'utf8'));
+const hiddenArticles = readdirSync(helpRoot, { recursive: true })
+  .filter((name) => name.endsWith('.md'))
+  .map((name) => `/help/${name.replaceAll('\\', '/')}`)
+  .filter((sourcePath) => !toc.articles.some((article) => article.sourcePath === sourcePath))
+  .filter((sourcePath) => {
+    const source = readFileSync(join(repoRoot, sourcePath.slice(1)), 'utf8');
+    const metadata = source.match(/^---\n([\s\S]*?)\n---\n/)?.[1] ?? '';
+    return /^hidefromtoc:\s*true\s*$/m.test(metadata);
+  })
+  .map((sourcePath) => ({ sourcePath, outputPath: articleOutput(sourcePath) }));
+const articles = [...toc.articles, ...hiddenArticles];
 const pathMap = new Map(
-  toc.articles.map((article) => [article.sourcePath, article.outputPath])
+  articles.map((article) => [article.sourcePath, article.outputPath])
 );
 
-for (const article of toc.articles) {
+for (const article of articles) {
   const absolutePath = join(repoRoot, article.sourcePath.slice(1));
   const source = readFileSync(absolutePath, 'utf8');
   const frontmatter = source.match(/^---\n([\s\S]*?)\n---\n/);

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate local article links, assets, frontmatter, and TOC coverage."""
+"""Validate article links, assets, frontmatter, and TOC coverage from the Copilot skill."""
 
 from __future__ import annotations
 
@@ -82,6 +82,11 @@ def validate_toc(articles: list[Path], errors: list[str]) -> None:
     toc_text = TOC.read_text(encoding="utf-8")
     for article in articles:
         if article == TOC:
+            continue
+        frontmatter = FRONTMATTER_RE.match(article.read_text(encoding="utf-8"))
+        if frontmatter and re.search(
+            r"^hidefromtoc:\s*true\s*$", frontmatter.group("body"), re.MULTILINE
+        ):
             continue
         expected = f"/{article.relative_to(ROOT).as_posix()}"
         if expected not in toc_text:
