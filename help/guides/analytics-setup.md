@@ -35,7 +35,7 @@ ht-degree: 3%
 | [3. データセットを作成](#dataset) | 不要 | 必須 |
 | [4. レポートスイートの準備](#report-suite) | 必須 | 不要 |
 | [5. データストリームを作成](#datastream) | 必須 | 必須 |
-| [6. Analyticsを有効にしてステージ ](#enable-analytics)にデプロイ | 必須 | 必須 |
+| [6. Analyticsを有効にしてステージ &#x200B;](#enable-analytics)にデプロイ | 必須 | 必須 |
 | [7. 接続とデータ ビューを作成](#cja) | 不要 | 必須 |
 | [8. データを確認し、実稼動環境](#verify)にデプロイします | 必須 | 必須 |
 
@@ -45,7 +45,7 @@ ht-degree: 3%
 
 次のものが必要です。
 
-- **サポートされているランタイムとSDK。** ハンドラーリポジトリでは、`@adobe/llm-apps-runtime` 1.2.0以降を使用する必要があります。 EDS ウィジェットの場合は、LLM Apps SDK 0.1.13以降を使用します。 Analyticsを有効にする前に、古いアプリを最新のランタイムおよびSDKに更新するには、[既存のアプリをアップグレード ](/help/guides/upgrade-existing-app.md)します。 これらの要件を満たすアプリは、アップグレードは必要ありません。
+- **サポートされているランタイムとSDK。** ハンドラーリポジトリでは、`@adobe/llm-apps-runtime` 1.2.0以降を使用する必要があります。 EDS ウィジェットの場合は、LLM Apps SDK 0.1.13以降を使用します。 Analyticsを有効にする前に、古いアプリを最新のランタイムおよびSDKに更新するには、[既存のアプリをアップグレード &#x200B;](/help/guides/upgrade-existing-app.md)します。 これらの要件を満たすアプリは、アップグレードは必要ありません。
 - **エージェント型フィールドグループ。** エージェンティック情報と会話イベントのフィールドグループに対して、組織を有効にする必要があります。 スキーマにフィールドグループを追加しても、これらのフィールドグループが表示されない場合は、Adobeのアカウントチームにお問い合わせください。 [会話インサイトの実装](https://experienceleague.adobe.com/en/docs/analytics-platform/using/conversation-insights/implement#schema-and-datasets)を参照してください。 アクション呼び出しは、[!DNL Experience Platform]のBetaにあるAgentic Informationの`agenticExperience.tools` フィールドに記録されます。
 - サンドボックスにID名前空間、スキーマ、データセット、データストリームを作成するための&#x200B;**[!DNL Experience Platform]権限**。
 - **[!DNL Adobe Analytics]の場合：**&#x200B;権限で、レポートスイートと処理ルールを管理します。 製品管理者は、デフォルトで両方を持っています。
@@ -60,7 +60,7 @@ Analyticsとデプロイを有効にすると、アプリは2種類のイベン�
 | アクションコール | `mcp.tool_call` | LLM プラットフォームは、サインインプロンプトの失敗や返しの呼び出しなど、アプリのアクションの1つを呼び出します。 | アクションのコード IDと、呼び出しが失敗したかどうかを示します。 ユーザーのインテント（アクションが収集し、プラットフォームが提供する場合）。 プラットフォームがそれらを提供する場合：プラットフォーム名、会話ID、プラットフォームのユーザーID、ロケール、組織、およびユーザーのおおよその場所。 |
 | ウィジェット操作 | `web.webinteraction.linkClicks` | Edge Delivery Services ウィジェットのリンクまたはボタンを選択したユーザー。 | リンクまたはボタンのラベル（最大100文字）。 アクション呼び出しによって指定された場合、会話IDとターン ID。 Adobe Web SDKでは、ウィジェットフレームのURL、画面とブラウザーのウィンドウサイズ、ローカルタイムとタイムゾーン、独自のバージョンも追加されます。 |
 
-[!DNL Adobe Analytics]では、各アクション呼び出しは`mcp:<code identifier>`という名前のページのページビューとしてカウントされ、各ウィジェットのインタラクションはリンククリックとしてカウントされます。 Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/hit-types)の[Edge Network イベントタイプを参照してください。
+[!DNL Adobe Analytics]では、各アクション呼び出しは`mcp:<code identifier>`という名前のページのページビューとしてカウントされ、各ウィジェットのインタラクションはリンククリックとしてカウントされます。 Adobe Analytics[&#128279;](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/hit-types)のEdge Network イベントタイプを参照してください。
 
 すべてのアクション呼び出しとウィジェットのインタラクションは、[!DNL Experience Platform] データセット内の1つの[!DNL Adobe Analytics] ヒットと1つのイベントです。 トラフィックの多いアプリで、Analyticsを有効にする前に、契約がこのボリュームをカバーしていることを確認します。
 
@@ -106,7 +106,7 @@ Analyticsとデプロイを有効にすると、アプリは2種類のイベン�
 | ID記号 | `MCPHOSTUSER`は、図とまったく同じです |
 | ID タイプ | **[!UICONTROL 個々のクロスデバイス ID]** |
 
-手順については、[ カスタム名前空間の作成](https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/namespaces#create-namespaces)を参照してください。
+手順については、[&#x200B; カスタム名前空間の作成](https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/namespaces#create-namespaces)を参照してください。
 
 ## 手順2：スキーマの作成 {#schema}
 
@@ -127,7 +127,7 @@ Analyticsとデプロイを有効にすると、アプリは2種類のイベン�
 
 Adobe Analytics ExperienceEvent フィールドグループは必要ありません。 ユーザーのインテントは、代わりに処理ルールを通じて[!DNL Adobe Analytics]に達します。 [手順4](#report-suite)を参照してください。
 
-手順については、[新しいスキーマの作成](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#create)および[ フィールドグループの追加](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#add-field-groups)を参照してください。
+手順については、[新しいスキーマの作成](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#create)および[&#x200B; フィールドグループの追加](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#add-field-groups)を参照してください。
 
 ## 手順3：データセットの作成 {#dataset}
 
@@ -141,7 +141,7 @@ Adobe Analytics ExperienceEvent フィールドグループは必要ありませ
 | スキーマ | [手順2](#schema)のスキーマ |
 | 名前 | 任意の名前（例：`AEM LLM Apps`） |
 
-手順については、[ データセットの作成](https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#create)を参照してください。
+手順については、[&#x200B; データセットの作成](https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#create)を参照してください。
 
 ## 手順4：レポートスイートの準備 {#report-suite}
 
@@ -153,7 +153,7 @@ Adobe Analytics ExperienceEvent フィールドグループは必要ありませ
 
 レポートスイートを作成するか、既存のレポートスイートを選択します。 [!DNL Adobe Analytics]が追加するプレフィックスを含む、完全なレポートスイート IDをメモします。 [手順5](#datastream)のIDが必要です。
 
-手順については、[ レポートスイートの作成](https://experienceleague.adobe.com/ja/docs/analytics/admin/admin-tools/manage-report-suites/c-new-report-suite/t-create-a-report-suite)を参照してください。
+手順については、[&#x200B; レポートスイートの作成](https://experienceleague.adobe.com/ja/docs/analytics/admin/admin-tools/manage-report-suites/c-new-report-suite/t-create-a-report-suite)を参照してください。
 
 ### User Intent eVarを有効にする {#user-intent-evar}
 
@@ -170,11 +170,11 @@ Adobe Analytics ExperienceEvent フィールドグループは必要ありませ
 
 レポートスイートで既にeVar3を使用している場合は、別の未使用のeVarを選択し、そのeVarを処理ルールで使用します。
 
-手順については、[ コンバージョン変数の追加または編集](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/conversion-variables/conversion-var-admin#add-or-edit-conversion-variables)を参照してください。
+手順については、[&#x200B; コンバージョン変数の追加または編集](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/conversion-variables/conversion-var-admin#add-or-edit-conversion-variables)を参照してください。
 
 ### 処理ルールの作成 {#processing-rule}
 
-[!DNL Adobe Analytics]は、ユーザーインテントをeVarではなくコンテキストデータ変数として受け取ります。 その理由については、[暗黙的マッピング ](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/xdm-var-mapping#implicit-mapping)を参照してください。 ユーザーインテントをeVarにコピーする処理ルールを作成します。
+[!DNL Adobe Analytics]は、ユーザーインテントをeVarではなくコンテキストデータ変数として受け取ります。 その理由については、[暗黙的マッピング &#x200B;](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/xdm-var-mapping#implicit-mapping)を参照してください。 ユーザーインテントをeVarにコピーする処理ルールを作成します。
 
 - **条件：** コンテキスト データ変数`a.x.conversation.prompt.raw.0.purpose`は`intents`に等しいです。
 - **アクション：**&#x200B;は、**ユーザーインテント （eVar3）**&#x200B;の値をコンテキストデータ変数`a.x.conversation.prompt.raw.0.text`で上書きします。
@@ -202,7 +202,7 @@ Adobe Analytics ExperienceEvent フィールドグループは必要ありませ
 
 スキーマと同じサンドボックスにデータストリームを作成します。 データストリームを作成した後で、そのサンドボックスを変更することはできません。
 
-手順については、[ データストリームの作成](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#create)を参照してください。
+手順については、[&#x200B; データストリームの作成](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#create)を参照してください。
 
 ### サービスの追加 {#add-services}
 
@@ -217,11 +217,11 @@ Adobe Analytics ExperienceEvent フィールドグループは必要ありませ
 
 ![Adobe Experience Platform サービス – イベントデータセットが選択され、他のオプションがクリアされました](/help/assets/guide-analytics/datastream-platform-service.png)
 
-手順については、[ データストリームへのサービスの追加](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#add-services)、[Adobe Analytics settings](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#analytics)、[Adobe Experience Platform settings](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#aep)を参照してください。
+手順については、[&#x200B; データストリームへのサービスの追加](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#add-services)、[Adobe Analytics settings](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#analytics)、[Adobe Experience Platform settings](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#aep)を参照してください。
 
 次に、データストリームの詳細から&#x200B;**[!UICONTROL データストリーム ID]**&#x200B;をコピーします。 [手順6](#enable-analytics)で必要です。
 
-![ データストリームの詳細 – Adobe AnalyticsおよびAdobe Experience Platform サービスが有効になっており、サイドパネルにデータストリーム IDとマッピングスキーマの例が表示されている](/help/assets/guide-analytics/datastream-services.png)
+![&#x200B; データストリームの詳細 – Adobe AnalyticsおよびAdobe Experience Platform サービスが有効になっており、サイドパネルにデータストリーム IDとマッピングスキーマの例が表示されている](/help/assets/guide-analytics/datastream-services.png)
 
 ## 手順6:Analyticsを有効にしてステージにデプロイする {#enable-analytics}
 
@@ -237,10 +237,10 @@ Adobe Analytics ExperienceEvent フィールドグループは必要ありませ
 4. **[!UICONTROL データストリーム ID]**&#x200B;で、[手順5](#datastream)からIDを貼り付けます。
 5. **[!UICONTROL 要件]**&#x200B;で、**[!UICONTROL 詳細を表示]**&#x200B;を選択し、アプリが各要件を満たしていることを確認します。
 
-   ![ アプリ設定、「Analytics」タブ – 「Analyticsを有効にする」をオンにし、空のデータストリーム ID フィールドと拡張された要件リスト ](/help/assets/guide-analytics/analytics-settings.png)
+   ![&#x200B; アプリ設定、「Analytics」タブ – 「Analyticsを有効にする」をオンにし、空のデータストリーム ID フィールドと拡張された要件リスト &#x200B;](/help/assets/guide-analytics/analytics-settings.png)
 
 6. **[!UICONTROL 変更を保存]**&#x200B;を選択します。
-7. [ アプリをステージングにデプロイします](/help/guides/deploy-your-app.md)。 この設定は、各環境への次のデプロイメントに対して有効になります。
+7. [&#x200B; アプリをステージングにデプロイします](/help/guides/deploy-your-app.md)。 この設定は、各環境への次のデプロイメントに対して有効になります。
 
 >[!NOTE]
 >
@@ -271,9 +271,9 @@ Adobe Analytics ExperienceEvent フィールドグループは必要ありませ
 >
 >**[!UICONTROL すべての新しいデータの読み込み]**&#x200B;を有効にします。 この設定により、継続的な接続が作成されるため、Workspaceで新しいイベントが自動的に利用できるようになります。
 
-この人物IDでは、[!DNL Customer Journey Analytics]は各イベントのプライマリ IDを人物として使用し、プライマリ IDのないイベントをスキップします。 [ イベントがユーザーを識別する方法](#identities)を参照してください。
+この人物IDでは、[!DNL Customer Journey Analytics]は各イベントのプライマリ IDを人物として使用し、プライマリ IDのないイベントをスキップします。 [&#x200B; イベントがユーザーを識別する方法](#identities)を参照してください。
 
-手順については、[接続の作成](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-connections/create-connection#create-connection)、[ イベントデータセット設定](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-connections/create-connection#event-dataset-settings)、[ID マップを人物IDとして使用](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-connections/create-connection#id-map)を参照してください。
+手順については、[接続の作成](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-connections/create-connection#create-connection)、[&#x200B; イベントデータセット設定](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-connections/create-connection#event-dataset-settings)、[ID マップを人物IDとして使用](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-connections/create-connection#id-map)を参照してください。
 
 ### データビューの作成 {#data-view}
 
@@ -299,13 +299,13 @@ Adobe Analytics ExperienceEvent フィールドグループは必要ありませ
 
 ユーザーインテントなどのテキストフィールドをディメンションとして追加します。 指標として追加されたテキストフィールドはカウントすることしかできず、その値で分類すると、**無効**&#x200B;と表示されます。
 
-手順については、[ データビューの設定](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/create-dataview#configure)および[ コンポーネント ](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/create-dataview#components)を参照してください。
+手順については、[&#x200B; データビューの設定](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/create-dataview#configure)および[&#x200B; コンポーネント &#x200B;](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/create-dataview#components)を参照してください。
 
 ## 手順8：データを確認して実稼動環境にデプロイする {#verify}
 
 **次に必要：** [!DNL Adobe Analytics]および[!DNL Customer Journey Analytics]。
 
-サポートされているLLM プラットフォームからステージアプリでアクションを呼び出し、そのウィジェットでリンクを選択します。 [ChatGPTでのテスト ](/help/guides/test-in-chatgpt.md)または[ クロードでのテスト ](/help/guides/test-in-claude.md)を参照してください。 次に、設定した各サービスを確認します。
+サポートされているLLM プラットフォームからステージアプリでアクションを呼び出し、そのウィジェットでリンクを選択します。 [ChatGPTでのテスト &#x200B;](/help/guides/test-in-chatgpt.md)または[&#x200B; クロードでのテスト &#x200B;](/help/guides/test-in-claude.md)を参照してください。 次に、設定した各サービスを確認します。
 
 | サービス | 確認する場所 | 何を期待するか |
 |---|---|---|
@@ -315,13 +315,13 @@ Adobe Analytics ExperienceEvent フィールドグループは必要ありませ
 
 各サービスはデータをある程度の遅延で処理するため、新しいイベントがすぐに表示されることはありません。
 
-レポートを作成するには、[Adobe Analyticsでプロジェクトを作成](https://experienceleague.adobe.com/en/docs/analytics/analyze/analysis-workspace/build-workspace-project/create-projects)、[ フリーフォームテーブルの概要](https://experienceleague.adobe.com/en/docs/analytics/analyze/analysis-workspace/visualizations/freeform-table/freeform-table)および[Customer Journey Analyticsでプロジェクトを作成](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-workspace/build-workspace-project/create-projects)を参照してください。
+レポートを作成するには、[Adobe Analyticsでプロジェクトを作成](https://experienceleague.adobe.com/en/docs/analytics/analyze/analysis-workspace/build-workspace-project/create-projects)、[&#x200B; フリーフォームテーブルの概要](https://experienceleague.adobe.com/en/docs/analytics/analyze/analysis-workspace/visualizations/freeform-table/freeform-table)および[Customer Journey Analyticsでプロジェクトを作成](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-workspace/build-workspace-project/create-projects)を参照してください。
 
-データが正しく表示されたら、[ アプリを実稼動環境にデプロイします](/help/guides/deploy-your-app.md)。
+データが正しく表示されたら、[&#x200B; アプリを実稼動環境にデプロイします](/help/guides/deploy-your-app.md)。
 
 ## 制限事項 {#limitations}
 
-- **ウィジェットのインタラクションが多くのユーザーに分割されます。** 各アクション呼び出しは新しいECIDを取得するので、[!DNL Customer Journey Analytics]は、異なるアクション呼び出しからのウィジェットのインタラクションを異なるユーザーとしてカウントします。 [ イベントがユーザーを識別する方法](#identities)を参照してください。
+- **ウィジェットのインタラクションが多くのユーザーに分割されます。** 各アクション呼び出しは新しいECIDを取得するので、[!DNL Customer Journey Analytics]は、異なるアクション呼び出しからのウィジェットのインタラクションを異なるユーザーとしてカウントします。 [&#x200B; イベントがユーザーを識別する方法](#identities)を参照してください。
 - **Web サイトへのリンクがありません。** 誰かがウィジェットのリンクをクリックしても、web サイトへの訪問は会話にリンクされません。
 - **ステージおよび実稼動共有レポート。** 両方の環境が同じデータストリームに送信し、イベントは、どの環境がそれらを送信したかを記録しません。
 - **一部のプラットフォームはIDを送信しません。** ユーザーIDを提供しないプラットフォームからのアクション呼び出し（[!DNL Claude]など）は、[!DNL Customer Journey Analytics]でスキップされます。
