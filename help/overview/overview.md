@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリとは何か、どのように機能するのか、アプリの構築を開始する方法について説明します。
-source-git-commit: 14d94a68dabddd2f2ef2cef65c51d31645d4a958
+source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
 workflow-type: tm+mt
-source-wordcount: '606'
+source-wordcount: '624'
 ht-degree: 1%
 ---
 
@@ -81,3 +81,5 @@ LLM プラットフォームがアクションを呼び出したときに実行�
 3. [&#x200B; アプリをデプロイしてテスト &#x200B;](/help/guides/deploy-your-app.md)。 生成された作業を確認し、ステージにデプロイし、サポートされているLLM プラットフォームでテストします。
 
 自動生成は、サンプルの動作を最初に示します。 このアプリを顧客が利用できるようにするには、[&#x200B; ハンドラーをシステムに接続](/help/guides/customize-handler.md)し、[&#x200B; ウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)します。
+
+自分の[!DNL Adobe Analytics]または[!DNL Customer Journey Analytics]のアプリについて報告するには、[Adobe AnalyticsとCustomer Journey Analyticsの設定](/help/guides/analytics-setup.md)を参照してください。

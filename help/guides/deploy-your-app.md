@@ -1,9 +1,9 @@
 ---
 title: アプリをデプロイ
 description: LLM アプリ UIを使用して、Adobe LLM アプリをステージングおよび実稼動環境にデプロイする方法について説明します。
-source-git-commit: a48b4022979d9a13b4fc3aa870c4ee6375e8bc13
+source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
 workflow-type: tm+mt
-source-wordcount: '412'
+source-wordcount: '444'
 ht-degree: 0%
 ---
 
@@ -58,11 +58,14 @@ ht-degree: 0%
 
 ## 設定の変更をデプロイ
 
-アクションメタデータの変更、アプリページの&#x200B;**[!UICONTROL 表示]** スイッチ、認証、およびアプリ変数は、その環境への次のデプロイメントで有効になります。 設定を保存しても、デプロイされたMCP サーバー自体は更新されません。
+アクションメタデータの変更、アプリページの&#x200B;**[!UICONTROL 表示]** スイッチ、認証、アプリ変数、およびAnalytics設定は、その環境への次のデプロイメントに対して有効になります。 設定を保存しても、デプロイされたMCP サーバー自体は更新されません。
 
 毎回ターゲット環境を確認してください。 ステージにデプロイしても、実稼動に同じ変更がデプロイされません。
+
+アプリがAnalytics ランタイムまたはSDKの要件を満たさない場合は、再デプロイする前に[既存のアプリをアップグレード &#x200B;](/help/guides/upgrade-existing-app.md)してください。
 
 ## 次の手順
 
 - [&#x200B; デプロイされたアプリをChatGPT プラグインとしてテストします](/help/guides/test-in-chatgpt.md)。
 - [&#x200B; デプロイされたアプリをClaude コネクタとしてテストします](/help/guides/test-in-claude.md)。
+- [&#x200B; アプリのイベントをAdobe AnalyticsまたはCustomer Journey Analyticsに送信](/help/guides/analytics-setup.md)。

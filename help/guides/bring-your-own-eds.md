@@ -2,7 +2,7 @@
 title: 独自のEdge Delivery Services プロジェクトを持ち込む
 description: 既存のAdobe Edge Delivery Services プロジェクトをAdobe LLM Apps アクションに接続します。
 hidefromtoc: true
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
 workflow-type: tm+mt
 source-wordcount: '866'
 ht-degree: 1%
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 既存のリポジトリをリンクすると、プラットフォームは`scripts/aem.js`、`blocks/`、`styles/styles.css`、`head.html`をチェックします。 埋め込みでは、`scripts/scripts.js`も読み込まれ、書き出された`decorateMain`関数を呼び出してブロックを準備します。 EDSのブロック読み込み契約を維持します。 必要なファイルだけでは、高度にカスタマイズされたプロジェクトが正しくレンダリングされることを確認できません。
 
-## LLM Apps SDKのインストール
+## LLM Apps SDKのインストール {#install-the-llm-apps-sdk}
 
 EDS プロジェクトルートから：
 

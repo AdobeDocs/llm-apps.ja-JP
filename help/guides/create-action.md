@@ -1,9 +1,9 @@
 ---
 title: アクションをゼロから作成
 description: アクションメタデータを定義し、そのハンドラーを実装し、EDS ウィジェットを接続してテストし、Adobe LLM アプリを使用してデプロイします。
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
 workflow-type: tm+mt
-source-wordcount: '1453'
+source-wordcount: '1476'
 ht-degree: 0%
 ---
 
@@ -147,9 +147,11 @@ query
 
 安定したパラメーター名を使用します。 名前を変更するには、ハンドラーとそのテストも変更する必要があります。
 
-### 分析の設定
+### 分析の設定 {#configure-analytics}
 
 アクションに至った会話の概要をAnalyticsに含める場合は、**[!UICONTROL ユーザーインテントを収集]**&#x200B;を有効にします。
+
+独自の[!DNL Adobe Analytics]または[!DNL Customer Journey Analytics]を設定すると、ユーザーインテントもそこに送信されます。 [Adobe AnalyticsとCustomer Journey Analyticsの設定](/help/guides/analytics-setup.md)を参照してください。
 
 ユーザーインテント収集は、デフォルトで有効になっています。 **[!UICONTROL ユーザーインテントの説明]**&#x200B;を確認します。概要をリクエストする手順が含まれています。 機密性のない匿名の意図に指示を制限し、プライバシーポリシーにデータ収集を記述します。 説明は最大2,000文字まで使用できます。
 
