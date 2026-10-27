@@ -1,7 +1,7 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリとは何か、どのように機能するのか、アプリの構築を開始する方法について説明します。
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: d37cb1f4e199d77c94def7a034a55598bd3d8d83
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 1%
@@ -19,7 +19,10 @@ ht-degree: 1%
 
 [!DNL Adobe LLM Apps]では、[!DNL ChatGPT]や[!DNL Claude]などのサポート対象AI アシスタント内で、製品の検索、可用性チェック、サービス予約などの便利なアクションを提供できます。
 
+>[!VIDEO](https://video.tv.adobe.com/v/3504875/?learn=on&enablevpops)
+
 [!DNL LLM Apps]は[experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)で利用できます。
+
 
 ## [!DNL LLM Apps]でできること
 
@@ -70,16 +73,16 @@ LLM プラットフォームがアクションを呼び出したときに実行�
 └────────────────────┘          └────────────────────┘          └────────────────────┘
 ```
 
-ビルドする内容とコンポーネントの連携の仕組みについて詳しくは、[&#x200B; アプリを連携させる方法](/help/guides/app-architecture.md)を参照してください。
+ビルドする内容とコンポーネントの連携の仕組みについて詳しくは、[ アプリを連携させる方法](/help/guides/app-architecture.md)を参照してください。
 
 ## 今すぐ始める {#choose-your-journey}
 
 アプリの作成とアクションの作成は別々の手順で行います。
 
-1. [&#x200B; インフラストラクチャの設定](/help/guides/create-app.md)。 Adobeのマネージドインフラストラクチャを使用して簡単に設定するか、独自の[!DNL GitHub] リポジトリを使用します。
-2. [&#x200B; アクションを作成](/help/guides/creating-actions.md)。 web サイトを分析してアクションを生成したり、自社で作成したりできます。
-3. [&#x200B; アプリをデプロイしてテスト &#x200B;](/help/guides/deploy-your-app.md)。 生成された作業を確認し、ステージにデプロイし、サポートされているLLM プラットフォームでテストします。
+1. [ インフラストラクチャの設定](/help/guides/create-app.md)。 Adobeのマネージドインフラストラクチャを使用して簡単に設定するか、独自の[!DNL GitHub] リポジトリを使用します。
+2. [ アクションを作成](/help/guides/creating-actions.md)。 web サイトを分析してアクションを生成したり、自社で作成したりできます。
+3. [ アプリをデプロイしてテスト ](/help/guides/deploy-your-app.md)。 生成された作業を確認し、ステージにデプロイし、サポートされているLLM プラットフォームでテストします。
 
-自動生成は、サンプルの動作を最初に示します。 このアプリを顧客が利用できるようにするには、[&#x200B; ハンドラーをシステムに接続](/help/guides/customize-handler.md)し、[&#x200B; ウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)します。
+自動生成は、サンプルの動作を最初に示します。 このアプリを顧客が利用できるようにするには、[ ハンドラーをシステムに接続](/help/guides/customize-handler.md)し、[ ウィジェットをカスタマイズ ](/help/guides/widgets.md)します。
 
 自分の[!DNL Adobe Analytics]または[!DNL Customer Journey Analytics]のアプリについて報告するには、[Adobe AnalyticsとCustomer Journey Analyticsの設定](/help/guides/analytics-setup.md)を参照してください。
