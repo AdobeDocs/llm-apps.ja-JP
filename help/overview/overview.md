@@ -19,7 +19,7 @@ ht-degree: 1%
 
 [!DNL Adobe LLM Apps]では、[!DNL ChatGPT]や[!DNL Claude]などのサポート対象AI アシスタント内で、製品の検索、可用性チェック、サービス予約などの便利なアクションを提供できます。
 
->[!VIDEO](https://video.tv.adobe.com/v/3504875/?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3504876/?captions=jpn&learn=on&enablevpops)
 
 [!DNL LLM Apps]は[experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)で利用できます。
 
