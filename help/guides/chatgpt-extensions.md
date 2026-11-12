@@ -34,7 +34,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->ご利用いただけるかどうかは、クライアントによって異なります。 ファイルのエントリポイントは&#x200B;**デスクトップ専用**&#x200B;です。コンポーザーのメンションには&#x200B;**デスクトップまたは作業ブラウザー**&#x200B;が必要です。 OpenAIのweb サポート列には、従来の[!DNL ChatGPT]が含まれていません。 テストする前に、[ プラットフォームのサポート ](https://github.com/openai/mcp-extensions/blob/main/docs/spec.md#platform-support)を確認してください。
+>ご利用いただけるかどうかは、クライアントによって異なります。 ファイルのエントリポイントは&#x200B;**デスクトップ専用**&#x200B;です。コンポーザーのメンションには&#x200B;**デスクトップまたは作業ブラウザー**&#x200B;が必要です。 OpenAIのweb サポート列には、従来の[!DNL ChatGPT]が含まれていません。 テストする前に、[&#x200B; プラットフォームのサポート &#x200B;](https://github.com/openai/mcp-extensions/blob/main/docs/spec.md#platform-support)を確認してください。
 
 >[!IMPORTANT]
 >
@@ -48,7 +48,7 @@ ht-degree: 0%
 
 このタブは、アクションの作成中にも使用できます。 このガイドでは、レビュー済みの既存のアクションを使用します。
 
-編集後、**[!UICONTROL 変更を保存]**&#x200B;を選択します。 設定を公開するには、[ アプリをデプロイ ](/help/guides/deploy-your-app.md)し、[ChatGPT接続を更新](/help/guides/test-in-chatgpt.md#refresh-after-app-changes)します。
+編集後、**[!UICONTROL 変更を保存]**&#x200B;を選択します。 設定を公開するには、[&#x200B; アプリをデプロイ &#x200B;](/help/guides/deploy-your-app.md)し、[ChatGPT接続を更新](/help/guides/test-in-chatgpt.md#refresh-after-app-changes)します。
 
 ## アプリを開く場所を選択 {#configure-entrypoints}
 
@@ -72,7 +72,7 @@ ht-degree: 0%
 
 例えば、「グローバル」と「スレッド」の両方を選択して、ナビゲーションまたは会話の横から同じカタログウィジェットを開きます。 ウィジェットがファイル表示をサポートしている場合は、「ファイル」を選択することもできます。 ファイルをグローバルまたはスレッドと組み合わせる場合は、`file`入力の&#x200B;**[!UICONTROL Required]**&#x200B;をオフのままにします。ファイルの起動は引き続きファイルオブジェクトを提供しますが、グローバルおよびスレッドの起動は入力なしで行われます。 ハンドラーとウィジェットは両方のケースをサポートする必要があります。 ファイルのみのアクションには`file`が必要です。
 
-![ChatGPT Extensions - Home アクション用にグローバルおよびスレッドが選択され、ファイルのチェックが外され、共有オプションのアイコン URL ](/help/assets/guide-chatgpt-extensions/global-thread-entrypoints.png)が表示される
+![ChatGPT Extensions - Home アクション用にグローバルおよびスレッドが選択され、ファイルのチェックが外され、共有オプションのアイコン URL &#x200B;](/help/assets/guide-chatgpt-extensions/global-thread-entrypoints.png)が表示される
 
 **期待される結果：** カタログをグローバルのナビゲーションから開くか、スレッドの会話側タブとして開きます。
 
@@ -82,15 +82,15 @@ ht-degree: 0%
 
 **グローバル**&#x200B;で、ナビゲーションメニューを開き、アプリのエントリーポイントを選択します。 この例では、エントリーポイントは&#x200B;**Home**&#x200B;です。
 
-![ ナビゲーションメニューを開き、ホームをグローバルのエントリーポイントとして強調表示した完全なChatGPT ウィンドウ ](/help/assets/guide-chatgpt-extensions/global-entrypoint-menu.png)
+![&#x200B; ナビゲーションメニューを開き、ホームをグローバルのエントリーポイントとして強調表示した完全なChatGPT ウィンドウ &#x200B;](/help/assets/guide-chatgpt-extensions/global-entrypoint-menu.png)
 
 ダッシュボードがフルスクリーンで開き、ナビゲーションパネルが引き続き使用可能であることを確認します。
 
-![ グローバルなエントリーポイントから開いたホーム ダッシュボードを表示する完全なChatGPT ウィンドウ ](/help/assets/guide-chatgpt-extensions/global-entrypoint-open.png)
+![&#x200B; グローバルなエントリーポイントから開いたホーム ダッシュボードを表示する完全なChatGPT ウィンドウ &#x200B;](/help/assets/guide-chatgpt-extensions/global-entrypoint-open.png)
 
 **スレッド**&#x200B;の場合、会話メニューを開き、**[!UICONTROL プラグイン]**&#x200B;を選択し、エントリポイントを選択します。 新しいプロンプトを必要とせずに、ウィジェットが会話の横に開くことを確認します。
 
-![ サイドバー、ぼやけた会話、ホームダッシュボードが横に開いた完全なChatGPT ウィンドウ ](/help/assets/guide-chatgpt-extensions/thread-entrypoint-open.png)
+![&#x200B; サイドバー、ぼやけた会話、ホームダッシュボードが横に開いた完全なChatGPT ウィンドウ &#x200B;](/help/assets/guide-chatgpt-extensions/thread-entrypoint-open.png)
 
 ### アプリでサポートされているファイルを開く {#file-entrypoint}
 
@@ -110,7 +110,7 @@ ht-degree: 0%
 
 **[!UICONTROL 表示モード]**&#x200B;の下：
 
-1. モデル ]**によって起動されたときの**[!UICONTROL &#x200B;表示を`inline`、`fullscreen`、または&#x200B;**[!UICONTROL 環境設定なし]**&#x200B;に設定します。
+1. モデル **によって起動されたときの**&#x200B;表示を`inline`、`fullscreen`、または&#x200B;**[!UICONTROL 環境設定なし]**&#x200B;に設定します。
 1. ウィジェットの&#x200B;**[!UICONTROL サポートされているリソース表示モード]** （インライン、フルスクリーン、またはその両方）を選択します。 ホストのデフォルトを使用するには、両方をオフにします。
 1. **[!UICONTROL リソースの初期表示]**&#x200B;を選択します。 サポートされているモードを選択した場合は、初期モードを含める必要があります。
 
@@ -144,7 +144,7 @@ ht-degree: 0%
 
 別のアクションでメンション検索が既に提供されている場合、切替スイッチは使用できず、警告でそのアクションが識別されます。 既存のプロバイダーのメンションを無効にし、保存してから置き換えを有効にします。
 
-![ コンポーザーのメンションは使用できません。Search Mentionsでは、アプリに対するメンション検索が既に提供されています](/help/assets/guide-chatgpt-extensions/composer-mentions-conflict.png)
+![&#x200B; コンポーザーのメンションは使用できません。Search Mentionsでは、アプリに対するメンション検索が既に提供されています](/help/assets/guide-chatgpt-extensions/composer-mentions-conflict.png)
 
 ## その他のChatGPT ウィジェット機能 {#additional-widget-features}
 
@@ -156,19 +156,19 @@ SDKは、ChatGPT固有のディープリンク、拡張選択コンテキスト�
 | 選択コンテキスト | 機密性のない製品を選択し、その製品について質問する |
 | ドラフトまたは新しい会話コントロール | メッセージが期待どおりに開き、ドラフトが自動的に送信されないことを確認します |
 
-基本的なウィジェットメッセージやその他の標準のSDK APIは、ChatGPTのみではありません。 ウィジェットがどの拡張機能を実装しているかを管理者に尋ねます。[SDK ドキュメント ](https://www.npmjs.com/package/@adobe/llmapps-sdk)を参照してください。
+基本的なウィジェットメッセージやその他の標準のSDK APIは、ChatGPTのみではありません。 ウィジェットがどの拡張機能を実装しているかを管理者に尋ねます。[SDK ドキュメント &#x200B;](https://www.npmjs.com/package/@adobe/llmapps-sdk)を参照してください。
 
 ## 拡張機能の変更または削除 {#change-or-remove}
 
 同じタブで、エントリーポイントのチェックボックスをオフにするか、**[!UICONTROL コンポーザーのメンションを有効にする]**&#x200B;をオフにします。 拡張子が残っていない場合はファイルをクリアします。 共有アイコンを削除するには、**[!UICONTROL アイコンをクリア]**&#x200B;を選択します。 表示の既定値を復元するには、**[!UICONTROL 環境設定なし]**&#x200B;を選択し、サポートされているモードをクリアして、**[!UICONTROL ホストの既定値]**&#x200B;を選択します。
 
-エントリポイントを削除しても、アクションやユーザーファイルは削除されません。 [ フィールド定義とルール ](/help/reference/reference-docs.md#chatgpt-extension-fields)を参照してください。
+エントリポイントを削除しても、アクションやユーザーファイルは削除されません。 [&#x200B; フィールド定義とルール &#x200B;](/help/reference/reference-docs.md#chatgpt-extension-fields)を参照してください。
 
 ## トラブルシューティング {#troubleshooting}
 
 | 表示される内容 | 実行内容 |
 |---|---|
-| 機能またはコントロールがありません | [ クライアントサポート ](#before-you-begin)を確認してください。 エントリポイントの場合は、ウィジェットが設定されていることを確認します。 これらの拡張機能は、Claudeやその他のホストには適用されません |
+| 機能またはコントロールがありません | [&#x200B; クライアントサポート &#x200B;](#before-you-begin)を確認してください。 エントリポイントの場合は、ウィジェットが設定されていることを確認します。 これらの拡張機能は、Claudeやその他のホストには適用されません |
 | レポートの保存と互換性のない必須の入力 | グローバル/スレッドは入力なし、ファイルは`file`、メンションは`query`を提供します。 管理者に不一致を解決するよう依頼します。アクションに必要な入力を削除しないでください |
 | ファイルの設定または表示に失敗する | サポートされている拡張機能を追加し、オブジェクト `file`入力を確認し、互換性のあるデスクトップクライアントを使用します。 ウィジェットはそのファイル形式を実装する必要があります |
 | ファイルの保存に失敗する | 編集サポートと書き込み権限を確認する。 新しいコンテンツを上書きする代わりに、競合を調整します。サイズの大きすぎるコンテンツを減らします |
