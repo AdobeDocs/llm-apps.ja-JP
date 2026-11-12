@@ -1,9 +1,9 @@
 ---
 title: 生成されたEDS ウィジェットのカスタマイズ
 description: Adobe LLM アプリによって自動的に作成されるEdge Delivery Services ウィジェットについて理解し、カスタマイズします。
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
 workflow-type: tm+mt
-source-wordcount: '1065'
+source-wordcount: '1148'
 ht-degree: 0%
 ---
 
@@ -71,6 +71,8 @@ export default async function decorate(block, bridge) {
 - サイズを`bridge.autoResize()`と同期しておきます。
 
 このガイドでは、一般的なブリッジ方法について説明します。 完全なAPIについては、[`@adobe/llmapps-sdk` パッケージ &#x200B;](https://www.npmjs.com/package/@adobe/llmapps-sdk)を参照してください。
+
+サポート対象のOpenAI クライアントで、準備済みウィジェットを直接開いたり、会話の横で開いたり、ファイルビューアとして開いたりできるようにするには、[ChatGPT拡張機能の設定](/help/guides/chatgpt-extensions.md)を参照してください。 このガイドでは、UIの設定と要件について説明します。 ファイルの処理、選択コンテキスト、ディープリンク、およびリッチメッセージの制御には、ウィジェットの実装が必要です。拡張機能を有効にしても、その動作は自動的に追加されません。 オプションのAPIを使用する前に、ホスト機能を確認します。 個別の`bridge.chatgpt` ベンダーAPIはChatGPTでのみ使用でき、他の`null`箇所で使用できます。標準のブリッジ APIとは異なります。
 
 ## データコントラクトについて
 

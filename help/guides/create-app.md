@@ -1,9 +1,9 @@
 ---
 title: 基盤の設定
 description: Adobeで管理されているインフラストラクチャを使用してAdobe LLM アプリを作成するか、プラットフォームで初期化する2つの空のGitHub リポジトリを提供します。
-source-git-commit: 14d94a68dabddd2f2ef2cef65c51d31645d4a958
+source-git-commit: 079eb2403f15a97842c5c336c03ec5bfe10de622
 workflow-type: tm+mt
-source-wordcount: '1337'
+source-wordcount: '1595'
 ht-degree: 0%
 ---
 
@@ -106,22 +106,51 @@ ht-degree: 0%
 
 ウィジェットとは、商品カードや予約フォームなどのアクションに添付される、オプションの視覚的な応答です。 ウィザードは[!DNL Edge Delivery Services] （EDS） リポジトリをホストに接続します。
 
+[!DNL LLM Apps]、AEM サイト アクセス、およびDA書き込みアクセスに同じAdobe アカウントを使用します。
+
+#### ウィジェットリポジトリへの接続 {#connect-widget-repository}
+
 1. **[!UICONTROL ウィジェットソース]**&#x200B;で、**[!UICONTROL ウィジェットリポジトリを手動で選択]**&#x200B;を選択します。
 2. **[!UICONTROL コードソース]**&#x200B;で、**[!UICONTROL GitHub]**&#x200B;を選択します。
 3. リポジトリを既に持っているかどうかを選択します。 そうでない場合は、「**[!UICONTROL GitHub]**&#x200B;でリポジトリを作成」を選択し、空のウィジェットリポジトリを作成して、ウィザードに戻ります。
 4. このリポジトリのAdobe LLM アプリ [!DNL GitHub] アプリを、アクションリポジトリと同じようにインストールまたは設定します。
 5. **[!UICONTROL 組織]**&#x200B;と&#x200B;**[!UICONTROL リポジトリ]**&#x200B;を選択します。 アクションリポジトリは選択しないでください。
 6. 「**[!UICONTROL リポジトリを検証]**」を選択します。 検証を実行すると、AEMのボイラープレートを使用して空のリポジトリが初期化されます。 既存のリポジトリは、互換性のあるEDS プロジェクトである必要があります。
-7. 「**[!UICONTROL AEM Code Syncをインストール]**」を選択し、AEM Code Syncにウィジェットリポジトリへのアクセス権を付与します。
-8. インストール確認ページで、セットアップ ウィザードを使用して、自分をEDS サイトの管理者として追加します。
-9. [!DNL LLM Apps]に戻り、**[!UICONTROL AEM Code Sync インストールの検証]**&#x200B;を選択します。
-10. **[!UICONTROL AEM Code Sync installed]**&#x200B;が表示されたら、**[!UICONTROL 次の手順]**&#x200B;を選択します。
+
+#### &#x200B;7. AEM サイトアクセスの設定 {#aem-site-access}
+
+**新規インストール：** **[!UICONTROL AEM Code Sync]**&#x200B;をインストールし、ウィジェットリポジトリへのアクセス権を付与します。 インストール確認ページのセットアップウィザードを完了して、自分をサイト管理者として追加してください。
+
+**既存のEDS サイト：** AEM Code Syncのインストールを維持し、選択したウィジェットリポジトリをカバーしていることを確認します。 既存のサイト管理者に対し、`https://tools.aem.live/tools/user-admin/index.html/?org=<org>&site=<site>`でAEM User Adminを開き、`admin`の役割でAdobe アカウントを追加するように依頼します。 Code Syncを再インストールする必要はありません。
+
+`<org>`と`<site>`をAEMの組織名とサイト名に置き換えます。 サイト管理者は、これらの値を確認できます。
+
+#### &#x200B;8. DA書き込みアクセス権の付与 {#da-write-access}
+
+新規および既存のサイトの両方について、DA組織管理者に次のことを依頼します。
+
+1. `https://da.live/config#/<org>/`でDA設定を開き、`<org>`をサイトのコンテンツを保存するDA組織に置き換えます。
+2. **権限** シートを開きます。 存在しない場合は、**[!UICONTROL シートを追加]**&#x200B;を選択し、`permissions`という名前を付け、列ヘッダー&#x200B;**パス**、**グループ**、**アクション**&#x200B;を追加します。 **コメント**&#x200B;列を追加して、各ルールを説明することもできます。
+3. サイト内のすべてのコンテンツに対するAdobe アカウントの書き込みアクセス権を付与する行を追加します。**パス**&#x200B;のサイトのコンテンツパス、**グループ**&#x200B;のAdobe アカウントの電子メール、および&#x200B;**アクション**&#x200B;の`write`を使用します。 設定を保存します。
+
+   ![&#x200B; グループ列にアカウントの例を示すDA権限シートと、アクション列に書き込みアクセス権](/help/assets/guide-infrastructure/da-write-permissions.png)
+
+   このスクリーンショットは架空のアカウントを使用しています。 `widget-author@example.com`をAdobe アカウントの電子メールに置き換え、組織全体の`/ + **`の例ではなく、サイトのコンテンツパスを使用します。 `CONFIG`行は構成管理者用です。コンテンツへのアクセス権を付与するために変更する必要はありません。
+
+AEM サイトの役割は、DA書き込みアクセス権を付与しません。 組織全体の書き込みアクセス権は必要ありません。
+
+DA権限の設定について詳しくは、[権限とセキュリティ &#x200B;](https://www.aem.live/docs/ew/administering/permissions)を参照してください。
+
+#### &#x200B;9. AEM設定の検証 {#validate-aem-setup}
+
+1. [!DNL LLM Apps]に戻り、**[!UICONTROL AEM設定の検証]**&#x200B;を選択します。
+2. **[!UICONTROL AEM設定が確認されました]**&#x200B;が表示されたら、**[!UICONTROL 次の手順]**&#x200B;を選択します。
+
+検証に失敗した場合は、メッセージに従って[AEM サイト アクセス &#x200B;](#aem-site-access)または[DA書き込みアクセス &#x200B;](#da-write-access)を確認し、もう一度検証します。
 
 >[!NOTE]
 >
 >**[!UICONTROL Cloud Manager Edge Delivery Servicesの使用]**&#x200B;は&#x200B;**[!UICONTROL 近日リリース予定]**&#x200B;とマークされ、選択は許可されません。 manual widget-repository オプションを使用します。
-
-検証でAEM Code Syncが検出されない場合は、AEM Code Syncが選択したウィジェットリポジトリにアクセスできること、およびサイト管理者として自分自身を追加したことを確認します。 次に、もう一度検証します。
 
 ## アプリの詳細を入力 {#app-details}
 

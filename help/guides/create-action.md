@@ -1,9 +1,9 @@
 ---
 title: アクションをゼロから作成
 description: アクションメタデータを定義し、そのハンドラーを実装し、EDS ウィジェットを接続してテストし、Adobe LLM アプリを使用してデプロイします。
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
 workflow-type: tm+mt
-source-wordcount: '1476'
+source-wordcount: '1518'
 ht-degree: 0%
 ---
 
@@ -66,7 +66,9 @@ Widget: product cards
 
 アプリを開いて&#x200B;**[!UICONTROL アクション]**&#x200B;を選択し、**[!UICONTROL アクションの作成]**&#x200B;を選択します。
 
-作成ダイアログには、**[!UICONTROL アクション]**&#x200B;と&#x200B;**[!UICONTROL ウィジェットメタデータ]**&#x200B;のタブが含まれています。 各セクションを展開して、フィールドを設定します。
+作成ダイアログには、**[!UICONTROL アクション]**、**[!UICONTROL ウィジェットメタデータ]**、**[!UICONTROL ChatGPT拡張機能]**&#x200B;のタブが含まれています。 各セクションを展開して、フィールドを設定します。
+
+オプションの&#x200B;**[!UICONTROL ChatGPT Extensions]**&#x200B;設定を使用すると、ユーザーはアプリを直接開いたり、カスタムファイルビューアを使用したり、サポートされているクライアントでコンポーザーでリソースを検索したりできます。 対応するアクションとウィジェットの動作の準備が整った後に、これらの設定を行います。 [ChatGPT拡張機能の設定](/help/guides/chatgpt-extensions.md)を参照してください。
 
 ### 基本情報を入力
 
