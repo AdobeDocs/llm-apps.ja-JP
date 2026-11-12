@@ -1,9 +1,9 @@
 ---
 title: アクションをゼロから作成
 description: アクションメタデータを定義し、そのハンドラーを実装し、EDS ウィジェットを接続してテストし、Adobe LLM アプリを使用してデプロイします。
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
 workflow-type: tm+mt
-source-wordcount: '1476'
+source-wordcount: '1518'
 ht-degree: 0%
 ---
 
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、最初に[EDS開発者チュートリアル &#x200B;](https://www.aem.live/developer/tutorial)および[&#x200B; ブロックの探索](https://www.aem.live/docs/exploring-blocks)を読んで、ウィジェットを接続する前に、ブロック、`decorate`関数、EDS プロジェクト構造などの基本を学びます。
+>このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、最初に[EDS開発者チュートリアル ](https://www.aem.live/developer/tutorial)および[ ブロックの探索](https://www.aem.live/docs/exploring-blocks)を読んで、ウィジェットを接続する前に、ブロック、`decorate`関数、EDS プロジェクト構造などの基本を学びます。
 
 プラットフォームが作成しなかった機能を追加します。 [!DNL LLM Apps]でアクションを定義し、リンクされたリポジトリにそのハンドラーを書き込み、必要に応じてウィジェットを追加します。
 
 **このガイドでは、** アクションを定義し、そのハンドラーを実装し、オプションのウィジェットを接続する方法について説明します。 アクションをローカルにテストし、アプリをデプロイし、サポートされているLLM プラットフォームでアクションを試します。
 
-最初のアプリの場合は、[&#x200B; インフラストラクチャの設定](/help/guides/create-app.md)から開始し、[&#x200B; アクションの作成](/help/guides/creating-actions.md)を行います。 アクションの作成ガイドでは、web サイトからの自動生成と手動での作成について説明します。
+最初のアプリの場合は、[ インフラストラクチャの設定](/help/guides/create-app.md)から開始し、[ アクションの作成](/help/guides/creating-actions.md)を行います。 アクションの作成ガイドでは、web サイトからの自動生成と手動での作成について説明します。
 
 ## 始める前に
 
@@ -66,11 +66,13 @@ Widget: product cards
 
 アプリを開いて&#x200B;**[!UICONTROL アクション]**&#x200B;を選択し、**[!UICONTROL アクションの作成]**&#x200B;を選択します。
 
-作成ダイアログには、**[!UICONTROL アクション]**&#x200B;と&#x200B;**[!UICONTROL ウィジェットメタデータ]**&#x200B;のタブが含まれています。 各セクションを展開して、フィールドを設定します。
+作成ダイアログには、**[!UICONTROL アクション]**、**[!UICONTROL ウィジェットメタデータ]**、**[!UICONTROL ChatGPT拡張機能]**&#x200B;のタブが含まれています。 各セクションを展開して、フィールドを設定します。
+
+オプションの&#x200B;**[!UICONTROL ChatGPT Extensions]**&#x200B;設定を使用すると、ユーザーはアプリを直接開いたり、カスタムファイルビューアを使用したり、サポートされているクライアントでコンポーザーでリソースを検索したりできます。 対応するアクションとウィジェットの動作の準備が整った後に、これらの設定を行います。 [ChatGPT拡張機能の設定](/help/guides/chatgpt-extensions.md)を参照してください。
 
 ### 基本情報を入力
 
-![&#x200B; アクションの作成 – 基本情報](/help/assets/guide-create-action/action-basic-info.png)
+![ アクションの作成 – 基本情報](/help/assets/guide-create-action/action-basic-info.png)
 
 次を入力 :
 
@@ -155,9 +157,9 @@ query
 
 ユーザーインテント収集は、デフォルトで有効になっています。 **[!UICONTROL ユーザーインテントの説明]**&#x200B;を確認します。概要をリクエストする手順が含まれています。 機密性のない匿名の意図に指示を制限し、プライバシーポリシーにデータ収集を記述します。 説明は最大2,000文字まで使用できます。
 
-![&#x200B; アクションの作成 – ユーザーインテント分析](/help/assets/guide-create-action/action-analytics-user-intent.png)
+![ アクションの作成 – ユーザーインテント分析](/help/assets/guide-create-action/action-analytics-user-intent.png)
 
-完全なフィールド定義については、[&#x200B; アクションとウィジェットフィールド &#x200B;](/help/reference/reference-docs.md)を参照してください。
+完全なフィールド定義については、[ アクションとウィジェットフィールド ](/help/reference/reference-docs.md)を参照してください。
 
 ## ウィジェットの設定
 
@@ -165,7 +167,7 @@ query
 
 **[!UICONTROL ウィジェットメタデータ]**&#x200B;を開きます。
 
-![&#x200B; アクションの作成 – ウィジェットのメタデータ &#x200B;](/help/assets/guide-create-action/widget-metadata.png)
+![ アクションの作成 – ウィジェットのメタデータ ](/help/assets/guide-create-action/widget-metadata.png)
 
 設定：
 
@@ -198,7 +200,7 @@ https://main--<repo>--<owner>.aem.live/<widget-page>
 
 **[!UICONTROL CSP設定]**&#x200B;で、アセットとネットワーク要求に必要なオリジンを追加します。 外部リソースを読み込むウィジェットは、CSPが不完全な場合、レンダリングされない可能性があります。
 
-![新しいアクションの作成 – コンテンツセキュリティポリシードメインリスト &#x200B;](/help/assets/guide-create-action/widget-csp.png)
+![新しいアクションの作成 – コンテンツセキュリティポリシードメインリスト ](/help/assets/guide-create-action/widget-csp.png)
 
 EDS プロジェクトまたはウィジェットページがまだ存在しない場合は、[自分のEDS プロジェクトを作成](/help/guides/bring-your-own-eds.md)し、アクションに戻ります。
 
@@ -228,7 +230,7 @@ actions/
 
 フォルダー名は、アクションエディターに表示されるアクションのコード識別子と一致する必要があります。
 
-結果のコントラクトとハンドラーとウィジェットの関係について詳しくは、[生成ハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
+結果のコントラクトとハンドラーとウィジェットの関係について詳しくは、[生成ハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
 
 ### ハンドラーコントラクト
 
@@ -278,7 +280,7 @@ structuredContent: {
 
 ### APIの接続
 
-サーバーサイドハンドラーでAPI呼び出しを保持します。 この例では、パブリック製品APIを呼び出します。 `PRODUCT_API_ORIGIN`という名前の[&#x200B; アプリ変数](/help/guides/app-variables.md)でAPIのHTTPS オリジンを設定します。 この例では、上記で定義された`query`および`category` パラメーターを受け入れ、少なくとも1つのパラメーターを必要とし、資格情報は必要ありません。
+サーバーサイドハンドラーでAPI呼び出しを保持します。 この例では、パブリック製品APIを呼び出します。 `PRODUCT_API_ORIGIN`という名前の[ アプリ変数](/help/guides/app-variables.md)でAPIのHTTPS オリジンを設定します。 この例では、上記で定義された`query`および`category` パラメーターを受け入れ、少なくとも1つのパラメーターを必要とし、資格情報は必要ありません。
 
 ```javascript
 const { getVariable } = require('@adobe/llm-apps-runtime');
@@ -379,7 +381,7 @@ test/
 npm test
 ```
 
-プロジェクトのレイアウトとローカル MCP テストについては、[&#x200B; ローカルハンドラーの開発とテスト &#x200B;](/help/reference/development.md)を参照してください。
+プロジェクトのレイアウトとローカル MCP テストについては、[ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照してください。
 
 ## アクションをローカルでテストする
 
@@ -413,7 +415,7 @@ MCP インスペクターまたは`curl`を使用して、次を行います。
 ## デプロイとテスト
 
 1. ハンドラーとウィジェットの変更をコミットしてプッシュします。
-2. [&#x200B; アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
+2. [ アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
 3. [ChatGPT](/help/guides/test-in-chatgpt.md)または[Claude](/help/guides/test-in-claude.md)でアプリをテストします。
 4. アクションと、そのアクションを呼び出さない無関係なプロンプトに一致するプロンプトを使用して、アクションの選択を確認します。
 5. ステージが成功したら、実稼動環境にデプロイします。
