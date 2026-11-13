@@ -1,9 +1,9 @@
 ---
 title: 既存アプリのアップグレード
 description: Adobe AnalyticsまたはCustomer Journey Analyticsを有効にする前に、古いAdobe LLM アプリのランタイムとEDS SDKを更新します。
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '803'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 このガイドは、アプリが1.2.0より前の`@adobe/llm-apps-runtime`を使用している場合や、そのEDS ウィジェットが0.1.13より前のLLM Apps SDKを使用している場合にのみ使用してください。 既に両方の要件を満たしているアプリは、[Adobe AnalyticsとCustomer Journey Analyticsの設定](/help/guides/analytics-setup.md)に直接進むことができます。
 
@@ -21,7 +19,7 @@ ht-degree: 0%
 
 ## 始める前に {#before-you-begin}
 
-ハンドラーリポジトリーにアクセスする必要があります。また、EDS ウィジェットを持つアプリの場合は、アプリにリンクされたEDS リポジトリーにアクセスする必要があります。 アプリでAdobeのマネージドインフラストラクチャを使用している場合は、更新する前にコードへのアクセスをリクエストしてください。 [Adobe Managed Infrastructureの使用](/help/guides/create-app.md#adobe-managed-infrastructure)を参照してください。
+ハンドラーリポジトリーにアクセスする必要があります。また、EDS ウィジェットを持つアプリの場合は、アプリにリンクされたEDS リポジトリーにアクセスする必要があります。 アプリで[!DNL LLM Apps]管理インフラストラクチャを使用している場合は、更新を行う前にコードへのアクセスをリクエストしてください。 [管理対象インフラストラクチャ  [!DNL LLM Apps] の使用](/help/guides/create-app.md#adobe-managed-infrastructure)を参照してください。
 
 別のアプリを作成する必要はありません。 サポートされているバージョン以下のコンポーネントのみを更新します。 [analyticsの設定要件](/help/guides/analytics-setup.md#setup-checklist)を満たす既存のAdobe設定を再利用できます。
 
@@ -63,7 +61,7 @@ EDS ウィジェットを持つアプリケーションの場合は、まずSDK 
 
 1. 依存関係の更新とそのロックファイルをコミットし、更新をプッシュして、ハンドラーリポジトリのデフォルトブランチ（通常は`main`）にマージします。 デプロイメントは、そのブランチを複製します。 ローカルまたは結合されていない機能ブランチにのみ存在する更新は、デプロイメントには含まれません。
 
-   ロックファイルが存在する場合、デプロイメントは`npm ci`の依存関係をインストールし、記録されたバージョンを使用します。 再デプロイしても、ランタイムは自動的にはアップグレードされません。 再デプロイする前に、GitHubのデフォルトブランチで、アップグレードされた依存関係と解決されたバージョンを確認します。
+   ロックファイルが存在する場合、デプロイメントは`npm ci`の依存関係をインストールし、記録されたバージョンを使用します。 再デプロイしても、ランタイムは自動的にはアップグレードされません。 再デプロイする前に、リポジトリのデフォルトブランチで、アップグレードされた依存関係と解決されたバージョンを確認します。
 
 ## LLM Apps Widget Repositoryを確認して更新します {#upgrade-sdk}
 

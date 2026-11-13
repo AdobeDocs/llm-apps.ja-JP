@@ -2,19 +2,17 @@
 title: 独自のEdge Delivery Services プロジェクトを持ち込む
 description: 既存のAdobe Edge Delivery Services プロジェクトをAdobe LLM Apps アクションに接続します。
 hidefromtoc: true
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '866'
-ht-degree: 1%
+source-wordcount: '900'
+ht-degree: 2%
 ---
 
 # 自分のEDS プロジェクトを持ち込む {#bring-your-own-eds}
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 このガイドを使用して、互換性のある既存のEdge Delivery Services（EDS）プロジェクトを接続したり、自分で作成したアクションにウィジェットを追加したりします。 既存のプロジェクトはオプションです。 独自のインフラストラクチャを設定する場合、デフォルトのパスは、[&#x200B; インフラストラクチャのセットアップ &#x200B;](/help/guides/create-app.md)中にプラットフォームが初期化する2つの空のリポジトリから始まります。
 
@@ -26,7 +24,7 @@ ht-degree: 1%
 
 次のものが必要です。
 
-- [AEM Code Sync](https://github.com/apps/aem-code-sync)がインストールされ、設定済みのコンテンツソースを含む、AEM ボイラープレートと互換性のあるEDS リポジトリ。
+- 設定されたコンテンツソースを持つAEM ボイラープレートと互換性のあるEDS リポジトリ。そのコードは[AEM Code Sync](https://github.com/apps/aem-code-sync) （GitHub）または[独自のGit](https://www.aem.live/developer/byo-git) （他のGit プロバイダー）を使用して[!DNL Cloud Manager] サイトに到達します。
 - そのリポジトリに依存関係を追加し、ブロックを作成する権限。
 - EDS サイトの応答ヘッダーを設定する権限。
 - `structuredContent`を返すハンドラーを含む[!DNL LLM Apps]のアクション。

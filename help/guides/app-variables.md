@@ -1,9 +1,9 @@
 ---
 title: アプリの変数とシークレットの設定
 description: Adobe LLM アプリケーションアプリに環境固有の変数を追加し、アクションハンドラーでそれらを読み取り、デプロイし、一般的な問題のトラブルシューティングを行います。
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1184'
 ht-degree: 1%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 変数とシークレットを使用して、アクションハンドラーで値をハードコーディングせずにアプリを設定します。 例えば、製品カタログ APIのURLを設定して、ステージングのテストサービスと実稼動環境のライブサービスを使用するように、ハンドラーコードを変更せずに設定します。
 

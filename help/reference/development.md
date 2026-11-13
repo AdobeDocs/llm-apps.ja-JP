@@ -1,9 +1,9 @@
 ---
 title: ローカルハンドラーの開発とテスト
 description: Adobe LLM アプリのプロジェクト構造、ローカルサーバーコマンド、MCP テスト、単体テストを処理します。
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '664'
+source-wordcount: '677'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 この参照は、ハンドラーをローカルで開発する際に使用します。 ハンドラー結果コントラクトについては、[生成されたハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
 
@@ -23,7 +21,7 @@ ht-degree: 0%
 - npm:
 - リンクされたハンドラーリポジトリのローカルクローン。
 
-Adobe Managed Infrastructureの場合は、このリファレンスに従う前にリポジトリアクセスをリクエストしてください。 ローカルハンドラーの実行にはAdobeの資格情報は必要ありませんが、保護されたアップストリームサービスには、独自の承認済みアクセスが必要です。
+[!DNL LLM Apps]管理対象インフラストラクチャの場合は、この参照に従う前にリポジトリへのアクセスをリクエストしてください。 ローカルハンドラーの実行にはAdobeの資格情報は必要ありませんが、保護されたアップストリームサービスには、独自の承認済みアクセスが必要です。
 
 ## プロジェクト構造
 

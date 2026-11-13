@@ -1,7 +1,7 @@
 ---
-source-git-commit: fa80b7b68e1b905eb22d4789a74b2f0de886d70c
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1179'
+source-wordcount: '1180'
 ht-degree: 0%
 ---
 # エージェント駆動型スクリーンショット手順
@@ -68,7 +68,7 @@ iframe内のアプリ。固定フレームインデックスを想定しない�
 
 新しいリソースが必要な場合は、ターゲット組織、web サイト，
 インフラストラクチャオプション、AEM プログラム、およびフィクチャ名を作成する前に作成します。 の
-Adobeのマネージドインフラストラクチャにより。 の場合
+LLM アプリ管理インフラストラクチャでは、プラットフォームでリポジトリを作成できます。 の場合
 own-repository パスを使用する場合は、2つの空のリポジトリを使用し、事前に承認を取得します
 検証によって初期化されます。
 

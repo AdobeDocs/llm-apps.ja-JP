@@ -1,9 +1,9 @@
 ---
 title: 認証リファレンス
 description: Adobe LLM Appsでのエンドユーザー認証のためのフィールド定義、トークン要件、検出エンドポイント、ハンドラーAPI、LLM プラットフォームの動作。
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1428'
+source-wordcount: '1442'
 ht-degree: 2%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 このページを使用して、認証フィールドと契約を検索します。 セットアップ手順については、[独自のID プロバイダーでエンドユーザーを認証する](/help/guides/authentication.md)を参照してください。
 

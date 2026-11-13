@@ -1,9 +1,9 @@
 ---
 title: 生成されたEDS ウィジェットのカスタマイズ
 description: Adobe LLM アプリによって自動的に作成されるEdge Delivery Services ウィジェットについて理解し、カスタマイズします。
-source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1148'
+source-wordcount: '1163'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 >[!NOTE]
 >
@@ -27,7 +25,7 @@ ht-degree: 0%
 
 ## 生成されたウィジェットの検索
 
-[&#x200B; インフラストラクチャのセットアップ &#x200B;](/help/guides/create-app.md)中に接続されたEDS リポジトリを開きます。 Adobeのマネージドインフラストラクチャを使用している場合は、続行する前にコードアクセスをリクエストしてください。 生成された各ウィジェットはEDS ブロックです。
+[&#x200B; インフラストラクチャのセットアップ &#x200B;](/help/guides/create-app.md)中に接続されたEDS リポジトリを開きます。 [!DNL LLM Apps]管理インフラストラクチャを使用している場合は、続行する前にコード アクセスを要求してください。 生成された各ウィジェットはEDS ブロックです。
 
 ```text
 blocks/
@@ -38,7 +36,7 @@ blocks/
 
 - JavaScript ファイルは、アクション結果を読み取り、インターフェイスを構築します。
 - CSS ファイルは、レイアウト、レスポンシブ動作、ビジュアルデザインを制御します。
-- 生成されたプルリクエストには、アクション用に作成されたファイルが正確に表示されます。
+- 生成されたプルリクエストまたはブランチには、アクション用に作成されたファイルが正確に表示されます。
 
 スラグはハイフンを使用しています。コード識別子`search_products`を持つアクションは`blocks/search-products/`などのブロックを使用します。 生成されたウィジェットページは通常`/eds-widgets/search-products-demo`です。実際の&#x200B;**[!UICONTROL ウィジェット URL]**&#x200B;をアクションメタデータに使用してください。
 

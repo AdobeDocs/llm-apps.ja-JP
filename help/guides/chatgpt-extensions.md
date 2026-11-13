@@ -1,9 +1,9 @@
 ---
 title: ChatGPT拡張機能の設定
 description: ChatGPT専用のエントリポイント、アクションアイコン、表示環境設定、コンポーザーのメンションを、要件とトラブルシューティングを含めて設定できます。
-source-git-commit: caf0a247e481e1b6e833ade63c5b243a5b7b22ec
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1710'
+source-wordcount: '1724'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 **これらはChatGPT専用の拡張機能です。** [!DNL Claude]またはその他のLLM プラットフォームの機能は設定しません。 アプリは、標準のアクションとウィジェットを通じて、これらのプラットフォームで引き続き動作します。
 

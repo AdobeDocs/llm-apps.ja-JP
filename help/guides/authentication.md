@@ -1,9 +1,9 @@
 ---
 title: 独自のID プロバイダーでエンドユーザーを認証する
 description: Adobe LLM アプリのエンドユーザー認証を有効にすると、サポートされているLLM プラットフォームが、保護されたアクションを呼び出す前にID プロバイダーでユーザーをサインインします。
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '2136'
+source-wordcount: '2150'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 デフォルトでは、アプリ内のすべてのアクションは公開されています。 MCP サーバーのURLを持つLLM プラットフォームは、これらのアクションを呼び出すことができ、ハンドラーはエンドユーザーを識別できません。
 

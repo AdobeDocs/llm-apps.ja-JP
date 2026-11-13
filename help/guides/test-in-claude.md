@@ -1,9 +1,9 @@
 ---
 title: Claude コネクタとしてのLLM アプリのテスト
 description: Adobe LLM Apps MCP サーバーのURLからClaude コネクタを作成し、会話でテストします。
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '690'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 デプロイメント後、LLM アプリはMCP サーバーのURLを公開します。 このURLを[!DNL Claude]にカスタムコネクタとして追加し、生成されたアクションとウィジェットをテストします。
 

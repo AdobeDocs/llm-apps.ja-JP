@@ -1,9 +1,9 @@
 ---
 title: Adobe AnalyticsとCustomer Journey Analyticsの設定
 description: Adobe Experience Platform データストリームを通じて、Adobe LLM Apps イベントを独自のAdobe Analytics レポートスイートとCustomer Journey Analytics データビューに転送します。
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '2962'
+source-wordcount: '2976'
 ht-degree: 3%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 アプリのイベントを[!DNL Adobe Analytics]、[!DNL Customer Journey Analytics]またはその両方に送信します。 [!DNL LLM Apps]は、所有しているデータストリームを通じてイベントを[!DNL Adobe Experience Platform] Edge Networkに転送します。 データストリームは、イベントを追加した各サービスにルーティングします。
 
