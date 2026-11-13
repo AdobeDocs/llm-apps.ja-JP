@@ -29,13 +29,13 @@ ht-degree: 1%
 - **[!DNL LLM Apps]の管理インフラストラクチャ**&#x200B;が、最も早く開始できます。 Adobeでは、アクションハンドラーとウィジェットのリポジトリを作成およびホストするので、自分でリポジトリを設定する必要はありません。
 - **独自のリポジトリ**&#x200B;は、アプリのコードを所有しているリポジトリに保存し、[!DNL Cloud Manager]に追加します。 [!DNL GitHub]、[!DNL GitHub Enterprise]、[!DNL GitLab]、[!DNL Bitbucket]または[!DNL Azure DevOps]でホストできます。 このプラットフォームは、必要なプロジェクトファイルを含む空のリポジトリを初期化するので、事前にアクションやウィジェットコードを準備する必要はありません。
 
-**このガイドでは、** インフラストラクチャ オプションを選択し、セットアップ ウィザードを使用してアプリを作成する方法を説明します。 セットアップ後、[ アクションの作成](/help/guides/creating-actions.md)に進みます。
+**このガイドでは、** インフラストラクチャ オプションを選択し、セットアップ ウィザードを使用してアプリを作成する方法を説明します。 セットアップ後、[&#x200B; アクションの作成](/help/guides/creating-actions.md)に進みます。
 
 アプリを作成すると、**not**&#x200B;がアクションの生成を開始します。 アプリページとは別にアクションの生成を開始します。
 
 ## アプリ作成ウィザードを開く
 
-[Adobe LLM アプリ ](https://experience.adobe.com/llm-apps)を開きます。 ようこそページから、**[!UICONTROL 開始]**&#x200B;を選択します。 既にアプリを開いている場合は、アプリセレクターを使用して、**[!UICONTROL 新しいアプリを作成]**&#x200B;を選択します。
+[Adobe LLM アプリ &#x200B;](https://experience.adobe.com/llm-apps)を開きます。 ようこそページから、**[!UICONTROL 開始]**&#x200B;を選択します。 既にアプリを開いている場合は、アプリセレクターを使用して、**[!UICONTROL 新しいアプリを作成]**&#x200B;を選択します。
 
 **[!UICONTROL LLM アプリの作成]** ウィザードは、**[!UICONTROL 開始]**&#x200B;から始まります。 テクノロジー環境の設定方法を選択します。
 
@@ -54,16 +54,16 @@ ht-degree: 1%
 
 1. 「**[!UICONTROL 処理しましょう]**」を選択します。
 2. **[!UICONTROL 次の手順]**&#x200B;を選択します。
-3. [ アプリの詳細](#app-details)を完了します。
+3. [&#x200B; アプリの詳細](#app-details)を完了します。
 4. 「**[!UICONTROL アプリを作成]**」を選択します。
 
 アプリページには&#x200B;**[!UICONTROL アプリの設定]**&#x200B;が表示され、Adobeはリポジトリを準備し、ウィジェットサイトに接続します。 UIは、設定には通常1～2分かかることを示します。アクション、テスト、デプロイメントは、設定の準備ができるまで利用できません。
 
-![ アプリのセットアップ — Adobeがアプリのインフラストラクチャを準備しています](/help/assets/guide-infrastructure/provisioning.png)
+![&#x200B; アプリのセットアップ — Adobeがアプリのインフラストラクチャを準備しています](/help/assets/guide-infrastructure/provisioning.png)
 
 設定が失敗した場合は、エラーを読み取り、**[!UICONTROL 再試行]**&#x200B;を選択します。 ページで進行状況を確認できない場合は、バックグラウンドで設定を続行します。再接続するには、**[!UICONTROL もう一度チェック]**&#x200B;を選択します。
 
-セットアップが完了したら、[ アクションの作成](/help/guides/creating-actions.md)を続行します。
+セットアップが完了したら、[&#x200B; アクションの作成](/help/guides/creating-actions.md)を続行します。
 
 ## 独自のリポジトリの使用 {#your-own-repositories}
 
@@ -86,9 +86,9 @@ ht-degree: 1%
 ウィジェットは[!DNL Edge Delivery Services] （EDS） サイトから提供され、ウィジェット リポジトリはそのサイトのコードを保持します。 ウィジェットリポジトリがEDS サイトに属しているか、またはが属していることを確認します。 1つを設定するには2つの方法があります。
 
 - **任意のGit プロバイダーで、自分のGitを持ち込む。** [!DNL Cloud Manager]でEDS サイトを作成し、**自分のGitを持ち込む**&#x200B;でリポジトリにリンクします。 次に、[!DNL Cloud Manager]はリポジトリのコードをサイトに同期します。 ウィザードを開始する前に、これを行います。 [独自のGitを持ち込む](https://www.aem.live/developer/byo-git)を参照してください。
-- **A [!DNL GitHub] リポジトリ、およびAEM Code Sync。** [Edge Delivery Services チュートリアル ](https://www.aem.live/developer/tutorial)のように、自分でEDS サイトを設定します。 このウィザードでは、AEM Code Syncのインストールと、リポジトリの検証後のアクセス権の確認について説明します。
+- **A [!DNL GitHub] リポジトリ、およびAEM Code Sync。** [Edge Delivery Services チュートリアル &#x200B;](https://www.aem.live/developer/tutorial)のように、自分でEDS サイトを設定します。 このウィザードでは、AEM Code Syncのインストールと、リポジトリの検証後のアクセス権の確認について説明します。
 
-ウィジェットステップは、適用されるケースを検出します。 [ ウィジェットインフラストラクチャの設定](#set-up-the-widget-infrastructure)を参照してください。
+ウィジェットステップは、適用されるケースを検出します。 [&#x200B; ウィジェットインフラストラクチャの設定](#set-up-the-widget-infrastructure)を参照してください。
 
 >[!TIP]
 >
@@ -107,9 +107,9 @@ ht-degree: 1%
 3. 「**[!UICONTROL リポジトリを検証]**」を選択します。 検証により、Adobe LLM Apps ボイラープレートを使用して空のリポジトリが初期化されます。 既存のリポジトリには、互換性のあるアクションプロジェクトが含まれている必要があります。
 4. **[!UICONTROL Repository validated]**&#x200B;が表示されたら、**[!UICONTROL 次の手順]**&#x200B;を選択します。
 
-![ アクションインフラストラクチャの設定 – Cloud Manager プログラムとリポジトリが選択され、リポジトリが検証されました](/help/assets/guide-infrastructure/action-repository.png)
+![&#x200B; アクションインフラストラクチャの設定 – Cloud Manager プログラムとリポジトリが選択され、リポジトリが検証されました](/help/assets/guide-infrastructure/action-repository.png)
 
-プラットフォームは、生成されたアクションコードをこのリポジトリのブランチにプッシュします。 **[!UICONTROL レビュー済みとしてマーク]**&#x200B;を選択すると、ブランチが結合されます。 [ アクションの作成](/help/guides/creating-actions.md)を参照してください。
+プラットフォームは、生成されたアクションコードをこのリポジトリのブランチにプッシュします。 **[!UICONTROL レビュー済みとしてマーク]**&#x200B;を選択すると、ブランチが結合されます。 [&#x200B; アクションの作成](/help/guides/creating-actions.md)を参照してください。
 
 ### ウィジェットインフラストラクチャの設定 {#set-up-the-widget-infrastructure}
 
@@ -117,7 +117,7 @@ ht-degree: 1%
 
 1. **[!UICONTROL ウィジェットソース]**&#x200B;で、**[!UICONTROL ウィジェットリポジトリを手動で選択]**&#x200B;を選択します。
 
-   ![ ウィジェットインフラストラクチャの設定 – ウィジェットリポジトリを手動で選択したウィジェットソース ](/help/assets/guide-infrastructure/widget-source.png)
+   ![&#x200B; ウィジェットインフラストラクチャの設定 – ウィジェットリポジトリを手動で選択したウィジェットソース &#x200B;](/help/assets/guide-infrastructure/widget-source.png)
 
 2. **[!UICONTROL Cloud Manager プログラム]**&#x200B;で、ウィジェットリポジトリを含むプログラムを選択します。 アクションリポジトリのプログラムとは異なる場合があります。
 3. **[!UICONTROL Edge Delivery Services リポジトリ]**&#x200B;で、ウィジェットリポジトリを選択します。 アクションリポジトリは選択しないでください。
@@ -129,7 +129,7 @@ ht-degree: 1%
 
 [!DNL GitLab]、[!DNL Bitbucket]、[!DNL Azure DevOps]または[!DNL GitHub Enterprise]のリポジトリの場合、検証は、[!DNL Cloud Manager]がリポジトリにリンクしているEDS サイトを見つけます。 ウィザードに、**[!UICONTROL Edge Delivery Services サイト]**&#x200B;の下のサイトが表示されます。
 
-![Widget インフラストラクチャのセットアップ – ウィジェットリポジトリが検証され、Cloud Managerが同期するEdge Delivery Services サイト ](/help/assets/guide-infrastructure/widget-repository.png)が表示されました
+![Widget インフラストラクチャのセットアップ – ウィジェットリポジトリが検証され、Cloud Managerが同期するEdge Delivery Services サイト &#x200B;](/help/assets/guide-infrastructure/widget-repository.png)が表示されました
 
 [!DNL Cloud Manager]はリポジトリのコードをそのサイトに同期するので、AEM Code Syncは必要ありません。 **[!UICONTROL 次の手順]**&#x200B;を選択します。
 
@@ -155,20 +155,20 @@ ht-degree: 1%
 2. **権限** シートを開きます。 存在しない場合は、**[!UICONTROL シートを追加]**&#x200B;を選択し、`permissions`という名前を付け、列ヘッダー&#x200B;**パス**、**グループ**、**アクション**&#x200B;を追加します。 **コメント**&#x200B;列を追加して、各ルールを説明することもできます。
 3. サイト内のすべてのコンテンツに対するAdobe アカウントの書き込みアクセス権を付与する行を追加します。**パス**&#x200B;のサイトのコンテンツパス、**グループ**&#x200B;のAdobe アカウントの電子メール、および&#x200B;**アクション**&#x200B;の`write`を使用します。 設定を保存します。
 
-   ![ グループ列にアカウントの例を示すDA権限シートと、アクション列に書き込みアクセス権](/help/assets/guide-infrastructure/da-write-permissions.png)
+   ![&#x200B; グループ列にアカウントの例を示すDA権限シートと、アクション列に書き込みアクセス権](/help/assets/guide-infrastructure/da-write-permissions.png)
 
    このスクリーンショットは架空のアカウントを使用しています。 `widget-author@example.com`をAdobe アカウントの電子メールに置き換え、組織全体の`/ + **`の例ではなく、サイトのコンテンツパスを使用します。 `CONFIG`行は構成管理者用です。コンテンツへのアクセス権を付与するために変更する必要はありません。
 
 AEM サイトの役割は、DA書き込みアクセス権を付与しません。 組織全体の書き込みアクセス権は必要ありません。
 
-DA権限の設定について詳しくは、[権限とセキュリティ ](https://www.aem.live/docs/ew/administering/permissions)を参照してください。
+DA権限の設定について詳しくは、[権限とセキュリティ &#x200B;](https://www.aem.live/docs/ew/administering/permissions)を参照してください。
 
 ##### AEM設定の検証 {#validate-aem-setup}
 
 1. [!DNL LLM Apps]に戻り、**[!UICONTROL AEM設定の検証]**&#x200B;を選択します。
 2. **[!UICONTROL AEM設定が確認されました]**&#x200B;が表示されたら、**[!UICONTROL 次の手順]**&#x200B;を選択します。
 
-検証に失敗した場合は、メッセージに従って[AEM サイト アクセス ](#aem-site-access)または[DA書き込みアクセス ](#da-write-access)を確認し、もう一度検証します。
+検証に失敗した場合は、メッセージに従って[AEM サイト アクセス &#x200B;](#aem-site-access)または[DA書き込みアクセス &#x200B;](#da-write-access)を確認し、もう一度検証します。
 
 >[!NOTE]
 >
@@ -178,7 +178,7 @@ DA権限の設定について詳しくは、[権限とセキュリティ ](https
 
 両方のインフラストラクチャ オプションは、**[!UICONTROL アプリの詳細]**&#x200B;で終わります。
 
-![ アプリの詳細 – LLM アプリ名、Cloud Manager リポジトリから設定されたAEM プログラム、およびApplication Insights データリージョン ](/help/assets/guide-infrastructure/app-details.png)
+![&#x200B; アプリの詳細 – LLM アプリ名、Cloud Manager リポジトリから設定されたAEM プログラム、およびApplication Insights データリージョン &#x200B;](/help/assets/guide-infrastructure/app-details.png)
 
 1. **[!UICONTROL LLM アプリ名]**&#x200B;を入力します。 ブランドまたはエクスペリエンスを識別する名前（*Frescopa Coffee*&#x200B;など）を使用します。
 2. アプリが属する&#x200B;**[!UICONTROL AEM プログラム]**&#x200B;を選択します。 1つのプログラムのみにアクセスできる場合、ウィザードはそのプログラムを自動的に選択します。 独自のリポジトリでは、プログラムはアクションリポジトリのプログラムであり、ここで変更することはできません。
@@ -195,12 +195,12 @@ DA権限の設定について詳しくは、[権限とセキュリティ ](https
 
 後でリポジトリを確認するには、アプリの&#x200B;**[!UICONTROL 設定]**&#x200B;を開きます。 「**[!UICONTROL リポジトリ]**」セクションには、各リポジトリのプログラムと名前、および「自分のGitを取り込む」を使用するウィジェットリポジトリのEDS サイトとオリジンが表示されます。 アプリの作成後にリポジトリを変更することはできません。
 
-![ アプリの設定 – ボイラープレートとEdge Delivery Services リポジトリ（リンクされたサイトとオリジンを含む）を含むリポジトリセクション ](/help/assets/guide-infrastructure/settings-repositories.png)
+![&#x200B; アプリの設定 – ボイラープレートとEdge Delivery Services リポジトリ（リンクされたサイトとオリジンを含む）を含むリポジトリセクション &#x200B;](/help/assets/guide-infrastructure/settings-repositories.png)
 
 Adobe LLM アプリ [!DNL GitHub] アプリで以前に作成されたアプリは、既存のリポジトリで引き続き使用できます。
 
 ## 次のトピック：アクションの作成
 
-アプリにインフラストラクチャが追加されましたが、まだ生成されたアクションはありません。 [ アクションの作成](/help/guides/creating-actions.md)を続行してweb サイトを分析するか、手動でのアクション作成を選択します。
+アプリにインフラストラクチャが追加されましたが、まだ生成されたアクションはありません。 [&#x200B; アクションの作成](/help/guides/creating-actions.md)を続行してweb サイトを分析するか、手動でのアクション作成を選択します。
 
-アクションメタデータ、ハンドラー、ウィジェット、およびデプロイされたMCP サーバーの関係については、[ アプリケーションの接続方法](/help/guides/app-architecture.md)を参照してください。
+アクションメタデータ、ハンドラー、ウィジェット、およびデプロイされたMCP サーバーの関係については、[&#x200B; アプリケーションの接続方法](/help/guides/app-architecture.md)を参照してください。
