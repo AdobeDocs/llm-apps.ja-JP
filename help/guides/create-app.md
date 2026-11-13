@@ -77,7 +77,7 @@ ht-degree: 1%
 
 - アプリが属する[!DNL Cloud Manager] プログラムへのアクセス。
 - アクションハンドラー用とウィジェット用の2つのリポジトリ。 空のリポジトリは問題ありません。これには、作成されたREADMEとそのGit ホストのみを含むリポジトリが含まれます。
-- 両方のリポジトリ [がプライベートリポジトリとしてCloud Manager](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-manager/content/managing-code/external-repositories)に追加され、所有権が検証され、ステータスは&#x200B;**準備完了**&#x200B;です。 [!DNL Cloud Manager]は書き込み可能である必要があります。読み取り専用アクセストークンだけでは不十分です。
+- 両方のリポジトリ [がプライベートリポジトリとしてCloud Manager](https://experienceleague.adobe.com/ja/docs/experience-manager-cloud-manager/content/managing-code/external-repositories)に追加され、所有権が検証され、ステータスは&#x200B;**準備完了**&#x200B;です。 [!DNL Cloud Manager]は書き込み可能である必要があります。読み取り専用アクセストークンだけでは不十分です。
 
 自分がホストしているリポジトリのみが一覧表示されます。 [!DNL Cloud Manager]でAdobeによってホストされているリポジトリはサポートされていません。
 
