@@ -1,17 +1,13 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリとは何か、どのように機能するのか、アプリの構築を開始する方法について説明します。
-source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
+source-git-commit: 07bcd58b3aab70b03f62523b5b25f30f4b6d7004
 workflow-type: tm+mt
-source-wordcount: '642'
+source-wordcount: '596'
 ht-degree: 1%
 ---
 
 # Adobe LLM Apps – 概要 {#adobe-llm-apps-an-overview}
-
->[!IMPORTANT]
->
->LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 ## [!DNL Adobe LLM Apps]とは
 
