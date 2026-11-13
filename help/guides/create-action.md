@@ -15,13 +15,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、最初に[EDS開発者チュートリアル ](https://www.aem.live/developer/tutorial)および[ ブロックの探索](https://www.aem.live/docs/exploring-blocks)を読んで、ウィジェットを接続する前に、ブロック、`decorate`関数、EDS プロジェクト構造などの基本を学びます。
+>このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、最初に[EDS開発者チュートリアル &#x200B;](https://www.aem.live/developer/tutorial)および[&#x200B; ブロックの探索](https://www.aem.live/docs/exploring-blocks)を読んで、ウィジェットを接続する前に、ブロック、`decorate`関数、EDS プロジェクト構造などの基本を学びます。
 
 プラットフォームが作成しなかった機能を追加します。 [!DNL LLM Apps]でアクションを定義し、リンクされたリポジトリにそのハンドラーを書き込み、必要に応じてウィジェットを追加します。
 
 **このガイドでは、** アクションを定義し、そのハンドラーを実装し、オプションのウィジェットを接続する方法について説明します。 アクションをローカルにテストし、アプリをデプロイし、サポートされているLLM プラットフォームでアクションを試します。
 
-最初のアプリの場合は、[ インフラストラクチャの設定](/help/guides/create-app.md)から開始し、[ アクションの作成](/help/guides/creating-actions.md)を行います。 アクションの作成ガイドでは、web サイトからの自動生成と手動での作成について説明します。
+最初のアプリの場合は、[&#x200B; インフラストラクチャの設定](/help/guides/create-app.md)から開始し、[&#x200B; アクションの作成](/help/guides/creating-actions.md)を行います。 アクションの作成ガイドでは、web サイトからの自動生成と手動での作成について説明します。
 
 ## 始める前に
 
@@ -148,9 +148,9 @@ Invoked status text: Products found
 
 チェックボックスの下にある手順を確認して、概要を確認します。 機密性のない匿名化された意図に限定し、プライバシーポリシーにデータ収集を記載します。 命令は最大2,000文字を受け付けます。 **[!UICONTROL ユーザーインテントを収集]**&#x200B;をクリアして、概要を収集しません。
 
-![新しいアクションの作成 – ユーザーのインテントを収集し、デフォルトの手順を使用したアプリケーションインサイト ](/help/assets/guide-create-action/action-analytics-user-intent.png)
+![新しいアクションの作成 – ユーザーのインテントを収集し、デフォルトの手順を使用したアプリケーションインサイト &#x200B;](/help/assets/guide-create-action/action-analytics-user-intent.png)
 
-完全なフィールド定義については、[ アクションとウィジェットフィールド ](/help/reference/reference-docs.md)を参照してください。
+完全なフィールド定義については、[&#x200B; アクションとウィジェットフィールド &#x200B;](/help/reference/reference-docs.md)を参照してください。
 
 ## ウィジェットの設定
 
@@ -218,7 +218,7 @@ actions/
 
 フォルダー名は、アクションエディターに表示されるアクションのコード識別子と一致する必要があります。
 
-結果のコントラクトとハンドラーとウィジェットの関係について詳しくは、[生成ハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
+結果のコントラクトとハンドラーとウィジェットの関係について詳しくは、[生成ハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
 
 ### ハンドラーコントラクト
 
@@ -268,7 +268,7 @@ structuredContent: {
 
 ### APIの接続
 
-サーバーサイドハンドラーでAPI呼び出しを保持します。 この例では、パブリック製品APIを呼び出します。 `PRODUCT_API_ORIGIN`という名前の[ アプリ変数](/help/guides/app-variables.md)でAPIのHTTPS オリジンを設定します。 この例では、上記で定義された`query`および`category` パラメーターを受け入れ、少なくとも1つのパラメーターを必要とし、資格情報は必要ありません。
+サーバーサイドハンドラーでAPI呼び出しを保持します。 この例では、パブリック製品APIを呼び出します。 `PRODUCT_API_ORIGIN`という名前の[&#x200B; アプリ変数](/help/guides/app-variables.md)でAPIのHTTPS オリジンを設定します。 この例では、上記で定義された`query`および`category` パラメーターを受け入れ、少なくとも1つのパラメーターを必要とし、資格情報は必要ありません。
 
 ```javascript
 const { getVariable } = require('@adobe/llm-apps-runtime');
@@ -369,7 +369,7 @@ test/
 npm test
 ```
 
-プロジェクトのレイアウトとローカル MCP テストについては、[ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照してください。
+プロジェクトのレイアウトとローカル MCP テストについては、[&#x200B; ローカルハンドラーの開発とテスト &#x200B;](/help/reference/development.md)を参照してください。
 
 ## アクションをローカルでテストする
 
@@ -403,7 +403,7 @@ MCP インスペクターまたは`curl`を使用して、次を行います。
 ## デプロイとテスト
 
 1. ハンドラーとウィジェットの変更をコミットしてプッシュします。
-2. [ アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
+2. [&#x200B; アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
 3. [ChatGPT](/help/guides/test-in-chatgpt.md)または[Claude](/help/guides/test-in-claude.md)でアプリをテストします。
 4. アクションと、そのアクションを呼び出さない無関係なプロンプトに一致するプロンプトを使用して、アクションの選択を確認します。
 5. ステージが成功したら、実稼動環境にデプロイします。
