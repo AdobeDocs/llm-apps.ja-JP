@@ -1,9 +1,9 @@
 ---
 title: Claude コネクタとしてのLLM アプリのテスト
 description: Adobe LLM Apps MCP サーバーのURLからClaude コネクタを作成し、会話でテストします。
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '690'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 デプロイメント後、LLM アプリはMCP サーバーのURLを公開します。 このURLを[!DNL Claude]にカスタムコネクタとして追加し、生成されたアクションとウィジェットをテストします。
 
@@ -37,7 +35,7 @@ ht-degree: 0%
 
 ## カスタムコネクタの追加
 
-1. [&#x200B; カスタマイズ/コネクタ &#x200B;](https://claude.ai/customize/connectors)を開きます。 組織全体のコネクタの場合、代わりに承認済み所有者が[組織設定> コネクタ &#x200B;](https://claude.ai/admin-settings/connectors)を開きます。
+1. [ カスタマイズ/コネクタ ](https://claude.ai/customize/connectors)を開きます。 組織全体のコネクタの場合、代わりに承認済み所有者が[組織設定> コネクタ ](https://claude.ai/admin-settings/connectors)を開きます。
 2. 組織フローの「**[!UICONTROL カスタムコネクタを追加]**」または「**[!UICONTROL 追加]** > **[!UICONTROL カスタム]** > **[!UICONTROL Web]**」を選択します。
 3. 必要に応じてコネクタ名を入力し、HTTPS MCP サーバーの完全なURLを貼り付けます。
 4. ダイアログに複数の手順がある場合は、**[!UICONTROL 続行]**&#x200B;を選択して、検出された認証設定を確認します。
@@ -78,5 +76,5 @@ ht-degree: 0%
 
 ## 次の手順
 
-- [生成されたウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)。
+- [生成されたウィジェットをカスタマイズ ](/help/guides/widgets.md)。
 - [最初からアクションを作成](/help/guides/create-action.md)。

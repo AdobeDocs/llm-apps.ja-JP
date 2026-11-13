@@ -1,9 +1,9 @@
 ---
 title: 生成されたEDS ウィジェットのカスタマイズ
 description: Adobe LLM アプリによって自動的に作成されるEdge Delivery Services ウィジェットについて理解し、カスタマイズします。
-source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1148'
+source-wordcount: '1163'
 ht-degree: 0%
 ---
 
@@ -11,13 +11,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 >[!NOTE]
 >
->このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、ウィジェットをカスタマイズする前に、[EDS開発者チュートリアル &#x200B;](https://www.aem.live/developer/tutorial)および[&#x200B; ブロックの探索](https://www.aem.live/docs/exploring-blocks)をお読みください。 これらのリソースには、ブロック、`decorate`関数、およびEDS プロジェクト構造が含まれています。
+>このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、ウィジェットをカスタマイズする前に、[EDS開発者チュートリアル ](https://www.aem.live/developer/tutorial)および[ ブロックの探索](https://www.aem.live/docs/exploring-blocks)をお読みください。 これらのリソースには、ブロック、`decorate`関数、およびEDS プロジェクト構造が含まれています。
 
 生成が成功すると、プラットフォームは[!DNL LLM Apps]のアクションにリンクされたEDS ウィジェットを提供します。 ウィジェットは、プレビュー用に代表データをレンダリングし、サポートされているLLM プラットフォームに接続されたときにハンドラーの結果を読み取ります。 ウィジェットをカスタマイズする前に、生成されたデザインと動作を確認します。
 
@@ -27,7 +25,7 @@ ht-degree: 0%
 
 ## 生成されたウィジェットの検索
 
-[&#x200B; インフラストラクチャのセットアップ &#x200B;](/help/guides/create-app.md)中に接続されたEDS リポジトリを開きます。 Adobeのマネージドインフラストラクチャを使用している場合は、続行する前にコードアクセスをリクエストしてください。 生成された各ウィジェットはEDS ブロックです。
+[ インフラストラクチャのセットアップ ](/help/guides/create-app.md)中に接続されたEDS リポジトリを開きます。 [!DNL LLM Apps]管理インフラストラクチャを使用している場合は、続行する前にコード アクセスを要求してください。 生成された各ウィジェットはEDS ブロックです。
 
 ```text
 blocks/
@@ -38,7 +36,7 @@ blocks/
 
 - JavaScript ファイルは、アクション結果を読み取り、インターフェイスを構築します。
 - CSS ファイルは、レイアウト、レスポンシブ動作、ビジュアルデザインを制御します。
-- 生成されたプルリクエストには、アクション用に作成されたファイルが正確に表示されます。
+- 生成されたプルリクエストまたはブランチには、アクション用に作成されたファイルが正確に表示されます。
 
 スラグはハイフンを使用しています。コード識別子`search_products`を持つアクションは`blocks/search-products/`などのブロックを使用します。 生成されたウィジェットページは通常`/eds-widgets/search-products-demo`です。実際の&#x200B;**[!UICONTROL ウィジェット URL]**&#x200B;をアクションメタデータに使用してください。
 
@@ -70,7 +68,7 @@ export default async function decorate(block, bridge) {
 - `bridge.callTool()`で別のアクションを呼び出します。
 - サイズを`bridge.autoResize()`と同期しておきます。
 
-このガイドでは、一般的なブリッジ方法について説明します。 完全なAPIについては、[`@adobe/llmapps-sdk` パッケージ &#x200B;](https://www.npmjs.com/package/@adobe/llmapps-sdk)を参照してください。
+このガイドでは、一般的なブリッジ方法について説明します。 完全なAPIについては、[`@adobe/llmapps-sdk` パッケージ ](https://www.npmjs.com/package/@adobe/llmapps-sdk)を参照してください。
 
 サポート対象のOpenAI クライアントで、準備済みウィジェットを直接開いたり、会話の横で開いたり、ファイルビューアとして開いたりできるようにするには、[ChatGPT拡張機能の設定](/help/guides/chatgpt-extensions.md)を参照してください。 このガイドでは、UIの設定と要件について説明します。 ファイルの処理、選択コンテキスト、ディープリンク、およびリッチメッセージの制御には、ウィジェットの実装が必要です。拡張機能を有効にしても、その動作は自動的に追加されません。 オプションのAPIを使用する前に、ホスト機能を確認します。 個別の`bridge.chatgpt` ベンダーAPIはChatGPTでのみ使用でき、他の`null`箇所で使用できます。標準のブリッジ APIとは異なります。
 
@@ -105,7 +103,7 @@ export default async function decorate(block, bridge) {
 
 `bridge.toolResult`は最初の結果でのみ解決されます。 ウィジェットがマウントされたままであり、後で結果を処理する必要がある場合は、`bridge.onToolResult(callback)`を使用します。
 
-`structuredContent`を変更する場合は、ハンドラーとウィジェットを一緒に更新します。 構造化データがモデルから隠されていると仮定しないでください。これはホストのアクション結果の一部です。 完全な返品契約については、[生成ハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
+`structuredContent`を変更する場合は、ハンドラーとウィジェットを一緒に更新します。 構造化データがモデルから隠されていると仮定しないでください。これはホストのアクション結果の一部です。 完全な返品契約については、[生成ハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
 
 ## 外部データの安全なレンダリング
 
@@ -215,7 +213,7 @@ aem up
 1. EDSの変更をコミットしてプッシュします。
 2. ウィジェットページと変更されたスクリプトとスタイルが、設定済みのEDS URLで使用できることを確認します。 EDS公開ワークフローを使用してコンテンツの変更を公開します。
 3. ハンドラーまたはアクションメタデータを変更した場合は、変更をプッシュして、アプリをステージにデプロイします。
-4. サポートされているLLM プラットフォームでアクションとウィジェットをテストします。 [ChatGPTでのテスト &#x200B;](/help/guides/test-in-chatgpt.md)または[&#x200B; クロードでのテスト &#x200B;](/help/guides/test-in-claude.md)を参照してください。
+4. サポートされているLLM プラットフォームでアクションとウィジェットをテストします。 [ChatGPTでのテスト ](/help/guides/test-in-chatgpt.md)または[ クロードでのテスト ](/help/guides/test-in-claude.md)を参照してください。
 5. テストが成功したら、必要に応じてハンドラーとメタデータの変更を実稼動環境にデプロイします。
 
 EDS パブリケーションは、アプリ デプロイメントとは別です。 ステージングと実稼動で同じEDS URLを使用する場合、これらのURLでのウィジェットの変更は両方の環境に影響します。ステージングにデプロイしても、分離されたウィジェットのコピーは作成されません。

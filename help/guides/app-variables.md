@@ -1,9 +1,9 @@
 ---
 title: アプリの変数とシークレットの設定
 description: Adobe LLM アプリケーションアプリに環境固有の変数を追加し、アクションハンドラーでそれらを読み取り、デプロイし、一般的な問題のトラブルシューティングを行います。
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1184'
 ht-degree: 1%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 変数とシークレットを使用して、アクションハンドラーで値をハードコーディングせずにアプリを設定します。 例えば、製品カタログ APIのURLを設定して、ステージングのテストサービスと実稼動環境のライブサービスを使用するように、ハンドラーコードを変更せずに設定します。
 
@@ -59,7 +57,7 @@ npm install @adobe/llm-apps-runtime@latest
 3. **[!UICONTROL Workspace]**&#x200B;で、**[!UICONTROL ステージ]**&#x200B;または&#x200B;**[!UICONTROL 実稼動]**&#x200B;を選択します。
 4. 「**[!UICONTROL 追加]**」を選択します。
 
-   ![変数と秘密鍵 – 「追加」ボタン付きの空のステージワークスペース &#x200B;](/help/assets/guide-app-variables/variables-empty.png)
+   ![変数と秘密鍵 – 「追加」ボタン付きの空のステージワークスペース ](/help/assets/guide-app-variables/variables-empty.png)
 
 5. ダイアログで、次のように入力します。
    - **[!UICONTROL 名前]**: `GREETING_PREFIX`。
@@ -102,23 +100,23 @@ module.exports = async ({ name = 'there' } = {}, extra) => {
 >
 >変数は、アプリのアクションハンドラーでのみ使用できます。ウィジェットで自動的に使用できるのは&#x200B;**個ではなく**&#x200B;個です。
 
-ハンドラーの変更の準備ができたら、それらをコミットしてアプリのハンドラーリポジトリにプッシュします。 次のデプロイメントでは、最新のプッシュコードを使用します。 ハンドラーの編集について詳しくは、[生成ハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
+ハンドラーの変更の準備ができたら、それらをコミットしてアプリのハンドラーリポジトリにプッシュします。 次のデプロイメントでは、最新のプッシュコードを使用します。 ハンドラーの編集について詳しくは、[生成ハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
 
 #### ステップ 3：デプロイとテスト {#deploy-and-verify}
 
-1. [Workspace ]&#x200B;**で選択した環境と同じ環境にアプリ (/help/guides/deploy-your-app.md)をデプロイします。**
-2. `name`が`Ada`に設定されているサポートされているLLM プラットフォームからアクションを呼び出します。 [ChatGPT プラグインのテスト &#x200B;](/help/guides/test-in-chatgpt.md)または[Claude コネクタのテスト &#x200B;](/help/guides/test-in-claude.md)を参照してください。
+1. [Workspace ]**で選択した環境と同じ環境にアプリ ](/help/guides/deploy-your-app.md)をデプロイします。**[!UICONTROL 
+2. `name`が`Ada`に設定されているサポートされているLLM プラットフォームからアクションを呼び出します。 [ChatGPT プラグインのテスト ](/help/guides/test-in-chatgpt.md)または[Claude コネクタのテスト ](/help/guides/test-in-claude.md)を参照してください。
 3. 応答が`Good day, Ada!`であることを確認してください。 応答は、ハンドラーが設定された変数を読み取り、デフォルトの挨拶を上書きすることを確認します。
 
 他の環境を設定するには、**[!UICONTROL Workspace]**&#x200B;でその環境を選択し、適切な値で設定を繰り返してから、アプリをそこにデプロイしてテストします。
 
 >[!NOTE]
 >
->ステージと実稼動には&#x200B;**独立した設定**&#x200B;があります。 一方の環境の変更は、もう一方の環境に影響を与えることはありません&#x200B;**1&rbrace;。**&#x200B;必要に応じて、両方の環境で同じ名前を使用し、それぞれに適切な値を選択します。
+>ステージと実稼動には&#x200B;**独立した設定**&#x200B;があります。 一方の環境の変更は、もう一方の環境に影響を与えることはありません&#x200B;**1}。**&#x200B;必要に応じて、両方の環境で同じ名前を使用し、それぞれに適切な値を選択します。
 
 >[!TIP]
 >
->デプロイする前にローカルでテストするには、[&#x200B; ローカルハンドラーの開発とテスト &#x200B;](/help/reference/development.md)を参照し、変数をローカルサーバーに渡します。
+>デプロイする前にローカルでテストするには、[ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照し、変数をローカルサーバーに渡します。
 >
 >`node server/local.js --param 'LLMA_VARIABLE_NAMES=["GREETING_PREFIX"]' --param GREETING_PREFIX=Howdy`
 

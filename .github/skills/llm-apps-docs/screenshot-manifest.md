@@ -1,7 +1,7 @@
 ---
-source-git-commit: fa80b7b68e1b905eb22d4789a74b2f0de886d70c
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1963'
+source-wordcount: '2090'
 ht-degree: 1%
 ---
 # スクリーンショットマニフェスト
@@ -23,10 +23,19 @@ ht-degree: 1%
 
 | ファイル名 | 状態と便利なコンテキスト | 代替テキストの提案 |
 |---|---|---|
-| `setup-choice.png` | 両方のインフラストラクチャオプションを表示したまま開始 | LLM アプリの作成 – Adobeで管理するインフラストラクチャまたは独自のリポジトリを選択します |
-| `app-details.png` | アプリ名、AEM プログラム、Analytics リージョン、不変設定の警告 | アプリの詳細 – 名前を入力し、AEM プログラムを選択して、分析リージョンを選択します |
-| `action-repository.png` | GitHubを選択した独自のリポジトリパスとリポジトリ接続の手順 | アクションインフラストラクチャの設定 – 空または互換性のあるアクションリポジトリを接続する |
-| `provisioning.png` | 承認済みAdobe管理設定が進行中です | アプリのセットアップ - Adobeがインフラストラクチャの準備を行っています |
+| `setup-choice.png` | **操作を開始しましょう**、**自分のCloud Manager セットアップを使用する**、自分のリポジトリに対するコールアウト オプション | LLM アプリを作成する – 「Let us handle it and Use my Cloud Manager setup」で始めます |
+| `action-repository.png` | Cloud Manager プログラムとリポジトリが選択されました。**リポジトリが検証されました** | アクションインフラストラクチャの設定 – Cloud Manager プログラムとリポジトリが選択されました |
+| `widget-source.png` | **ウィジェットリポジトリを手動で選択**&#x200B;するウィジェットソース（Cloud Manager EDSは近日リリース予定） | ウィジェットインフラストラクチャの設定 – ウィジェットソース |
+| `widget-repository.png` | GitHub以外のウィジェットリポジトリが検証されました。**Edge Delivery Services サイト**&#x200B;注 | ウィジェットインフラストラクチャの設定 – ウィジェットリポジトリが検証され、そのリンクされたEDS サイトが表示される |
+| `app-details.png` | アプリ名、リポジトリから設定されたAEM プログラムセット、Application Insights データリージョン | アプリの詳細 – 名前、AEM プログラム、およびApplication Insights データリージョン |
+| `settings-repositories.png` | Settings > Repository （Cloud Managerのリポジトリカードとリンクされたサイトの両方を含む） | アプリ設定 – リポジトリセクション |
+| `provisioning.png` | 承認済みLLM アプリの管理中の設定 | アプリのセットアップ - Adobeがインフラストラクチャの準備を行っています |
+
+最後のキャプチャ（`provisioning.png`と`da-write-permissions.png`を除く）: 2026-11-13、ステージ
+（`experience-stage.adobe.com/llm-apps`）、GitLab アクションおよびウィジェットのリポジトリを持ち込む
+独自のGit: プログラム、リポジトリ、サイト、オリジンの値はマスクされ、赤いアウトラインはコールアウトです。
+キャプチャされない：GitHub ウィジェットパス（AEM Code Syncのインストール、AEM設定の検証）。 まだ必要ありません
+本番環境で検証済み。
 
 アカウントの詳細、組織ID、実際のプログラム名、リポジトリを除外
 識別子、アプリ ID。 空のフィールドまたは中立的なフィクスチャ名を使用します。
@@ -69,9 +78,9 @@ ht-degree: 1%
 | `widget-permissions.png` | オプションのブラウザー権限。未使用の権限はオフです | 新しいアクションの作成 – ブラウザー権限 |
 | `widget-csp.png` | リソース、接続、フレーム、リダイレクト、ベース URI ドメインのコントロール | 新しいアクションの作成 – コンテンツセキュリティポリシードメイン |
 
-既存のキャプチャには、作成時に&#x200B;**アクション**&#x200B;と&#x200B;**ウィジェットメタデータ**&#x200B;が表示されます
-ダイアログ、およびの&#x200B;**LLM ウィジェットの詳細**、**アクションの詳細**、および&#x200B;**Analytics**
-保存したエディター： 現在の実装には、両方に&#x200B;**ChatGPT Extensions**&#x200B;もあります
+既存のキャプチャには、作成時に&#x200B;**アクション**&#x200B;と&#x200B;**ウィジェットメタデータ**が表示されます
+ダイアログ、およびの**LLM ウィジェットの詳細**、**アクションの詳細**、および&#x200B;**Analytics**
+保存したエディター： 現在の実装には、両方に**ChatGPT Extensions**もあります
 フロー。画像を更新する際に、実行中のUIでそのタブを確認します。 Capture the
 実際に使用するレイアウトを指定します。 保存せずにサンプルフィールドを入力し、
 編集を破棄します。

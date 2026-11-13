@@ -1,9 +1,9 @@
 ---
 title: アプリをデプロイ
 description: LLM アプリ UIを使用して、Adobe LLM アプリをステージングおよび実稼動環境にデプロイする方法について説明します。
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '458'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 生成されたアクションを確認するか、リンクされたリポジトリに独自のハンドラーコードをプッシュしたら、[!DNL LLM Apps]からアプリをデプロイします。 生成されたアクションの場合は、デプロイする前に生成された作業を確認して結合します。
 
@@ -25,9 +23,9 @@ ht-degree: 0%
 
 ターゲット環境を選択し、**[!UICONTROL デプロイ]**&#x200B;を選択します。
 
-ハンドラーで[&#x200B; アプリ変数](/help/guides/app-variables.md)を使用している場合は、デプロイする前にターゲット環境に設定します。 追加、更新、または削除された変数は、このデプロイメントで有効になります。ステージングと実稼動には独立した値があります。
+ハンドラーで[ アプリ変数](/help/guides/app-variables.md)を使用している場合は、デプロイする前にターゲット環境に設定します。 追加、更新、または削除された変数は、このデプロイメントで有効になります。ステージングと実稼動には独立した値があります。
 
-![&#x200B; デプロイ – ターゲット環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
+![ デプロイ – ターゲット環境を選択](/help/assets/guide-onboarding-agent/deploy-stage.png)
 
 デプロイメントは、次の4つの手順で実行されます。
 
@@ -46,13 +44,13 @@ ht-degree: 0%
 
 ダイアログを閉じるには、**閉じる**&#x200B;を選択します。 アプリの詳細ページで、**[!UICONTROL アプリのテスト]**&#x200B;までスクロールします。
 
-![&#x200B; アプリの詳細 – MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
+![ アプリの詳細 – MCP サーバーのURLをコピー](/help/assets/guide-onboarding-agent/app-mcp-url.png)
 
 デプロイされた各環境には、MCP サーバーのURLが表示されます。 「**[!UICONTROL URLをコピー]**」を選択し、それを使用してターゲット LLM プラットフォームでプラグインまたはコネクタを作成します。
 
 **デプロイメント履歴** セクションには、最新10件のデプロイメントが表示されます。
 
-![&#x200B; デプロイメント履歴](/help/assets/guide-deploy/deployment-history.png)
+![ デプロイメント履歴](/help/assets/guide-deploy/deployment-history.png)
 
 各行には、ターゲット **環境** （ステージまたは実稼動）、**ステータス** （成功または失敗）、**デプロイ日**&#x200B;が表示されます。 この表を使用して、デプロイメントの日付を追跡し、最新のデプロイメントが成功したことを確認します。
 
@@ -62,10 +60,10 @@ ht-degree: 0%
 
 毎回ターゲット環境を確認してください。 ステージにデプロイしても、実稼動に同じ変更がデプロイされません。
 
-アプリがAnalytics ランタイムまたはSDKの要件を満たさない場合は、再デプロイする前に[既存のアプリをアップグレード &#x200B;](/help/guides/upgrade-existing-app.md)してください。
+アプリがAnalytics ランタイムまたはSDKの要件を満たさない場合は、再デプロイする前に[既存のアプリをアップグレード ](/help/guides/upgrade-existing-app.md)してください。
 
 ## 次の手順
 
-- [&#x200B; デプロイされたアプリをChatGPT プラグインとしてテストします](/help/guides/test-in-chatgpt.md)。
-- [&#x200B; デプロイされたアプリをClaude コネクタとしてテストします](/help/guides/test-in-claude.md)。
-- [&#x200B; アプリのイベントをAdobe AnalyticsまたはCustomer Journey Analyticsに送信](/help/guides/analytics-setup.md)。
+- [ デプロイされたアプリをChatGPT プラグインとしてテストします](/help/guides/test-in-chatgpt.md)。
+- [ デプロイされたアプリをClaude コネクタとしてテストします](/help/guides/test-in-claude.md)。
+- [ アプリのイベントをAdobe AnalyticsまたはCustomer Journey Analyticsに送信](/help/guides/analytics-setup.md)。

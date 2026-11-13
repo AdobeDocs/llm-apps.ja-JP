@@ -2,23 +2,21 @@
 title: 独自のEdge Delivery Services プロジェクトを持ち込む
 description: 既存のAdobe Edge Delivery Services プロジェクトをAdobe LLM Apps アクションに接続します。
 hidefromtoc: true
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '866'
-ht-degree: 1%
+source-wordcount: '900'
+ht-degree: 2%
 ---
 
 # 自分のEDS プロジェクトを持ち込む {#bring-your-own-eds}
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
-このガイドを使用して、互換性のある既存のEdge Delivery Services（EDS）プロジェクトを接続したり、自分で作成したアクションにウィジェットを追加したりします。 既存のプロジェクトはオプションです。 独自のインフラストラクチャを設定する場合、デフォルトのパスは、[&#x200B; インフラストラクチャのセットアップ &#x200B;](/help/guides/create-app.md)中にプラットフォームが初期化する2つの空のリポジトリから始まります。
+このガイドを使用して、互換性のある既存のEdge Delivery Services（EDS）プロジェクトを接続したり、自分で作成したアクションにウィジェットを追加したりします。 既存のプロジェクトはオプションです。 独自のインフラストラクチャを設定する場合、デフォルトのパスは、[ インフラストラクチャのセットアップ ](/help/guides/create-app.md)中にプラットフォームが初期化する2つの空のリポジトリから始まります。
 
-プラットフォームが自動的にウィジェットを作成した場合は、代わりに[生成されたウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)します。 生成されたプロジェクトには、ここに記載されているSDK ファイル、ブロック、コンテンツ、およびアクション設定が既に含まれています。
+プラットフォームが自動的にウィジェットを作成した場合は、代わりに[生成されたウィジェットをカスタマイズ ](/help/guides/widgets.md)します。 生成されたプロジェクトには、ここに記載されているSDK ファイル、ブロック、コンテンツ、およびアクション設定が既に含まれています。
 
 **このガイドでは、** EDS プロジェクトの準備、SDKのインストール、およびウィジェットのビルドとパブリッシュの方法について説明します。 次に、ウィジェットをアクションに接続し、デプロイしたアプリでテストします。
 
@@ -26,7 +24,7 @@ ht-degree: 1%
 
 次のものが必要です。
 
-- [AEM Code Sync](https://github.com/apps/aem-code-sync)がインストールされ、設定済みのコンテンツソースを含む、AEM ボイラープレートと互換性のあるEDS リポジトリ。
+- 設定されたコンテンツソースを持つAEM ボイラープレートと互換性のあるEDS リポジトリ。そのコードは[AEM Code Sync](https://github.com/apps/aem-code-sync) （GitHub）または[独自のGit](https://www.aem.live/developer/byo-git) （他のGit プロバイダー）を使用して[!DNL Cloud Manager] サイトに到達します。
 - そのリポジトリに依存関係を追加し、ブロックを作成する権限。
 - EDS サイトの応答ヘッダーを設定する権限。
 - `structuredContent`を返すハンドラーを含む[!DNL LLM Apps]のアクション。
@@ -146,7 +144,7 @@ https://main--<repo>--<owner>.aem.page/eds-widgets/search-products-demo
 
 プラットフォームの自動EDS設定は、公開ウィジェットの配信用に`access-control-allow-origin: *`を設定し、より狭い既存の値を置き換えることができます。 このポリシーは、認証済みのクロスオリジン要求を持たず、セキュリティ要件が許可されている場合にのみ、意図的に公開されたリソースに対してのみ使用してください。 制限付きの既存サイトを管理する場合は、接続する前にそのポリシーを確認してください。ウィジェットを機能させるためにプライベートサイトコンテンツを公開しないでください。
 
-EDS設定の詳細については、[設定サービス &#x200B;](https://aem.live/docs/config-service-setup)を参照してください。
+EDS設定の詳細については、[設定サービス ](https://aem.live/docs/config-service-setup)を参照してください。
 
 ## アクションの設定
 
@@ -170,14 +168,14 @@ EDS設定の詳細については、[設定サービス &#x200B;](https://aem.li
 
 「**[!UICONTROL 変更を保存]**」を選択してから、テスト中の環境に再デプロイします。 保存されたウィジェット設定は、デプロイメントするまで、実行中のMCP サーバーを更新しません。
 
-フィールド定義については、[&#x200B; アクションとウィジェットフィールド &#x200B;](/help/reference/reference-docs.md)を参照してください。
+フィールド定義については、[ アクションとウィジェットフィールド ](/help/reference/reference-docs.md)を参照してください。
 
 ## 統合のテスト
 
 1. EDS ページを直接プレビューし、サンプルデータのフォールバックを確認します。
 2. ハンドラーをローカルでテストし、その`structuredContent`をブロックで期待される形状と比較します。
 3. ハンドラーとアクションメタデータをステージにデプロイします。 EDS コードとコンテンツ公開は別のステップです。
-4. サポートされているLLM プラットフォームからアクションを呼び出します。 [ChatGPTでのテスト &#x200B;](/help/guides/test-in-chatgpt.md)または[&#x200B; クロードでのテスト &#x200B;](/help/guides/test-in-claude.md)を参照してください。
+4. サポートされているLLM プラットフォームからアクションを呼び出します。 [ChatGPTでのテスト ](/help/guides/test-in-chatgpt.md)または[ クロードでのテスト ](/help/guides/test-in-claude.md)を参照してください。
 5. 読み込み、成功、空、エラーの状態を確認します。
 
-ページがLLM プラットフォームで直接機能するが、機能しない場合は、CORS、CSP、HTTPS URL、および`structuredContent` シェイプを確認してください。 「[&#x200B; トラブルシューティング &#x200B;](/help/reference/troubleshooting.md)」を参照してください。
+ページがLLM プラットフォームで直接機能するが、機能しない場合は、CORS、CSP、HTTPS URL、および`structuredContent` シェイプを確認してください。 「[ トラブルシューティング ](/help/reference/troubleshooting.md)」を参照してください。

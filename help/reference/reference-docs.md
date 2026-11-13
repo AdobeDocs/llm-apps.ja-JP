@@ -1,9 +1,9 @@
 ---
 title: アクションフィールドとウィジェットフィールド
 description: Adobe LLM アプリのアクションメタデータ、パラメーター、ウィジェット、CSP、権限のフィールド定義。
-source-git-commit: 2892acf4b3042c296203377a06bc3ff80fd375a5
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1273'
 ht-degree: 3%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]は現在Betaにいます。
->
->ここに示す機能、ワークフロー、UIは、必ずしも製品の最終状態を表すものではありません。 Betaに参加するには、llm-apps-beta@adobe.comに電子メールを送信します。
+>LLM Appsは、AEM Sites Cloud Serviceのすべてのユーザーが独自のアプリケーションを開発および管理できます。 メーター設定が開始されると、各アプリ呼び出しは、お客様のAEM Sites コンテンツリクエストにカウントされます。 Adobeは、計量が有効になる前に、計量レートと開始日を発表します。
 
 このページを使用して、アクションエディターでフィールドを検索します。 作成手順については、[最初からアクションを作成する](/help/guides/create-action.md)を参照してください。
 
@@ -30,7 +28,7 @@ ht-degree: 3%
 | **[!UICONTROL Analytics]** | ユーザーインテントの収集と手順 |
 | **[!UICONTROL ChatGPT拡張機能]** | 直接開くエントリポイント、アクションアイコン、表示環境設定、コンポーザーのメンション |
 
-編集を保存するには、**[!UICONTROL 変更を保存]**&#x200B;を選択します。 生成されたアクションは、レビュー待ちのため、**[!UICONTROL レビュー済みとしてマーク]**&#x200B;されます。これは、生成されたプルリクエストも処理します。
+編集を保存するには、**[!UICONTROL 変更を保存]**&#x200B;を選択します。 生成されたアクションは、レビュー待ちではなく、**[!UICONTROL レビュー済みとしてマーク]**&#x200B;されます。これは、生成されたプルリクエストまたは分岐もマージします。
 
 ## アクションパラメーター
 
@@ -47,7 +45,7 @@ ht-degree: 3%
 
 ファイルパラメーターは、アクションエディターで設定された入力フィールド名です。 ユーザーがファイルをアップロードすると、ホストはそれらの引数（通常は`download_url`と`file_id`を含む）のファイルオブジェクトを提供します。
 
-アップロードされたファイルのパラメーターが[&#x200B; ファイルのエントリポイント &#x200B;](/help/guides/chatgpt-extensions.md#file-entrypoint)と異なります。 ファイルのエントリポイントでは、開いたファイルの`name`と`resourceUri`を含む`file`という名前のオブジェクトパラメーターを使用します。
+アップロードされたファイルのパラメーターが[ ファイルのエントリポイント ](/help/guides/chatgpt-extensions.md#file-entrypoint)と異なります。 ファイルのエントリポイントでは、開いたファイルの`name`と`resourceUri`を含む`file`という名前のオブジェクトパラメーターを使用します。
 
 ## メタデータフィールド
 
