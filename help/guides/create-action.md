@@ -1,9 +1,9 @@
 ---
 title: アクションをゼロから作成
 description: アクションメタデータを定義し、そのハンドラーを実装し、EDS ウィジェットを接続してテストし、Adobe LLM アプリを使用してデプロイします。
-source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
+source-git-commit: 0276ae4e4627e49157911ad579a42c0e77045eee
 workflow-type: tm+mt
-source-wordcount: '1532'
+source-wordcount: '1582'
 ht-degree: 0%
 ---
 
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、最初に[EDS開発者チュートリアル &#x200B;](https://www.aem.live/developer/tutorial)および[&#x200B; ブロックの探索](https://www.aem.live/docs/exploring-blocks)を読んで、ウィジェットを接続する前に、ブロック、`decorate`関数、EDS プロジェクト構造などの基本を学びます。
+>このガイドでは、Adobe Edge Delivery Services （EDS）に関する基本的な知識を前提としています。 EDSを初めて使用する場合は、最初に[EDS開発者チュートリアル ](https://www.aem.live/developer/tutorial)および[ ブロックの探索](https://www.aem.live/docs/exploring-blocks)を読んで、ウィジェットを接続する前に、ブロック、`decorate`関数、EDS プロジェクト構造などの基本を学びます。
 
 プラットフォームが作成しなかった機能を追加します。 [!DNL LLM Apps]でアクションを定義し、リンクされたリポジトリにそのハンドラーを書き込み、必要に応じてウィジェットを追加します。
 
 **このガイドでは、** アクションを定義し、そのハンドラーを実装し、オプションのウィジェットを接続する方法について説明します。 アクションをローカルにテストし、アプリをデプロイし、サポートされているLLM プラットフォームでアクションを試します。
 
-最初のアプリの場合は、[&#x200B; インフラストラクチャの設定](/help/guides/create-app.md)から開始し、[&#x200B; アクションの作成](/help/guides/creating-actions.md)を行います。 アクションの作成ガイドでは、web サイトからの自動生成と手動での作成について説明します。
+最初のアプリの場合は、[ インフラストラクチャの設定](/help/guides/create-app.md)から開始し、[ アクションの作成](/help/guides/creating-actions.md)を行います。 アクションの作成ガイドでは、web サイトからの自動生成と手動での作成について説明します。
 
 ## 始める前に
 
@@ -64,15 +64,15 @@ Widget: product cards
 
 アプリを開いて&#x200B;**[!UICONTROL アクション]**&#x200B;を選択し、**[!UICONTROL アクションの作成]**&#x200B;を選択します。
 
-作成ダイアログには、**[!UICONTROL アクション]**、**[!UICONTROL ウィジェットメタデータ]**、**[!UICONTROL ChatGPT拡張機能]**&#x200B;のタブが含まれています。 各セクションを展開して、フィールドを設定します。
+**[!UICONTROL 新しいアクションの作成]** ダイアログには、4つのタブがあります：**[!UICONTROL アクションの詳細]**、**[!UICONTROL LLM ウィジェットの詳細]**、**[!UICONTROL アプリケーションインサイト]**、および&#x200B;**[!UICONTROL ChatGPT拡張機能]**。 ダイアログが&#x200B;**[!UICONTROL アクションの詳細]**&#x200B;に開きます。 保存済みアクションエディターは、同じタブを使用します。
 
 オプションの&#x200B;**[!UICONTROL ChatGPT Extensions]**&#x200B;設定を使用すると、ユーザーはアプリを直接開いたり、カスタムファイルビューアを使用したり、サポートされているクライアントでコンポーザーでリソースを検索したりできます。 対応するアクションとウィジェットの動作の準備が整った後に、これらの設定を行います。 [ChatGPT拡張機能の設定](/help/guides/chatgpt-extensions.md)を参照してください。
 
-### 基本情報を入力
+### アクション情報と入力パラメーターを入力します
 
-![&#x200B; アクションの作成 – 基本情報](/help/assets/guide-create-action/action-basic-info.png)
+![新しいアクションの作成 – アクション名、コード ID、説明、および2つの入力パラメーターを含むアクションの詳細](/help/assets/guide-create-action/action-basic-info.png)
 
-次を入力 :
+**[!UICONTROL アクション情報]**&#x200B;の下に、次のように入力します。
 
 - **[!UICONTROL アクション名]** — *製品の検索*&#x200B;などの短いタスク名。
 - **[!UICONTROL 説明]** — アクションを使用するタイミングと返される内容を説明します。
@@ -88,48 +88,12 @@ products with their names, prices, categories, and image URLs.
 
 「*製品情報を取得します*」といった曖昧な説明は避けます。 LLM プラットフォームは、説明をもとにアクションを選択します。
 
-### 注釈を選択
+**[!UICONTROL 入力パラメーター]**&#x200B;で、ハンドラーが受け入れる値ごとに&#x200B;**[!UICONTROL パラメーター]**&#x200B;を1回追加するを選択します。 各パラメーターに対して、次のように入力します。
 
-注釈は、アクションの動作を説明します。
-
-- **破壊的なヒント** — アクションはデータを削除または完全に変更できます。
-- **Idempotent （same args = no extra effect）** – 同じリクエストを繰り返すと、同じ効果が得られます。
-- **Open world hint** — アクションは外部システムと通信します。
-- **読み取り専用ヒント** — アクションでデータが変更されることはありません。
-
-trueの注釈のみを選択します。 たとえば、商品検索は通常、読み取り専用、等価、オープンワールドです。
-
-### OpenAI メタデータの追加
-
-アクションの実行中および完了後に表示される短いメッセージを入力します。
-
-```text
-Invoking: Searching products...
-Invoked: Products found
-```
-
-ウィジェットを使用するアクションの場合は、**[!UICONTROL ウィジェットの説明]**&#x200B;を追加します。 ウィジェットの説明は、アクションの説明とは異なります。
-
-- **アクションの説明**&#x200B;は、モデルがアクションを呼び出すタイミングを決定するのに役立ちます。
-- **ウィジェットの説明**&#x200B;は`_meta["openai/widgetDescription"]`にマッピングされ、レンダリングされたコンポーネントが示す内容を要約して、繰り返しナレーションを減らします。
-
-[!DNL LLM Apps]は、ウィジェットの説明をコンポーネントメタデータとして適用します。 ハンドラーから説明を返さないでください。
-
-### 表示を設定
-
-- **[!UICONTROL AI モデルに公開]**&#x200B;すると、モデルはアクションを選択できます。
-- **[!UICONTROL アプリ サーフェスでウィジェットとして表示]**&#x200B;すると、設定されたウィジェットが表示されます。
-
-テキストのみのアクションの場合は、**[!UICONTROL ウィジェットメタデータ]** > **[!UICONTROL タイプ]**&#x200B;の下の&#x200B;**[!UICONTROL ウィジェットなし]**&#x200B;も選択します。 表示コントロールでは、アクションのウィジェットの種類は選択されません。
-
-### 入力パラメーターの追加
-
-ハンドラーが受け入れる値ごとに1つのパラメーターを追加します。 各パラメーターには次のものが必要です。
-
-- **名前** — ハンドラーが受け取るキー。
-- **Type** – 文字列、数値、整数またはブール値。
-- **説明** – 値の抽出方法。
-- **必須** — アクションに値が必要かどうか。
+- **[!UICONTROL パラメーター名]** — ハンドラーが受け取るキー。
+- **[!UICONTROL Type]** – 文字列、数値、整数、ブール値、オブジェクトまたはファイル。
+- **[!UICONTROL 必須]** — アクションに値が必要かどうか。
+- **[!UICONTROL 説明]** – 値の抽出方法。
 
 **製品を検索**&#x200B;の場合：
 
@@ -147,38 +111,70 @@ query
 
 安定したパラメーター名を使用します。 名前を変更するには、ハンドラーとそのテストも変更する必要があります。
 
-### 分析の設定 {#configure-analytics}
+### LLM設定の設定
 
-アクションに至った会話の概要をAnalyticsに含める場合は、**[!UICONTROL ユーザーインテントを収集]**&#x200B;を有効にします。
+**[!UICONTROL LLM設定]**&#x200B;を展開します。 セクションはデフォルトで折りたたまれます。
+
+![新しいアクションを作成 – LLM設定に注釈、OpenAI メタデータのステータス テキスト、および表示を追加](/help/assets/guide-create-action/action-llm-settings.png)
+
+「**[!UICONTROL 注釈]**」で、アクションに対してtrueのヒントのみを選択します。
+
+- **[!UICONTROL 破壊的なヒント]** — アクションはデータを削除または完全に変更できます。
+- **[!UICONTROL Idempotent （same args = no extra effect）]** – 同じリクエストを繰り返すと、同じ効果が得られます。
+- **[!UICONTROL Open world hint]** — アクションは外部システムと通信します。
+- **[!UICONTROL 読み取り専用ヒント]** — アクションでデータが変更されることはありません。
+
+たとえば、商品検索は通常、読み取り専用、等価、オープンワールドです。
+
+**[!UICONTROL OpenAI メタデータ]**&#x200B;の下に、アクションの実行中および完了後に表示される短いメッセージを、それぞれ最大64文字まで入力します。
+
+```text
+Invoking status text: Searching products...
+Invoked status text: Products found
+```
+
+**[!UICONTROL 表示]**&#x200B;の下：
+
+- **[!UICONTROL AI モデルに公開]**&#x200B;すると、モデルはアクションを選択できます。
+- **[!UICONTROL アプリ サーフェスでウィジェットとして表示]**&#x200B;すると、設定されたウィジェットが表示されます。
+
+ウィジェットの種類は表示によって選択されません。 テキストのみのアクションの場合は、**[!UICONTROL LLM ウィジェットの詳細]** > **[!UICONTROL ウィジェットタイプ]**&#x200B;の下にある&#x200B;**[!UICONTROL インタラクティブ UIなし]**&#x200B;を選択します。
+
+### アプリケーションインサイトの設定 {#configure-analytics}
+
+**[!UICONTROL アプリケーションインサイト]**&#x200B;を開きます。 **[!UICONTROL ユーザーインテントの収集]**&#x200B;がデフォルトで選択されています。LLM プラットフォームは、アクション実行時にユーザーが達成しようとしていたことの短い、匿名化された概要を作成します。
 
 独自の[!DNL Adobe Analytics]または[!DNL Customer Journey Analytics]を設定すると、ユーザーインテントもそこに送信されます。 [Adobe AnalyticsとCustomer Journey Analyticsの設定](/help/guides/analytics-setup.md)を参照してください。
 
-ユーザーインテント収集は、デフォルトで有効になっています。 **[!UICONTROL ユーザーインテントの説明]**&#x200B;を確認します。概要をリクエストする手順が含まれています。 機密性のない匿名の意図に指示を制限し、プライバシーポリシーにデータ収集を記述します。 説明は最大2,000文字まで使用できます。
+チェックボックスの下にある手順を確認して、概要を確認します。 機密性のない匿名化された意図に限定し、プライバシーポリシーにデータ収集を記載します。 命令は最大2,000文字を受け付けます。 **[!UICONTROL ユーザーインテントを収集]**&#x200B;をクリアして、概要を収集しません。
 
-![&#x200B; アクションの作成 – ユーザーインテント分析](/help/assets/guide-create-action/action-analytics-user-intent.png)
+![新しいアクションの作成 – ユーザーのインテントを収集し、デフォルトの手順を使用したアプリケーションインサイト ](/help/assets/guide-create-action/action-analytics-user-intent.png)
 
-完全なフィールド定義については、[&#x200B; アクションとウィジェットフィールド &#x200B;](/help/reference/reference-docs.md)を参照してください。
+完全なフィールド定義については、[ アクションとウィジェットフィールド ](/help/reference/reference-docs.md)を参照してください。
 
 ## ウィジェットの設定
 
-テキストのみのアクションの場合は、**[!UICONTROL Widget Metadata]**&#x200B;を開き、**[!UICONTROL Type]**&#x200B;を&#x200B;**[!UICONTROL No widget]**&#x200B;に設定します。 次に、残りのウィジェット設定をスキップします。
+**[!UICONTROL LLM ウィジェットの詳細]**&#x200B;を開きます。 テキストのみのアクションの場合は、**[!UICONTROL ウィジェットタイプ]**&#x200B;の下にある&#x200B;**[!UICONTROL インタラクティブ UIなし]**&#x200B;を選択し、残りのウィジェット設定をスキップします。
 
-**[!UICONTROL ウィジェットメタデータ]**&#x200B;を開きます。
+![新しいアクションを作成 – Edge Delivery Services ブロックを選択し、テンプレート URLの例を示すLLM Widgetの詳細](/help/assets/guide-create-action/widget-metadata.png)
 
-![&#x200B; アクションの作成 – ウィジェットのメタデータ &#x200B;](/help/assets/guide-create-action/widget-metadata.png)
+**[!UICONTROL ウィジェット情報]**&#x200B;で、次の項目を設定します。
 
-設定：
-
-- **[!UICONTROL Type]** — インタラクティブ ウィジェットの&#x200B;**[!UICONTROL Edge Delivery Services ブロック]**&#x200B;を選択します。
+- **[!UICONTROL Widget type]** — インタラクティブ ウィジェットの&#x200B;**[!UICONTROL Edge Delivery Services ブロック]**&#x200B;を選択します。
 - **[!UICONTROL Widget domain]** — ウィジェットのサンドボックスの生成元。 UIでは、アプリの提出に必要な項目とアプリごとに一意の項目が識別されます。これは、EDS ページのURLと同じではありません。
-- **境界線を優先** — ホスト内の境界線コンテナをリクエストします。
+- **[!UICONTROL ウィジェットの説明]** — ウィジェットのレンダリング後にモデルが表示するのは、最大512文字です。
+
+ウィジェットの説明は、アクションの説明とは異なります。
+
+- **アクションの説明**&#x200B;は、モデルがアクションを呼び出すタイミングを決定するのに役立ちます。
+- **ウィジェットの説明**&#x200B;は`_meta["openai/widgetDescription"]`にマッピングされ、レンダリングされたコンポーネントが示す内容を要約して、繰り返しナレーションを減らします。
+
+[!DNL LLM Apps]は、ウィジェットの説明をコンポーネントメタデータとして適用します。 ハンドラーから説明を返さないでください。
 
 **[!UICONTROL テンプレート URL]**&#x200B;を展開し、次を入力します。
 
 - **[!UICONTROL スクリプト URL]** — EDS ウィジェットのエントリポイント。
 - **[!UICONTROL ウィジェット URL]** – このアクションの公開済みEDS ページ。
-
-![新しいアクションの作成 – EDS ウィジェットのスクリプトとウィジェット URL](/help/assets/guide-create-action/widget-template-urls.png)
 
 一般的なURLは次のとおりです。
 
@@ -190,15 +186,9 @@ Widget URL:
 https://main--<repo>--<owner>.aem.live/<widget-page>
 ```
 
-必要なブラウザー権限とCSP ドメインのみを付与します。
+**[!UICONTROL CSP設定]**&#x200B;の下で、ウィジェットがアセットとネットワークリクエストに必要なオリジンのみを追加します。 外部リソースを読み込むウィジェットは、CSPが不完全な場合、レンダリングされない可能性があります。
 
-ウィジェットに位置情報などのブラウザー機能が必要な場合にのみ、**[!UICONTROL 権限（MCP固有）]**&#x200B;を展開します。 未使用の権限はオフのままにします。
-
-![新しいアクションの作成 – オプションのブラウザー権限](/help/assets/guide-create-action/widget-permissions.png)
-
-**[!UICONTROL CSP設定]**&#x200B;で、アセットとネットワーク要求に必要なオリジンを追加します。 外部リソースを読み込むウィジェットは、CSPが不完全な場合、レンダリングされない可能性があります。
-
-![新しいアクションの作成 – コンテンツセキュリティポリシードメインリスト &#x200B;](/help/assets/guide-create-action/widget-csp.png)
+![新しいアクションの作成 – リソース、接続、フレーム、リダイレクト、およびベース URI ドメイン リストを使用したCSP設定](/help/assets/guide-create-action/widget-csp.png)
 
 EDS プロジェクトまたはウィジェットページがまだ存在しない場合は、[自分のEDS プロジェクトを作成](/help/guides/bring-your-own-eds.md)し、アクションに戻ります。
 
@@ -208,7 +198,7 @@ EDS プロジェクトまたはウィジェットページがまだ存在しな�
 
 保存するとメタデータが作成されますが、アクションにはまだハンドラーが必要です。
 
-保存したアクションを再度開くと、エディターには&#x200B;**[!UICONTROL LLM ウィジェットの詳細]**、**[!UICONTROL アクションの詳細]**、および&#x200B;**[!UICONTROL Analytics]**&#x200B;のタブがあります。 後で編集した内容を保存するには、**[!UICONTROL 変更を保存]**&#x200B;を選択します。 作成ダイアログと保存済みアクションエディターのレイアウトは異なります。
+保存したアクションを再度開くと、エディターに同じタブが表示されます。 後で編集した内容を保存するには、**[!UICONTROL 変更を保存]**&#x200B;を選択します。
 
 ## ハンドラーの実装
 
@@ -228,7 +218,7 @@ actions/
 
 フォルダー名は、アクションエディターに表示されるアクションのコード識別子と一致する必要があります。
 
-結果のコントラクトとハンドラーとウィジェットの関係について詳しくは、[生成ハンドラーのカスタマイズ &#x200B;](/help/guides/customize-handler.md)を参照してください。
+結果のコントラクトとハンドラーとウィジェットの関係について詳しくは、[生成ハンドラーのカスタマイズ ](/help/guides/customize-handler.md)を参照してください。
 
 ### ハンドラーコントラクト
 
@@ -278,7 +268,7 @@ structuredContent: {
 
 ### APIの接続
 
-サーバーサイドハンドラーでAPI呼び出しを保持します。 この例では、パブリック製品APIを呼び出します。 `PRODUCT_API_ORIGIN`という名前の[&#x200B; アプリ変数](/help/guides/app-variables.md)でAPIのHTTPS オリジンを設定します。 この例では、上記で定義された`query`および`category` パラメーターを受け入れ、少なくとも1つのパラメーターを必要とし、資格情報は必要ありません。
+サーバーサイドハンドラーでAPI呼び出しを保持します。 この例では、パブリック製品APIを呼び出します。 `PRODUCT_API_ORIGIN`という名前の[ アプリ変数](/help/guides/app-variables.md)でAPIのHTTPS オリジンを設定します。 この例では、上記で定義された`query`および`category` パラメーターを受け入れ、少なくとも1つのパラメーターを必要とし、資格情報は必要ありません。
 
 ```javascript
 const { getVariable } = require('@adobe/llm-apps-runtime');
@@ -379,7 +369,7 @@ test/
 npm test
 ```
 
-プロジェクトのレイアウトとローカル MCP テストについては、[&#x200B; ローカルハンドラーの開発とテスト &#x200B;](/help/reference/development.md)を参照してください。
+プロジェクトのレイアウトとローカル MCP テストについては、[ ローカルハンドラーの開発とテスト ](/help/reference/development.md)を参照してください。
 
 ## アクションをローカルでテストする
 
@@ -413,7 +403,7 @@ MCP インスペクターまたは`curl`を使用して、次を行います。
 ## デプロイとテスト
 
 1. ハンドラーとウィジェットの変更をコミットしてプッシュします。
-2. [&#x200B; アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
+2. [ アプリを](/help/guides/deploy-your-app.md) ステージにデプロイします。
 3. [ChatGPT](/help/guides/test-in-chatgpt.md)または[Claude](/help/guides/test-in-claude.md)でアプリをテストします。
 4. アクションと、そのアクションを呼び出さない無関係なプロンプトに一致するプロンプトを使用して、アクションの選択を確認します。
 5. ステージが成功したら、実稼動環境にデプロイします。
