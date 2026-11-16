@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリとは何か、どのように機能するのか、アプリの構築を開始する方法について説明します。
-source-git-commit: 07bcd58b3aab70b03f62523b5b25f30f4b6d7004
+source-git-commit: 5a0959012e11cc46850cb5efd6e48e5258e54b0f
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '604'
 ht-degree: 1%
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 >[!VIDEO](https://video.tv.adobe.com/v/3504876/?captions=jpn&learn=on&enablevpops)
 
-[!DNL LLM Apps]は[experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)で利用できます。
+[!DNL LLM Apps]を[[!DNL AEM Experience Hub]](https://experience.adobe.com/experiencemanager/)から開くか、[experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)に直接移動できます。
 
 
 ## [!DNL LLM Apps]でできること
