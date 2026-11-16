@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM アプリの概要
 description: Adobe LLM アプリとは何か、どのように機能するのか、アプリの構築を開始する方法について説明します。
-source-git-commit: 07bcd58b3aab70b03f62523b5b25f30f4b6d7004
+source-git-commit: 5a0959012e11cc46850cb5efd6e48e5258e54b0f
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '604'
 ht-degree: 1%
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 1%
 
 [!DNL Adobe LLM Apps]では、[!DNL ChatGPT]や[!DNL Claude]などのサポート対象AI アシスタント内で、製品の検索、可用性チェック、サービス予約などの便利なアクションを提供できます。
 
->[!VIDEO](https://video.tv.adobe.com/v/3504876/?captions=jpn&learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3504875/?learn=on&enablevpops)
 
-[!DNL LLM Apps]は[experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)で利用できます。
+[!DNL LLM Apps]を[[!DNL AEM Experience Hub]](https://experience.adobe.com/experiencemanager/)から開くか、[experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)に直接移動できます。
 
 
 ## [!DNL LLM Apps]でできること
@@ -67,16 +67,16 @@ LLM プラットフォームがアクションを呼び出したときに実行�
 └────────────────────┘          └────────────────────┘          └────────────────────┘
 ```
 
-ビルドする内容とコンポーネントの連携の仕組みについて詳しくは、[&#x200B; アプリを連携させる方法](/help/guides/app-architecture.md)を参照してください。
+ビルドする内容とコンポーネントの連携の仕組みについて詳しくは、[ アプリを連携させる方法](/help/guides/app-architecture.md)を参照してください。
 
 ## 今すぐ始める {#choose-your-journey}
 
 アプリの作成とアクションの作成は別々の手順で行います。
 
-1. [&#x200B; インフラストラクチャの設定](/help/guides/create-app.md)。 迅速なセットアップには、[!DNL LLM Apps]管理インフラストラクチャを使用するか、[!DNL Cloud Manager]に追加した独自のリポジトリを使用します。
-2. [&#x200B; アクションを作成](/help/guides/creating-actions.md)。 web サイトを分析してアクションを生成したり、自社で作成したりできます。
-3. [&#x200B; アプリをデプロイしてテスト &#x200B;](/help/guides/deploy-your-app.md)。 生成された作業を確認し、ステージにデプロイし、サポートされているLLM プラットフォームでテストします。
+1. [ インフラストラクチャの設定](/help/guides/create-app.md)。 迅速なセットアップには、[!DNL LLM Apps]管理インフラストラクチャを使用するか、[!DNL Cloud Manager]に追加した独自のリポジトリを使用します。
+2. [ アクションを作成](/help/guides/creating-actions.md)。 web サイトを分析してアクションを生成したり、自社で作成したりできます。
+3. [ アプリをデプロイしてテスト ](/help/guides/deploy-your-app.md)。 生成された作業を確認し、ステージにデプロイし、サポートされているLLM プラットフォームでテストします。
 
-自動生成は、サンプルの動作を最初に示します。 このアプリを顧客が利用できるようにするには、[&#x200B; ハンドラーをシステムに接続](/help/guides/customize-handler.md)し、[&#x200B; ウィジェットをカスタマイズ &#x200B;](/help/guides/widgets.md)します。
+自動生成は、サンプルの動作を最初に示します。 このアプリを顧客が利用できるようにするには、[ ハンドラーをシステムに接続](/help/guides/customize-handler.md)し、[ ウィジェットをカスタマイズ ](/help/guides/widgets.md)します。
 
 自分の[!DNL Adobe Analytics]または[!DNL Customer Journey Analytics]のアプリについて報告するには、[Adobe AnalyticsとCustomer Journey Analyticsの設定](/help/guides/analytics-setup.md)を参照してください。
